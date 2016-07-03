@@ -452,12 +452,13 @@ Absolute enthalpy & Compound.ABSENT \\ \hline
 
 \subsection{Development of Thermodynamic Functions}
 
-As discussed earlier most of the thermodynamic properties of pure compounds which depends on temperature or pressure are in the form of equations which includes constants and an independent variable (temperature and pressure). These properties are written in the form of functions in openmodelica. The arguments to these functions are the independent variable (temperature, pressure, composition) and the name of the coefficients respective compound whose properties have to be calculated. The coefficients can be accessed by instanciating the base compound class. The functions returns the calculated property. For example the vapor pressure of methane at 300 K can be calculated by first instanciating the base methance class and then calling \textbf{Pvap(water.VP, 373)}. Where Pvap is a generic function to calculate the vapor pressure of any compound at any given temperature. The whole process is shown in figure \ref{BT2}.Similarly, all other thermodynamic properties can be calculated using their respective functions as shown in table \ref{tab:depprop}.
+As discussed earlier most of the thermodynamic properties of pure compounds which depends on temperature or pressure are in the form of equations which includes constants and an independent variable (temperature and pressure). These properties are written in the form of functions in openmodelica. The arguments to these functions are the independent variable (temperature, pressure, composition) and the name of the coefficients respective compound whose properties have to be calculated. The coefficients can be accessed by instanciating the base compound class. The functions returns the calculated property. For example the vapor pressure of methane at 300 K can be calculated by first instanciating the base methance class and then calling \textbf{Pvap(water.VP, 373)}. Where Pvap is a generic function to calculate the vapor pressure of any compound at any given temperature. The whole process is shown in figure \ref{fig:BT2}.Similarly, all other thermodynamic properties can be calculated using their respective functions as shown in table \ref{tab:depprop}.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\linewidth]{BT2}
 \caption{Using built in thermodynamic functions (Pvap)}
+\label{fig:BT2}
 \end{figure}
 
 \begin{table}
@@ -492,14 +493,29 @@ The fugacity of the i component in the liquid phase is related to the compositio
 \begin{align*}
 \gamma_i = \frac{f_i^L}{x_if_i^0}
 \end{align*}
-The standard state fugacity $f_i^0$ is the fugacity of the i-th component in the system temperature, i.e. mixture, and in an arbitrary pressure and composition. Here, the standard-state fugacity of each component is considered to be equal to pure liquid i at the system temperature and pressure.
-
-f an Equation of State is used to calculate equilibria, fugacity of the i-th component in the liquid phase is calculated by
+The standard state fugacity $f_i^0$ is the fugacity of the i-th component in the system temperature, i.e. mixture, and in an arbitrary pressure and composition. Here, the standard-state fugacity of each component is considered to be equal to pure liquid i at the system temperature and pressure. An Equation of State is used to calculate equilibria, fugacity of the i-th component in the liquid phase is calculated by
 \begin{align*}
 \gamma_i = \frac{f_i^L}{x_iP^*}
 \end{align*}
 with the fugacity coefficient $\Phi_i$ calculated by the EOS, just like it is for the same component in the vapor phase.
 The following EOS models are developed in openmodelica \cite{DWSIM}.
+
+The binary interaction parameters for each of the EOS and acitivity coefficient models have been extracted from chemsep database where they are saved in a .dat file. The following procedure is used to port all the binary interaction parameters to openmodelica. 
+
+\begin{itemize}
+\item First, the dat file is converted to as .csv file as python is very much comfortable with csv format. To accomplish this sublime editor is used which makes this task simple enough.
+\item This csv is them converted to an openmodelica function by a python script (Appendix C) which converts the compound names and the binary interaction parameters as an array.
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{BT3}
+\caption{Porting Chemsep's binary interaction parameters in openmodelica}
+\label{fig:BT3}
+\end{figure}
+
+Figure \ref{fig:BT3} demonstrate the above process for NRTL activity coefficient model.
+
 \begin{itemize}
 \item{\textbf{Peng Robinson}} \\
 The following equations represent the Peng Robinson model \cite{PR}.
@@ -597,7 +613,7 @@ The pressure is kept constant at 1 atm. The value of $x_1$ (mole fraction of eth
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=1\linewidth]{DP1}
+\includegraphics[width=0.8\linewidth]{BP}
 \caption{Bubble point (Tx) curve for ethanol water system generated in openmodelica.}
 \label{fig:BP}
 \end{figure}
@@ -622,7 +638,7 @@ The pressure is kept constant at 1 atm. The value of $y_1$ (mole fraction of eth
 \item Combining the bubble point and the dew point curves as generated above gives the Txy curve for the system as shown in Figure \ref{fig:VLE}
 \begin{figure}
 \centering
-\includegraphics[width=0.8\linewidth]{VLE4}
+\includegraphics[width=0.8\linewidth]{VLE}
 \caption{Txy curve for ethanol water system generated in openmodelica}
 \label{fig:VLE}
 \end{figure}
@@ -634,21 +650,34 @@ The same simulation when carried out with the imported DWSIM's thermodynamic eng
 \end{itemize}
 \section{Steady State Flash}
 \subsection{The Model}
-In this model a steady state flash was simulated in openmodelica using the developed thermodynamics. The components involved are Benzene and Toluene and as this system is an ideal system, the thermodynamic package used is Raoultâ  Law.The feed is equimolar mixture of benzene and toluene. To check the design efficiency of the developed thermodynamic engine in openmodelica , the output composition of the vapor product was specified, while the temperature at which this desired composition is attained is kept unknown. To carry out this simulation in DWSSIM, we have to use an adjust operation which uses a trial and error method and is time consuming. The flash algorithm involved is PT flash. The example is from the book Simultaneous modular simulation and optimization \cite{Beigler}
+In this model a steady state flash is simulated in openmodelica using the developed thermodynamics. The components involved are methanol, ethanol and water. The thermodynamic package used is NRTL. To check the design efficiency of the developed thermodynamic engine in openmodelica , the output composition of the vapor product is specified, while the temperature at which this desired composition of vapour is attained needs to be calculated. Therefore, it is a design problem. To carry out this simulation in DWSIM, we have to use an adjust operation which uses a trial and error method and is time consuming.
+
+\subsection{Problem Statement}
+The flowrate and the composition of the feed is specified. Pressure is kept constant at 1 atm. The problem is divided into three parts with each having different desired vapour compositions. The temperature and all the unknows compositions and flowrates need to be calculated. The schematic of the problem statement is shown in figure \ref{Flash}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{Flash}
+\caption{Model with problem statement for steady state flash of Methanol-ethanol-water.}
+\label{Flash}
+\end{figure}
+
+
 \subsection{Simulation Details and Equations}
 The input stream enters at 1 atm and the temperature is to be determined according to the desired vapor composition. The simulation was run for three different vapor compositions. The minimum and maximum temperatures were taken to be boiling points of pure benzene and toluene and the initial guess for temperature is taken to be average of the two boiling points. The following equations describe the model.
 
-\begin{align*}
+\begin{gather*}
 \intertext{Material Balances} \\
 F=V+L \\
-x_{1,F}F = y_1V + x_1L \\
+x_{i,F}F = y_iV + x_iL \\
+\intertext{For i = 1,2,3} \\
 \intertext{Equilibrium relations} \\
 y_i = K_ix_i \\
-\intertext{Summation Equations}
-\sum_{i=1}^{2}y_i = 1 \\
-\sum_{i=1}^{2}x_i = 1 \\
-\intertext{Where i is the component index. y is the mole fraction is vapor phase and x in the liquid phase. 1,2 represents benzene and toluene respectively.}
-\end{align*}
+\intertext{For i = 1,2,3} \\
+\intertext{Summation Equation} \\
+\sum_{i=1}^{3}x_i = 1 \\
+\intertext{Where i is the component index. y is the mole fraction in vapor phase and x in the liquid phase. 1,2,3 represents methanol, ethanol and water respectively.}
+\end{gather*}
 
 \subsection{Results}
 Three cases were studies. The desired vapor composition is different for each case. According to the VLE behavior the case with richest vapor computer- position (of more volatile component) should have the lowest temperature and the case with least vapor composition (of more volatile composition) should have the highest temperature. Table \ref{Tab:Flash} show the resulting tem- temperature for the three different cases.The simulation time taken was almost instant, whereas if DWSIM was used it takes five to ten seconds to simulate the same.
@@ -670,7 +699,14 @@ Desired Vapor Comp. & Temperature & Liquid Comp. \\ \hline
 
 \section{Semi-Batch Steam Distillation of a Binary Organic Mixture}
 \subsection{Problem background}
-This illustrative example involves semi-batch steam distil- lation of binary mixture. A schematic plot of the steam distil- lation apparatus is shown in Figure 1. The organic mixture is charged into the still initially, and then steam is bubbled through continuously until the desired degree of separation has been reached. There are two different periods in the op- eration of the still: the heating period, until the boiling point temperature of the organic mixture is reached, and the distil- lation period. A brief description of the mathematical models for the two periods follows \cite{PHD}.
+This illustrative example involves semi-batch steam distil- lation of binary mixture. A schematic plot of the steam distillation apparatus is shown in Figure \ref{SD}. The organic mixture is charged into the still initially, and then steam is bubbled through continuously until the desired degree of separation has been reached. There are two different periods in the op- eration of the still: the heating period, until the boiling point temperature of the organic mixture is reached, and the distil- lation period. A brief description of the mathematical models for the two periods follows \cite{PHD}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{SD}
+\caption{Schematic of steam distillation apparatus.}
+\label{SD}
+\end{figure}
 
 \textbf{Heating period} \\
 A simple mass balance on the water phase yields
@@ -733,32 +769,28 @@ feed that can yield a distillate concentration of $90\%$ of n-octane. Compute th
 
 \subsection{Results}
 Plots \ref{SD1} and \ref{SD2} shows the results obtained by simulating the example in openmodelica by using the built in thermodynamics. \\
-
 \begin{figure}
 \centering
-\includegraphics[width=0.9\linewidth]{SD}
-\caption{Change of organic phase composition during semi-batch steam distillation}
+\includegraphics[width=0.8\linewidth]{SD1}
+\caption{Change of organic phase composition during semi-batch steam distillation (as simulated in Openmodelica )}
 \label{SD1}
 \end{figure}
-
 \begin{figure}
 \centering
-\includegraphics[width=0.9\linewidth]{SD2}
-\caption{Temperature change during semi-batch steam distillation}
+\includegraphics[width=0.8\linewidth]{SD2}
+\caption{Temperature change during semi-batch steam distillation (as simulated in Openmodelica)}
 \label{SD2}
 \end{figure}
-
 Plots \ref{SD3} and \ref{SD4} shows the results from the actual thesis.
-
 \begin{figure}
 \centering
-\includegraphics[width=0.9\linewidth]{SD3}
+\includegraphics[width=0.7\linewidth]{SD3}
 \caption{Change of organic phase composition during semi-batch steam distillation (actual thesis)}
 \label{SD3}
 \end{figure}
 \begin{figure}
 \centering
-\includegraphics[width=0.9\linewidth]{SD4}
+\includegraphics[width=0.7\linewidth]{SD4}
 \caption{Temperature change during semi-batch steam distillation (actual these)}
 \label{SD4}
 \end{figure}
