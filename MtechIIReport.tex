@@ -356,9 +356,10 @@ These thermodynamic functions can be used along with the mass and energy balance
 
 \begin{table}
 \label{Prop}
+\caption{Thermodynamic routines and the procedures to call them}
 \centering
-\begin{tabular}{|c|c|} \hline
-\textbf{Thermodynamic Prop.} & \textbf{Thermodynamic Funct.} & \textbf{Arguments} \\ \hline
+\begin{tabular}{|c|c|c|} \hline
+Thermodynamic Prop & Thermodynamic Funct & Arguments \\ \hline
 Vapur Pressure & VapPres & Comp,T \\
 Enthalpy & Ent & Comp., T,P \\
 Liquid Density & LiqDen & Comp,T \\
@@ -414,10 +415,18 @@ The following three reasons justifies the requirement of a built in thermodynami
 Chemsep is an open source database, written in \textbf{xml} format, of over six hundred compounds with a comprehensive set of thermodynamic properties of each compound. It also has an extensive database of binary interaction parameters for thermodynamic packages like NRTL, Peng Robinson, UNIQUAC, SRK etc. Most of the thermodynamic properties are calculated by using empirical equations which are functions of temperature or pressure. Chemsep database includes the constants which are used in these equations. Therefore, chemsep database is a comprehensive database that can be used to built a powerful and robust thermodynamic engine.
 
 \item{\textbf{Porting Chemsep database into Openmodelica}} \\
-As described in the previous section chemsep database is written in xml format. This xml data has to be re written in such a form which can be understood by openmodelica. Therefore, each compound (including all its thermodynamic properties) is replicated as a single class in openmodelica. The properties are given abbreviations ( as shown in table \ref{tab:indprop}) so that they can be called continently. The conversion from xml to openmodelica classes is carried out by developing a python script (see Appendix \ref{appenC} ) which automates this process, thus making it fast and robust. 
+As described in the previous section chemsep database is written in xml format. This xml data has to be re written in such a form which can be understood by openmodelica. Therefore, each compound (including all its thermodynamic properties) is replicated as a single class in openmodelica as shown in figure \ref{fig:BT1}. The properties are given abbreviations ( as shown in table \ref{tab:indprop}) so that they can be called continently. The conversion from xml to openmodelica classes is carried out by developing a python script (see Appendix \ref{appenC} ) which automates this process, thus making it fast and robust. 
 
 Now one can extract any independent property of a compound by the \textbf{.} operator followed by the property relevant abbreviation. For example the critical temperature (Tc) of methane can be accessed by \textbf{Methane.Tc}. Similarly, all the properties of any compound can be accessed in the same way as shown in table \ref{tab:indprop}. \\
 \end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{BT1}
+\caption{Porting chemsep database in Openmodelica}
+\label{fig:BT1}
+\end{figure}
+
 
 \begin{table}
 \centering
@@ -443,7 +452,13 @@ Absolute enthalpy & Compound.ABSENT \\ \hline
 
 \subsection{Development of Thermodynamic Functions}
 
-As discussed earlier most of the thermodynamic properties of pure compounds which depends on temperature or pressure are in the form of equations which includes constants and an independent variable (temperature and pressure). These properties are written in the form of functions in openmodelica. The arguments to these functions are the independent variable and the name of the respective compound whose properties have to be calculated. The functions have been coded in such a way that it collects all the desired property constants from the compound class and returns the calculated property. For example the vapor pressure of water at 373 K can be calculated by writing \textbf{Pvap("Water", 373)}. Where Pvap is a generic function to calculate the vapor pressure of any compound at any given temperature. Similarly, all other thermodynamic properties can be calculated using their respective functions as shown in table \ref{tab:depprop}.
+As discussed earlier most of the thermodynamic properties of pure compounds which depends on temperature or pressure are in the form of equations which includes constants and an independent variable (temperature and pressure). These properties are written in the form of functions in openmodelica. The arguments to these functions are the independent variable (temperature, pressure, composition) and the name of the coefficients respective compound whose properties have to be calculated. The coefficients can be accessed by instanciating the base compound class. The functions returns the calculated property. For example the vapor pressure of methane at 300 K can be calculated by first instanciating the base methance class and then calling \textbf{Pvap(water.VP, 373)}. Where Pvap is a generic function to calculate the vapor pressure of any compound at any given temperature. The whole process is shown in figure \ref{BT2}.Similarly, all other thermodynamic properties can be calculated using their respective functions as shown in table \ref{tab:depprop}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{BT2}
+\caption{Using built in thermodynamic functions (Pvap)}
+\end{figure}
 
 \begin{table}
 \centering
