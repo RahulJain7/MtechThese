@@ -12,17 +12,18 @@
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Using built in thermodynamic functions (Pvap)}}{31}
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Porting Chemsep's binary interaction parameters in openmodelica}}{33}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Openmodelica code for ethaol-water flash.}}{37}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Openmodelica code for ethanol-water flash.}}{37}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Bubble point (Tx) curve for ethanol water system generated in openmodelica.}}{39}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Dew point (Ty) curve for ethanol water system generated in openmodelica.}}{40}
-\contentsline {figure}{\numberline {9.3}{\ignorespaces Txy curve for ethanol water system generated in openmodelica}}{40}
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Model with problem statement for steady state flash of Methanol-ethanol-water.}}{41}
-\contentsline {figure}{\numberline {9.5}{\ignorespaces Schematic of steam distillation apparatus.}}{43}
-\contentsline {figure}{\numberline {9.6}{\ignorespaces Change of organic phase composition during semi-batch steam distillation (as simulated in Openmodelica )}}{46}
-\contentsline {figure}{\numberline {9.7}{\ignorespaces Temperature change during semi-batch steam distillation (as simulated in Openmodelica)}}{46}
-\contentsline {figure}{\numberline {9.8}{\ignorespaces Change of organic phase composition during semi-batch steam distillation (actual thesis)}}{47}
-\contentsline {figure}{\numberline {9.9}{\ignorespaces Temperature change during semi-batch steam distillation (actual these)}}{47}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Bubble point (Tx) curve for ethanol water system generated in openmodelica.}}{40}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Dew point (Ty) curve for ethanol water system generated in openmodelica.}}{41}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Txy curve for ethanol water system generated in openmodelica}}{41}
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Txy curve for ethanol-water system (UNIQUAC) generated in Aspen Plus}}{42}
+\contentsline {figure}{\numberline {9.5}{\ignorespaces Model with problem statement for steady state flash of Methanol-ethanol-water.}}{43}
+\contentsline {figure}{\numberline {9.6}{\ignorespaces Schematic of steam distillation apparatus.}}{45}
+\contentsline {figure}{\numberline {9.7}{\ignorespaces Change of organic phase composition during semi-batch steam distillation (as simulated in Openmodelica )}}{47}
+\contentsline {figure}{\numberline {9.8}{\ignorespaces Temperature change during semi-batch steam distillation (as simulated in Openmodelica)}}{48}
+\contentsline {figure}{\numberline {9.9}{\ignorespaces Change of organic phase composition during semi-batch steam distillation (actual thesis)}}{48}
+\contentsline {figure}{\numberline {9.10}{\ignorespaces Temperature change during semi-batch steam distillation (actual these)}}{49}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

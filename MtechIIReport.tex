@@ -29,7 +29,7 @@ by \\
 \vspace{0.8cm}
 \LARGE
 Supervisor: \\
-\textbf{Kannan . M . Moudgalya} \\
+\textbf{Prof. Kannan . M . Moudgalya} \\
 \vspace{1cm}
 \includegraphics[width=0.4\textwidth]{university} \\
 \vspace{1cm}
@@ -651,15 +651,18 @@ Summation Equation \\
 UNIQUAC activity coefficient model is used as the phase equilibria model. 
  
 \subsection{Openmodelica code and its explanation}
+
 \begin{figure}
 \centering
-\label{omcode}
 \includegraphics[width=1.2\linewidth]{omcode}
 \caption{Openmodelica code for ethanol-water flash.}
+\label{omcode}
 \end{figure}
 
-\subsection{How openmodelica handles and solves the model equations}
+Figure \ref{omcode} decribes the code used to simulate the flash. The first four lines specifies variables which carries the feed specifications (temperature, pressure, composition, flowarate). The next set of lines instanciate the compound class ethanol and water and creates an array of the same. The next line \textbf{extends UNIQUAC} is used to inherit the already developed UNIQUAC class (which has all the equations for UNIQUAC model). By inheriting a class all the equations and variables of the inherited class are actually dragged and added to the class which inherits it. Therefore, all the UNIQUAC equations are added to the equation section of the Flash class.The next set of variables initializes and defines the unknown variables that needs to be calculated. Finally, the equation section has all the modelling equations required for the simulation of the flash. 
 
+\subsection{How openmodelica handles and solves the model equations}
+As described in chapter 5, openmodelica follows an equation oriented approach where all the equations are solved simultaneously. Refering to the above example openmodelica collects all the model equations along with the thermodynamic equations (UNIQUAC equations in this case) and then solves them simultaniously. The fact that thermodynamic equations are solved simultaniously along with the modelling equations can be shown by executing the algorithmic debugger which shows all the equations that are to be solved simultaniously. Figure \ref{AD} shows the snapshot of the algorithmic debugger for the above flash example. 
 
 \chapter{Solved examples in Openmodelica using the built in thermodynamics}
 
@@ -712,7 +715,16 @@ The pressure is kept constant at 1 atm. The value of $y_1$ (mole fraction of eth
 \label{fig:VLE}
 \end{figure}
 
-This figure is verified by reproducing the same problem in Aspen plus. Figure 7.4 depicts the Txy curve for ethanol water system generated in Aspen plus. It clearly shows that the plot generated in openmodelica completely replicates the one generated in Aspen plus.
+This figure is verified by reproducing the same problem in Aspen plus. Figure \ref{aspen} depicts the Txy curve for ethanol water system generated in Aspen plus. It clearly shows that the plot generated in openmodelica completely replicates the one generated in Aspen plus. 
+
+Reliable azeotropic data source by American Chemical Society cite says that at 1 atm the azeotropic composition and temperatures are 0.96 mole fraction ethanol and 351.4 K. These valuses are also in agreement with the openmodelica results.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{aspen}
+\caption{Txy curve for ethanol-water system (UNIQUAC) generated in Aspen Plus}
+\label{aspen}
+\end{figure}
 
 The same simulation when carried out with the imported DWSIM's thermodynamic engine in openmodelica resulted in an execution time of about 4 minutes whereas for the built in thermodynamic engine the execution time was fraction of a second.  
 
