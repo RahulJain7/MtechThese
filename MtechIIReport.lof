@@ -3,25 +3,26 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Comparison of graphical environment of Openmodelica and Simulink \cite {PeterFrit}}}{20}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Comparison of graphical environment of Openmodelica and Simulink \cite {PeterFrit}}}{21}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Structure of Python-C API approach}}{23}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Structure of Python-C socket approach}}{24}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Structure of Python-C API approach}}{24}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Structure of Python-C socket approach}}{25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Porting chemsep database in Openmodelica}}{29}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Using built in thermodynamic functions (Pvap)}}{30}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Porting Chemsep's binary interaction parameters in openmodelica}}{32}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Porting chemsep database in Openmodelica}}{30}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Using built in thermodynamic functions (Pvap)}}{31}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Porting Chemsep's binary interaction parameters in openmodelica}}{33}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Openmodelica code for ethaol-water flash.}}{37}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Bubble point (Tx) curve for ethanol water system generated in openmodelica.}}{37}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Dew point (Ty) curve for ethanol water system generated in openmodelica.}}{38}
-\contentsline {figure}{\numberline {9.3}{\ignorespaces Txy curve for ethanol water system generated in openmodelica}}{38}
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Model with problem statement for steady state flash of Methanol-ethanol-water.}}{39}
-\contentsline {figure}{\numberline {9.5}{\ignorespaces Schematic of steam distillation apparatus.}}{41}
-\contentsline {figure}{\numberline {9.6}{\ignorespaces Change of organic phase composition during semi-batch steam distillation (as simulated in Openmodelica )}}{44}
-\contentsline {figure}{\numberline {9.7}{\ignorespaces Temperature change during semi-batch steam distillation (as simulated in Openmodelica)}}{44}
-\contentsline {figure}{\numberline {9.8}{\ignorespaces Change of organic phase composition during semi-batch steam distillation (actual thesis)}}{45}
-\contentsline {figure}{\numberline {9.9}{\ignorespaces Temperature change during semi-batch steam distillation (actual these)}}{45}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Bubble point (Tx) curve for ethanol water system generated in openmodelica.}}{39}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Dew point (Ty) curve for ethanol water system generated in openmodelica.}}{40}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Txy curve for ethanol water system generated in openmodelica}}{40}
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Model with problem statement for steady state flash of Methanol-ethanol-water.}}{41}
+\contentsline {figure}{\numberline {9.5}{\ignorespaces Schematic of steam distillation apparatus.}}{43}
+\contentsline {figure}{\numberline {9.6}{\ignorespaces Change of organic phase composition during semi-batch steam distillation (as simulated in Openmodelica )}}{46}
+\contentsline {figure}{\numberline {9.7}{\ignorespaces Temperature change during semi-batch steam distillation (as simulated in Openmodelica)}}{46}
+\contentsline {figure}{\numberline {9.8}{\ignorespaces Change of organic phase composition during semi-batch steam distillation (actual thesis)}}{47}
+\contentsline {figure}{\numberline {9.9}{\ignorespaces Temperature change during semi-batch steam distillation (actual these)}}{47}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
