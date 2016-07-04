@@ -1,0 +1,104 @@
+\documentclass[12pt]{article}
+\topmargin -0.75in
+\textheight 9.25in
+\textwidth 6.25in
+\oddsidemargin 0in
+\evensidemargin 0in
+
+\usepackage{enumitem}
+\usepackage{verbatim}
+\renewcommand{\topfraction}{1.0}
+\renewcommand{\bottomfraction}{1.0}
+\renewcommand{\textfraction}{0}
+\renewcommand{\floatpagefraction}{1.0}
+\title{Outline for Mtech Stage II Project Report}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\section{The report will be written based on this outline}
+\begin{enumerate}
+\item Chemical Process simulator:
+\begin{enumerate}[label*=\arabic*.]
+\item What is it.
+\item The three major components of a process simulator
+\begin{enumerate}[label*=\arabic*.]
+\item Compound Database.
+\item Thermodynamics
+\item Unit Operation Modules.
+\end{enumerate}
+\item Application of process simulators in education and industry. 
+\end{enumerate}
+
+\item Requirement: Need of an open source process simulator
+\begin{enumerate}[label*=\arabic*.]
+\item Commercial process simulator are very expensive, if used for educational purposes. Due to which most of the chemical engineering institutes exclude process simulation course from their curriculum
+\item Commercial process simulators are unaffordable for small and medium scale industries. Therefore most of them are poorly designed, which reduces the efficiency of the plant.
+\end{enumerate}
+
+\item DWSIM: An open source steady state process simulator
+\begin{enumerate}[label*=\arabic*.]
+\item Follows sequential modular approach
+\item Intensive compound database.
+\item Good build in library of Unit operation and excellent thermodynamics.
+\item Contains extra utilities like graph plotting and optimization.
+\item Provides standalone thermodynamic library which can be used externally.
+\item Drawbacks: 
+\begin{enumerate}[label*=\arabic*.]
+\item Not suitable for design problems.
+\item Most of the small scale industries consists of batch processes which needs dynamic simulation for which DWSIM cannot be used.
+\end{enumerate}
+\end{enumerate}
+
+
+\item Openmodelica: An open source simulation environment for solving engineering models.
+\begin{enumerate}[label*=\arabic*.]
+ \item Follows equation oriented approach.
+ \item Contains good built in solvers.
+ \item Excellent debugging features
+ \item Based on object oriented approach which has lots of advantages like code reuse and encapsulation.
+ \item Connectors: an advanced concepts for connecting object.
+ \item Provides Excellent GUI where each object can be directly connected with other through connectors. Therefore reduces manual coding.
+ \item Drawbacks: As it is a general software, there is no built in thermodynamics and unit operations. 
+ \end{enumerate}
+
+\item Importing the Thermodynamic engine of DWSIM in Openmodelica. 
+\begin{enumerate}[label*=\arabic*.]
+\item The two approaches used for the integration.
+\begin{enumerate}[label*=\arabic*.]
+\item Python-C Api approach.
+\item Client-Server approach (sockets). 
+\end{enumerate}
+\item Comparison of the two approaches. Based on the time taken to simulate the same example.
+\end{enumerate}
+
+\item Development of a built in Thermodynamic engine in Openmodelica itself.
+\begin{enumerate}[label*=\arabic*.]
+\item Requirement for a built in thermodynamic engine.
+\item Development of the three components of a thermodynamic engine.
+\begin{enumerate}[label*=\arabic*.]
+\item Development of Compound Database.
+\item Development of Thermodynamic Functions.
+\item Development of Thermodynamic Packages.
+\end{enumerate}
+\item Comparison with the earlier approaches.
+\end{enumerate}
+
+\item Solved examples in Openmodelica by using built in thermodynamics.
+\begin{enumerate}[label*=\arabic*.]
+\item Generating Bubble point and Dew point curves for ethanol water system by using NRTL and UNIQUAC thermodynamic models.
+\item Steady state flash model capable of doing design calculations as well
+\item Dynamic flash model.
+\item Bubble batch distillation of Methanol and water from Ingham.
+\item Batch distillation with temperature controller for reflux.(part of PHD thesis by Efstathios S Iliopoulos)
+\end{enumerate}
+
+\item Future Work
+\begin{enumerate}[label*=\arabic*.]
+\item Developing steady state and dynamic models of all the unit operation in Openmodelica.
+\item Validating the above models by comparing the simulated results with a commercial simulator.
+\item Documentation of the developed thermodynamics and unit modules.
+
+\end{enumerate}
+\end{enumerate}
+\end{document}
