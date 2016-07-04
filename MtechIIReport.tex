@@ -44,13 +44,13 @@ INDIAN INSTITUTE OF TECHNOLOGY BOMBAY \\
 \section*{Acknowledgement}
 Firstly, I would like to thank my supervisor Prof. Kannan. M. Moudgalya, for guiding me throughout this project. The door to Prof. Moudgalya's office was always open whenever I ran into a trouble spot or had a question about my research. He consistently steered me in the right the direction whenever he thought I needed it.
 
-I would also like to thank Prof. K. P. Madhvan for providing me with rich literature sources and sharing his expertise and his broad knowledge has been of great value to me.  
+I would also like to thank Prof. K. P. Madhvan for providing me with rich literature sources. His expertise and broad knowledge has been of great value to me.  
 
-I would also like to thank the following interns Mr. Arpit Gupta, Mr. Neelesh Chandran, Mr. Jairam Ganesh and Mr. Rahul Nagraj. Their hard work and suggestions was of great help to me. 
+I would also like to thank the following interns Mr. Arpit Gupta, Mr. Neelesh Chandran, Mr. Jairam Ganesh and Mr. Rahul Nagraj. Their hard work and innovative ideas has been of great help to me. 
 
 
 \abstract
-Openmodelica is a state of art equation oriented modelling environment capable of doing both steady state and dynamics simulation but lacks thermodynamics, and good chemical engineering support. DWSIM is a sequential modular steady state simulator with good thermodynamic library (DTL). An attempt is made to make DTL available for Openmodelica in this work. Python-C API and Socket programming were developed and the performance compared for tasks like steady state and transient simulations regarding chemical engineering systems in Openmodelica. Socket programing performs much better in all the attempted examples. But both the approaches failed when it comes to solving complex chemical engineering processes. Therefore an attempt is made to develop an inbuilt thermodynamic engine in openmodelica so that thermodynamic equations can be solved simultaneously with mass and energy balance. This built in thermodynamic engine proved to be successful in solving many complex processes with excellent speed and accuracy. 
+Openmodelica is a state of art equation oriented modelling environment capable of doing both steady state and dynamics simulation but lacks thermodynamics, and good chemical engineering support. DWSIM is a sequential modular steady state simulator with good thermodynamic library (DTL). An attempt is made to make DTL available for Openmodelica in this work. Python-C API and Socket programming approaches are implemented and the performance compared for tasks like steady state and transient simulations regarding chemical engineering systems in Openmodelica. Socket programing performs much better in all the attempted examples. But both the approaches failed when it comes to solving complex chemical engineering processes. Therefore an attempt is made to develop an in-built thermodynamic engine in openmodelica so that thermodynamic equations can be solved simultaneously with mass and energy balance. This built in thermodynamic engine proved to be successful in solving many complex processes with excellent speed and accuracy. 
 \tableofcontents
 \listoftables
 \listoffigures
@@ -147,11 +147,47 @@ As open source simulators are freely available, anyone who is an expert can shar
 \item{Workshop conducted at ICT, Mumbai. Participants were only students.}
 \end{itemize}
 
-\chapter{Similar}
+\chapter{Literature Survey}
+\section{Available commercial chemical process simulation environments and their thermodynamic engine}
+\subsection{gPROMS ModelBuilder}
+gPROMS ModelBuilder is an environment for modellers to build, validate and execute steady-state and dynamic process models based on the gPROMS second-generation EO modelling platformoriginally developed at Imperial College London [Barton and Pantelides, 1994; Oh and Pantelides,1996], and subsequently substantially re-architected and re-written at PSE. Following are the thermodynamic engines that can be used in gPROMS to perform chemical process simulations.
+\begin{itemize}
+\item \textbf{Multiflash thermodynamic engine} \\
+KBC Advanced Technologies' Multiflash is the standard gPROMS physical properties package. It is supplied as an integral part of gPROMS ProcessBuilder, along with the 2000+ component DIPPR 801 database.
+
+Multiflash is a highly rigorous properties package that supports all commonly used thermodynamic and transport properties, including a wide range of equation of state and activity coefficient thermodynamic models.
+
+Multiflash is specifically designed for equation-orientated modelling, providing tight convergence of internal iterations and analytical partial derivatives with respect to temperature, pressure and composition.
+
+PSE can supply Multiflash with the DIPPR database supplied by the AIChE, providing component data for thousands of components.
+
+\item \textbf{OLI electrolyte properties} \\
+PSE provides OLI Systems' OLI electrolyte properties package for aqueous electrolytic systems. It is a proprietery thermodynamic package and involves separate licencing cost.
+
+\item \textbf{CAPE-OPEN physical properties} \\
+gPROMS provides a CAPE-OPEN physical properties socket into which any CAPE-OPEN compliant physical properties package can be plugged – for example Aspentech's Aspen Properties®, PROSIM's SIMULIS® Thermodynamics, Aspentech's COMThermo® and many others.
+
+\item \textbf{gSAFT} \\
+Statistical Associating Fluid Theory, or SAFT, is an advanced molecular thermodynamic method that can predict a wide variety of thermodynamic properties of mixtures accurately based on physically-realistic models of molecules and their interactions with other molecules.
+\end{itemize}
+
+\subsection{Aspen Custom Modeler}
+Aspen-tech' Aspen custom modeler is a modelling and simulation environment to develop customized model. It is an evolution of SPEEDUP, a first-generation EO
+tool originally developed at Imperial College London [Pantelides, 1988].
+
+The primary purpose of custom modeler is to built customized process models which are not available in Aspen Plus or Apen Hysys. These models can then be imported to Aspen plus or hysys and can be integrated with the flowsheet. 
+
+The custom modeler attains its thermodynamics from aspen properties which is a proprietery thermodynamic engine developed by Aspen-tech. Aspen properties itself uses two popular databases, namely NIST and DCHEMA.
+
+The thermodynamic equations are calculated separately by aspen properties, whereas the modelling equations are solved separately by aspen custom modeler.
+
+\section{Open source simulation environment and associated thermodynamic engine}
+\subsection{Ascend}
+
+
 
 
 \chapter{DWSIM: An Open Source Steady State Process Simulator}
-
 \section{The Sequential Modular Approach}
 \subsection{What is Sequential Modular Approach}
 DWSIM is based on sequential modular approach. In this approach there are computer programs for all unit operations. One constructs a complete model of these units by writing modelling equations, keeping in mind some assumptions, which closely replicates the actual process units. The simulator then solves the total process flowsheet by calling each unit according to how they are connected in the flowsheet and iterating where loops are encountered. In this approach the variables(pressure, temperature, flows, composition) to input streams to the are fixed and it will compute the variables of the streams leaving the unit. Apart from specifying the input streams completely one has to specify the unit parameters as well for example the flash unit requires one to specify the temperature and pressure at which the flashing takes place. The degree of freedom should be zero. The solver used for solving the equations is developed so efficiently that it takes some default initial guess values to calculate the solution through some numerical iterative technique. These guess values are then updated and progressively the system converges.
@@ -588,7 +624,35 @@ The following example demonstrates the implementation of the built in thermodyna
 
 \section{Steady state flash of ethanol-water system}
 \subsection{The Model}
+An equimolar feed containing ethanol and water is to be flashed at 1 atm and 355 K. The resulting vapour and liquid compositions are to be calculated. Following are the modelling equations for the same. 
+
+
+\begin{gather*}
+\intertext{Mass balance}
+z_iF = x_iL + y_iV 
+\intertext{for i = 1,2}
+\intertext{Where}
+\intertext{F,L,V  feed,liquid,vapour flowrate resp. (100kmol/hr)}
+\intertext{$z_i,x_i,y_i$ feed,liquid,vapour compositions resp.}
+\end{gather*}
+
+Equilibrium equations
+\begin{gather*}
+y_i = K_ix_i \\
+\intertext{for i = 1,2} \\
+\end{gather*}
+Where \\
+$K_i$ is the equilibrium constant obtained from UNIQUAC model. \\
+Summation Equation \\
+\begin{gather*}
+\sum_{i=1}^2y_i = 1
+\end{gather*}   
+
+UNIQUAC activity coefficient model is used as the phase equilibria model. 
+ 
 \subsection{Openmodelica code and its explanation}
+
+
 \subsection{How openmodelica handles and solves the model equations}
 
 
