@@ -69,8 +69,8 @@
 \contentsline {chapter}{\numberline {A}Codes for Python-C API Approach}{52}
 \contentsline {section}{\numberline {A.1}The Python Code}{52}
 \contentsline {section}{\numberline {A.2}The C Code}{53}
-\contentsline {chapter}{\numberline {B}Codes for Client-Server (Socket) Approach}{61}
-\contentsline {section}{\numberline {B.1}The Python Approach}{61}
-\contentsline {section}{\numberline {B.2}The C Client}{62}
-\contentsline {chapter}{\numberline {C}Python script to convert Chemsep database into openmodelica syntax}{65}
-\contentsline {section}{\numberline {C.1}Python script to convert Chemsep.xml to openmodelica classes}{65}
+\contentsline {chapter}{\numberline {B}Codes for Client-Server (Socket) Approach}{62}
+\contentsline {section}{\numberline {B.1}The Python Approach}{62}
+\contentsline {section}{\numberline {B.2}The C Client}{63}
+\contentsline {chapter}{\numberline {C}Python script to convert Chemsep database into openmodelica syntax}{66}
+\contentsline {section}{\numberline {C.1}Python script to convert Chemsep.xml to openmodelica classes}{66}
