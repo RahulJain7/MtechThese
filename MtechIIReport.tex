@@ -6,6 +6,7 @@
 \usepackage{cclicenses}
 \usepackage{listings}
 \usepackage[framemethod=tikz]{mdframed}
+\usepackage{url}
 \newcommand{\ignoreoverfullhboxes}{\setlength{\hfuzz}{\maxdimen}}
 \bibliographystyle{plain}
 
@@ -40,6 +41,25 @@ INDIAN INSTITUTE OF TECHNOLOGY BOMBAY \\
 2016
 \end{center}
 \end{titlepage}
+
+\section*{Approval Sheet}
+This thesis entitled $"$Development of an Open Source Chemical Process Simulator$"$ by Rahul Jain (Roll no. 143020028) may be accepted for being evaluated for the award of the degree of Master of Technology. \\
+\vspace{1.5cm}
+\begin{flushright}
+......................... \\
+Prof. Kannan Moudgalya (Supervisor) \\
+\vspace {1cm}
+......................... \\
+Prof. V. Dalvi (Examiner) \\
+\vspace {1cm}
+......................... \\
+Prof. Y. Shastri (Examiner) \\
+\vspace {1cm}
+......................... \\
+Prof. D. B. Phatak(Chairperson) \\
+\end{flushright}
+
+\newpage
 
 \section*{Acknowledgement}
 Firstly, I would like to thank my supervisor Prof. Kannan. M. Moudgalya, for guiding me throughout this project. The door to Prof. Moudgalya's office was always open whenever I ran into a trouble spot or had a question about my research. He consistently steered me in the right the direction whenever he thought I needed it.
@@ -149,7 +169,7 @@ As open source simulators are freely available, anyone who is an expert can shar
 
 \chapter{Literature Survey}
 \section{Available commercial chemical process simulation environments and their thermodynamic engine}
-\subsection{gPROMS ModelBuilder}
+\subsection{gPROMS ModelBuilder} \cite{GP}
 gPROMS ModelBuilder is an environment for modellers to build, validate and execute steady-state and dynamic process models based on the gPROMS second-generation EO modelling platformoriginally developed at Imperial College London [Barton and Pantelides, 1994; Oh and Pantelides,1996], and subsequently substantially re-architected and re-written at PSE. Following are the thermodynamic engines that can be used in gPROMS to perform chemical process simulations.
 \begin{itemize}
 \item \textbf{Multiflash thermodynamic engine} \\
@@ -171,7 +191,7 @@ gPROMS provides a CAPE-OPEN physical properties socket into which any CAPE-OPEN 
 Statistical Associating Fluid Theory, or SAFT, is an advanced molecular thermodynamic method that can predict a wide variety of thermodynamic properties of mixtures accurately based on physically-realistic models of molecules and their interactions with other molecules.
 \end{itemize}
 
-\subsection{Aspen Custom Modeler}
+\subsection{Aspen Custom Modeler} \cite{ACM}
 Aspen-tech' Aspen custom modeler is a modelling and simulation environment to develop customized model. It is an evolution of SPEEDUP, a first-generation EO
 tool originally developed at Imperial College London [Pantelides, 1988].
 
@@ -182,17 +202,17 @@ The custom modeler attains its thermodynamics from aspen properties which is a p
 The thermodynamic equations are calculated separately by aspen properties, whereas the modelling equations are solved separately by aspen custom modeler.
 
 \section{Open source simulation environment and associated thermodynamic engine}
-\subsection{Ascend}
+\subsection{Ascend} \cite{fprops}
 
 
 
 
 \chapter{DWSIM: An Open Source Steady State Process Simulator}
-\section{The Sequential Modular Approach}
+\section{The Sequential Modular Approach} \cite{SM}
 \subsection{What is Sequential Modular Approach}
 DWSIM is based on sequential modular approach. In this approach there are computer programs for all unit operations. One constructs a complete model of these units by writing modelling equations, keeping in mind some assumptions, which closely replicates the actual process units. The simulator then solves the total process flowsheet by calling each unit according to how they are connected in the flowsheet and iterating where loops are encountered. In this approach the variables(pressure, temperature, flows, composition) to input streams to the are fixed and it will compute the variables of the streams leaving the unit. Apart from specifying the input streams completely one has to specify the unit parameters as well for example the flash unit requires one to specify the temperature and pressure at which the flashing takes place. The degree of freedom should be zero. The solver used for solving the equations is developed so efficiently that it takes some default initial guess values to calculate the solution through some numerical iterative technique. These guess values are then updated and progressively the system converges.
 
-\subsection{The Two Pillars of Sequential Modular Approach}
+\subsection{The Two Pillars of Sequential Modular Approach} \cite{SM}
 \begin{itemize}
 \item{Partitioning and Precedence Order} \\
 The units we have to solve together are called partitions. The entire flowsheet is divided into partitions and then a precedence order is determined which decides which partition should be calculated according to the connectivity of the partitions. The results of each partition depends on its input and the units contained within that partition and not on any other units. The grouping is unique, while the ordering may or may not be, depending on the particular flowsheet under examination
@@ -241,7 +261,7 @@ It is similar to sensitivity analysis but instead of generating a plot it direct
 \subsection{Thermodynamic packages available in DWSIM}
 DWSIM in enriched with strong thermodynamic engine which can extract physical property data from the two available databases namely Chemsep and DWSIM. It can also extract properties from any other database which is in .xml format. DWSIM has a rich set of thermodynamic packages which includes ideal gas, equation of state, activity coefficient models. This makes it versatile to simulate any kind of system in DWSIM.
 
-\subsection{Flash Algorithm}
+\subsection{Flash Algorithm} \cite{DWSIM}
 Flash algorithm are thermodynamic procedures which calculates the properties of output streams after the input stream is flashed, for given operation conditions. In principle, flash calculations are straightforward and involve combining the VLE equations with the component mass balances, and in some cases the energy balance. Following are the four flash algorithms one can use in DWSIM according to the process requirement.
 
 \begin{itemize}
@@ -344,7 +364,7 @@ As stated in chapter three DWSIM cannot simulate dynamic systems. On the other h
 \end{itemize}
 The above two benefits shows that it may be a fruitful exercise to integrate the DTL with openmodelica. As a result one may obtain a complete process simulator which is capable of solving all type of problems that is simulation, design, optimization with steady state or dynamic behavior.
 
-\section{Python-C API approach to Integrate Openmodelica with DTL}
+\section{Python-C API approach to Integrate Openmodelica with DTL} \cite{api}
 DTL consists of a file with an extension .dll(dynamic link library) which is written in VB.NET (windows environment). This file is COM (component object model) enabled, which means that any programming language which supports COM can import this library and access the built in thermodynamic subroutines. Openmodelica is written in C (Linux environment) and the only language whose routines can be called in openmodelica is C. As both these programs are developed in so different environment it becomes hard to integrate the two.
 As openmodelica supports only C language, it would have been best to call DTL from C but unfortunately due to the difference in environment both were not compatible. Therefore there was a need to bring in some glue language which can establish this integration from DTL to C. For this purpose python was chosen as it is an excellent glue language.
 
@@ -364,7 +384,7 @@ Python-C API is one of the approach through which this integration of openmodeli
 \item{These python functions are now called by C through python-C API. In computer programming, an API (Application programming interface) is a set of routines, protocols, and tools for building software applications. An API expresses a software component in terms of its operations, inputs, outputs, and underlying types.This API is responsible for converting C variables to python and vice versa. The codes for C functions are shown in Appendix A}
 \item{Finally as openmodelica is compatible with C, the input are then sent to C functions through openmodelica external C functions, which in turn calls the python functions, which in turn calls DTL routines. The codes for external function in openmodelica are shown in Appendix A.}
 \end{itemize}
-\section{Client-Server (sockets) approach to integrate OpenModelica with DTL}
+\section{Client-Server (sockets) approach to integrate OpenModelica with DTL} \cite{socket}
 Client-Server or socket approach is another through which the integration is successful. Figure \ref{PyC2} decribes the data flow of the approach.Following points describes the structure and flow of this approach \ref{appenB}.
 
 \begin{figure}
@@ -662,7 +682,16 @@ UNIQUAC activity coefficient model is used as the phase equilibria model.
 Figure \ref{omcode} decribes the code used to simulate the flash. The first four lines specifies variables which carries the feed specifications (temperature, pressure, composition, flowarate). The next set of lines instanciate the compound class ethanol and water and creates an array of the same. The next line \textbf{extends UNIQUAC} is used to inherit the already developed UNIQUAC class (which has all the equations for UNIQUAC model). By inheriting a class all the equations and variables of the inherited class are actually dragged and added to the class which inherits it. Therefore, all the UNIQUAC equations are added to the equation section of the Flash class.The next set of variables initializes and defines the unknown variables that needs to be calculated. Finally, the equation section has all the modelling equations required for the simulation of the flash. 
 
 \subsection{How openmodelica handles and solves the model equations}
-As described in chapter 5, openmodelica follows an equation oriented approach where all the equations are solved simultaneously. Refering to the above example openmodelica collects all the model equations along with the thermodynamic equations (UNIQUAC equations in this case) and then solves them simultaniously. The fact that thermodynamic equations are solved simultaniously along with the modelling equations can be shown by executing the algorithmic debugger which shows all the equations that are to be solved simultaniously. Figure \ref{AD} shows the snapshot of the algorithmic debugger for the above flash example. 
+As described in chapter 5, openmodelica follows an equation oriented approach where all the equations are solved simultaneously. Refering to the above example openmodelica collects all the model equations along with the thermodynamic equations (UNIQUAC equations in this case) and then solves them simultaniously. The fact that thermodynamic equations are solved simultaniously along with the modelling equations can be shown by executing the transformational debugger which shows all the equations that are to be solved simultaniously. Figure \ref{TD} shows the snapshot of the transformational debugger for the above flash example. It can be seen that the all the equations irrespective of their type (thermodynamc or mass balance) are solved simultaneously.
+
+By default openmodelica uses \textbf{Dassl} to solve differential algebric equations and a hybrid solver for solving algebric equaitons. However, we can choose a different solver from the list of solvers. This is achieved by going in the simulation setup window, where one can specify all the details regarding the simulation execution for example the time period, the number of intervals for simulation etc. The output of openmodelica's successful simulation is a mat or a csv file.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{TD}
+\caption{Snapshot of transformational debugger in openmodelica.}
+\label{TD}
+\end{figure}
 
 \chapter{Solved examples in Openmodelica using the built in thermodynamics}
 
@@ -717,7 +746,7 @@ The pressure is kept constant at 1 atm. The value of $y_1$ (mole fraction of eth
 
 This figure is verified by reproducing the same problem in Aspen plus. Figure \ref{aspen} depicts the Txy curve for ethanol water system generated in Aspen plus. It clearly shows that the plot generated in openmodelica completely replicates the one generated in Aspen plus. 
 
-Reliable azeotropic data source by American Chemical Society cite says that at 1 atm the azeotropic composition and temperatures are 0.96 mole fraction ethanol and 351.4 K. These valuses are also in agreement with the openmodelica results.
+Reliable azeotropic data source by American Chemical Society \cite{Az} says that at 1 atm the azeotropic composition and temperatures are 0.96 mole fraction ethanol and 351.4 K. These valuses are also in agreement with the openmodelica results.
 
 \begin{figure}
 \centering
@@ -785,7 +814,7 @@ This illustrative example involves semi-batch steam distil- lation of binary mix
 \begin{figure}
 \centering
 \includegraphics[width=0.8\linewidth]{SD}
-\caption{Schematic of steam distillation apparatus.}
+\caption{Schematic of steam distillation apparatus \cite{PDH}.}
 \label{SD}
 \end{figure}
 

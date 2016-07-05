@@ -2,6 +2,7 @@
 \providecommand\zref@newlabel[2]{}
 \bibstyle{plain}
 \citation{PeterFrit}
+\citation{PDH}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -16,14 +17,19 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Expensive for academic institutions}{11}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Expensive for Industry}{11}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Amenable to the conduct of large scale training.}{11}}
+\citation{GP}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Literature Survey}{12}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Available commercial chemical process simulation environments and their thermodynamic engine}{12}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}gPROMS ModelBuilder}{12}}
+\citation{ACM}
+\citation{fprops}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Aspen Custom Modeler}{13}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Open source simulation environment and associated thermodynamic engine}{13}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Ascend}{13}}
+\citation{SM}
+\citation{SM}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}DWSIM: An Open Source Steady State Process Simulator}{14}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -33,10 +39,11 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Advantages and Disadvantages of Sequential Modular Approach}{15}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}Good collection of Unit Operations and Flowsheeting Applications}{15}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Unit Operations in DWSIM}{15}}
+\citation{DWSIM}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Flowsheeting Applications in DWSIM}{16}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.3}Thermodynamics}{16}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Thermodynamic packages available in DWSIM}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Flash Algorithm}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Flash Algorithm}{17}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Thermodynamic Curves and Parameter Estimation}{17}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Standalone Thermodynamic Library}{17}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.4}Drawbacks of DWSIM}{18}}
@@ -56,6 +63,7 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Comparison of graphical environment of Openmodelica and Simulink \cite  {PeterFrit}}}{21}}
 \newlabel{fig:OM1}{{5.1}{21}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.3}Drawbacks}{21}}
+\citation{api}
 \@writefile{toc}{\contentsline {chapter}{\numberline {6}Importing the Thermodynamic engine of DWSIM in Openmodelica.}{23}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -63,6 +71,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {6.2}Python-C API approach to Integrate Openmodelica with DTL}{23}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Structure of Python-C API approach}}{24}}
 \newlabel{fig:PyC1}{{6.1}{24}}
+\citation{socket}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Structure of Python-C socket approach}}{25}}
 \newlabel{fig:PyC2}{{6.2}{25}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.3}Client-Server (sockets) approach to integrate OpenModelica with DTL}{25}}
@@ -102,64 +111,81 @@
 \newlabel{omcode}{{8.1}{37}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.1.2}Openmodelica code and its explanation}{37}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.1.3}How openmodelica handles and solves the model equations}{38}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {9}Solved examples in Openmodelica using the built in thermodynamics}{39}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.2}{\ignorespaces Snapshot of transformational debugger in openmodelica.}}{39}}
+\newlabel{TD}{{8.2}{39}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {9}Solved examples in Openmodelica using the built in thermodynamics}{40}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {9.1}Generating VLE curve (Txy) for ethanol water system using the UNIQUAC model.}{39}}
-\newlabel{eqn:RL1}{{9.1}{39}}
-\newlabel{eqn:RL2}{{9.2}{39}}
-\newlabel{eqn:RL3}{{9.3}{39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.1}{\ignorespaces Bubble point (Tx) curve for ethanol water system generated in openmodelica.}}{40}}
-\newlabel{fig:BP}{{9.1}{40}}
-\newlabel{eqn:RL4}{{9.4}{40}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.2}{\ignorespaces Dew point (Ty) curve for ethanol water system generated in openmodelica.}}{41}}
-\newlabel{fig:DP}{{9.2}{41}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.3}{\ignorespaces Txy curve for ethanol water system generated in openmodelica}}{41}}
-\newlabel{fig:VLE}{{9.3}{41}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.2}Steady State Flash}{41}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2.1}The Model}{41}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.4}{\ignorespaces Txy curve for ethanol-water system (UNIQUAC) generated in Aspen Plus}}{42}}
-\newlabel{aspen}{{9.4}{42}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2.2}Problem Statement}{42}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2.3}Simulation Details and Equations}{42}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.5}{\ignorespaces Model with problem statement for steady state flash of Methanol-ethanol-water.}}{43}}
-\newlabel{Flash}{{9.5}{43}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2.4}Results}{43}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.1}Generating VLE curve (Txy) for ethanol water system using the UNIQUAC model.}{40}}
+\newlabel{eqn:RL1}{{9.1}{40}}
+\newlabel{eqn:RL2}{{9.2}{40}}
+\newlabel{eqn:RL3}{{9.3}{40}}
+\citation{Az}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.1}{\ignorespaces Bubble point (Tx) curve for ethanol water system generated in openmodelica.}}{41}}
+\newlabel{fig:BP}{{9.1}{41}}
+\newlabel{eqn:RL4}{{9.4}{41}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.2}{\ignorespaces Dew point (Ty) curve for ethanol water system generated in openmodelica.}}{42}}
+\newlabel{fig:DP}{{9.2}{42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.3}{\ignorespaces Txy curve for ethanol water system generated in openmodelica}}{42}}
+\newlabel{fig:VLE}{{9.3}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.2}Steady State Flash}{42}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2.1}The Model}{42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.4}{\ignorespaces Txy curve for ethanol-water system (UNIQUAC) generated in Aspen Plus}}{43}}
+\newlabel{aspen}{{9.4}{43}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2.2}Problem Statement}{43}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2.3}Simulation Details and Equations}{43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.5}{\ignorespaces Model with problem statement for steady state flash of Methanol-ethanol-water.}}{44}}
+\newlabel{Flash}{{9.5}{44}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2.4}Results}{44}}
 \citation{PHD}
-\@writefile{lot}{\contentsline {table}{\numberline {9.1}{\ignorespaces Temperature and liquid phase composition of benzene}}{44}}
-\newlabel{Tab:Flash}{{9.1}{44}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.3}Semi-Batch Steam Distillation of a Binary Organic Mixture}{44}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.1}Problem background}{44}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.6}{\ignorespaces Schematic of steam distillation apparatus.}}{45}}
-\newlabel{SD}{{9.6}{45}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.2}Problem Statement}{46}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.7}{\ignorespaces Change of organic phase composition during semi-batch steam distillation (as simulated in Openmodelica )}}{47}}
-\newlabel{SD1}{{9.7}{47}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.3}Results}{47}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.8}{\ignorespaces Temperature change during semi-batch steam distillation (as simulated in Openmodelica)}}{48}}
-\newlabel{SD2}{{9.8}{48}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.9}{\ignorespaces Change of organic phase composition during semi-batch steam distillation (actual thesis)}}{48}}
-\newlabel{SD3}{{9.9}{48}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.10}{\ignorespaces Temperature change during semi-batch steam distillation (actual these)}}{49}}
-\newlabel{SD4}{{9.10}{49}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {10}Future Work}{50}}
+\citation{PDH}
+\@writefile{lot}{\contentsline {table}{\numberline {9.1}{\ignorespaces Temperature and liquid phase composition of benzene}}{45}}
+\newlabel{Tab:Flash}{{9.1}{45}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.3}Semi-Batch Steam Distillation of a Binary Organic Mixture}{45}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.1}Problem background}{45}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.6}{\ignorespaces Schematic of steam distillation apparatus \cite  {PDH}.}}{46}}
+\newlabel{SD}{{9.6}{46}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.2}Problem Statement}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.7}{\ignorespaces Change of organic phase composition during semi-batch steam distillation (as simulated in Openmodelica )}}{48}}
+\newlabel{SD1}{{9.7}{48}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.3}Results}{48}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.8}{\ignorespaces Temperature change during semi-batch steam distillation (as simulated in Openmodelica)}}{49}}
+\newlabel{SD2}{{9.8}{49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.9}{\ignorespaces Change of organic phase composition during semi-batch steam distillation (actual thesis)}}{49}}
+\newlabel{SD3}{{9.9}{49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.10}{\ignorespaces Temperature change during semi-batch steam distillation (actual these)}}{50}}
+\newlabel{SD4}{{9.10}{50}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {10}Future Work}{51}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Codes for Python-C API Approach}{51}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Codes for Python-C API Approach}{52}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{appenA}{{A}{51}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}The Python Code}{51}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}The C Code}{52}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Codes for Client-Server (Socket) Approach}{60}}
+\newlabel{appenA}{{A}{52}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}The Python Code}{52}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.2}The C Code}{53}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Codes for Client-Server (Socket) Approach}{61}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{appenB}{{B}{60}}
-\@writefile{toc}{\contentsline {section}{\numberline {B.1}The Python Approach}{60}}
-\@writefile{toc}{\contentsline {section}{\numberline {B.2}The C Client}{61}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {C}Python script to convert Chemsep database into openmodelica syntax}{64}}
+\newlabel{appenB}{{B}{61}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.1}The Python Approach}{61}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.2}The C Client}{62}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {C}Python script to convert Chemsep database into openmodelica syntax}{65}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{appenC}{{C}{64}}
-\@writefile{toc}{\contentsline {section}{\numberline {C.1}Python script to convert Chemsep.xml to openmodelica classes}{64}}
+\newlabel{appenC}{{C}{65}}
+\@writefile{toc}{\contentsline {section}{\numberline {C.1}Python script to convert Chemsep.xml to openmodelica classes}{65}}
 \bibdata{ref}
+\bibcite{GP}{1}
+\bibcite{fprops}{2}
+\bibcite{api}{3}
+\bibcite{socket}{4}
+\bibcite{PR}{5}
+\bibcite{PeterFrit}{6}
+\bibcite{SRK}{7}
+\bibcite{NRTL}{8}
+\bibcite{Az}{9}
+\bibcite{DWSIM}{10}
+\bibcite{ACM}{11}
+\bibcite{SM}{12}
+\bibcite{PHD}{13}

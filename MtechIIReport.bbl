@@ -1,0 +1,68 @@
+\begin{thebibliography}{10}
+
+\bibitem{GP}
+\url{http://www.psenterprise.com/gproms/physprops/index.html}.
+
+\bibitem{fprops}
+\url{http://ascend4.org/FPROPS}.
+
+\bibitem{api}
+\url{http://www.tutorialspoint.com/python/python_classes_objects.htm}.
+
+\bibitem{socket}
+David~M. Beazley.
+\newblock Python network programming.
+\newblock Technical report, 2010.
+
+\bibitem{PR}
+Robinson DB~Peng DY.
+\newblock A new two-constant equation of state.
+\newblock {\em Industrial and Engineering Chemistry Fundamentals},
+  15(1):59--64, 1976.
+
+\bibitem{PeterFrit}
+Peter Fritzson.
+\newblock {\em Principles of Object-Oriented Modelling and Simulation with
+  Modelica 2.1}.
+\newblock Wiley Interscience, 2006.
+
+\bibitem{SRK}
+Soave G.
+\newblock Equilibrium constants from a modified redlich-kwong equation of
+  state.
+\newblock {\em Chemical Engineering Science}, 27(6):1197--1203, 1972.
+
+\bibitem{NRTL}
+Prausnitz JM~Renon H.
+\newblock Local compositions in thermodynamic excess functions for liquid
+  mixtures.
+\newblock {\em AICHE Journal}, 14(135):135--144, 1968.
+
+\bibitem{Az}
+L.H. Horsley.
+\newblock Azeotropic data, iii.
+\newblock {\em American Chemical Society}, pages 1--1, 1973.
+
+\bibitem{DWSIM}
+Daniel Medeiros.
+\newblock Dwsim technical document.
+\newblock Technical report, 2015.
+
+\bibitem{ACM}
+Zac Peers.
+\newblock
+  \url{http://www.aspentech.com/email/email_archive/acm_webinar-final.pdf}.
+
+\bibitem{SM}
+Endre Rev.
+\newblock Process modelling and simulation.
+\newblock Technical report, Budapest University of Technology and Economics,
+  Dept. of Chemical Engineering, 2013.
+
+\bibitem{PHD}
+Mordechai Shacham.
+\newblock Semi batch steam distillation of a binary organic mixture. technical
+  report.
+\newblock Technical report, 2009.
+
+\end{thebibliography}

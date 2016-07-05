@@ -24,7 +24,7 @@
 \contentsline {subsection}{\numberline {4.2.2}Flowsheeting Applications in DWSIM}{16}
 \contentsline {section}{\numberline {4.3}Thermodynamics}{16}
 \contentsline {subsection}{\numberline {4.3.1}Thermodynamic packages available in DWSIM}{16}
-\contentsline {subsection}{\numberline {4.3.2}Flash Algorithm}{16}
+\contentsline {subsection}{\numberline {4.3.2}Flash Algorithm}{17}
 \contentsline {subsection}{\numberline {4.3.3}Thermodynamic Curves and Parameter Estimation}{17}
 \contentsline {subsection}{\numberline {4.3.4}Standalone Thermodynamic Library}{17}
 \contentsline {section}{\numberline {4.4}Drawbacks of DWSIM}{18}
@@ -54,23 +54,23 @@
 \contentsline {subsection}{\numberline {8.1.1}The Model}{36}
 \contentsline {subsection}{\numberline {8.1.2}Openmodelica code and its explanation}{37}
 \contentsline {subsection}{\numberline {8.1.3}How openmodelica handles and solves the model equations}{38}
-\contentsline {chapter}{\numberline {9}Solved examples in Openmodelica using the built in thermodynamics}{39}
-\contentsline {section}{\numberline {9.1}Generating VLE curve (Txy) for ethanol water system using the UNIQUAC model.}{39}
-\contentsline {section}{\numberline {9.2}Steady State Flash}{41}
-\contentsline {subsection}{\numberline {9.2.1}The Model}{41}
-\contentsline {subsection}{\numberline {9.2.2}Problem Statement}{42}
-\contentsline {subsection}{\numberline {9.2.3}Simulation Details and Equations}{42}
-\contentsline {subsection}{\numberline {9.2.4}Results}{43}
-\contentsline {section}{\numberline {9.3}Semi-Batch Steam Distillation of a Binary Organic Mixture}{44}
-\contentsline {subsection}{\numberline {9.3.1}Problem background}{44}
-\contentsline {subsection}{\numberline {9.3.2}Problem Statement}{46}
-\contentsline {subsection}{\numberline {9.3.3}Results}{47}
-\contentsline {chapter}{\numberline {10}Future Work}{50}
-\contentsline {chapter}{\numberline {A}Codes for Python-C API Approach}{51}
-\contentsline {section}{\numberline {A.1}The Python Code}{51}
-\contentsline {section}{\numberline {A.2}The C Code}{52}
-\contentsline {chapter}{\numberline {B}Codes for Client-Server (Socket) Approach}{60}
-\contentsline {section}{\numberline {B.1}The Python Approach}{60}
-\contentsline {section}{\numberline {B.2}The C Client}{61}
-\contentsline {chapter}{\numberline {C}Python script to convert Chemsep database into openmodelica syntax}{64}
-\contentsline {section}{\numberline {C.1}Python script to convert Chemsep.xml to openmodelica classes}{64}
+\contentsline {chapter}{\numberline {9}Solved examples in Openmodelica using the built in thermodynamics}{40}
+\contentsline {section}{\numberline {9.1}Generating VLE curve (Txy) for ethanol water system using the UNIQUAC model.}{40}
+\contentsline {section}{\numberline {9.2}Steady State Flash}{42}
+\contentsline {subsection}{\numberline {9.2.1}The Model}{42}
+\contentsline {subsection}{\numberline {9.2.2}Problem Statement}{43}
+\contentsline {subsection}{\numberline {9.2.3}Simulation Details and Equations}{43}
+\contentsline {subsection}{\numberline {9.2.4}Results}{44}
+\contentsline {section}{\numberline {9.3}Semi-Batch Steam Distillation of a Binary Organic Mixture}{45}
+\contentsline {subsection}{\numberline {9.3.1}Problem background}{45}
+\contentsline {subsection}{\numberline {9.3.2}Problem Statement}{47}
+\contentsline {subsection}{\numberline {9.3.3}Results}{48}
+\contentsline {chapter}{\numberline {10}Future Work}{51}
+\contentsline {chapter}{\numberline {A}Codes for Python-C API Approach}{52}
+\contentsline {section}{\numberline {A.1}The Python Code}{52}
+\contentsline {section}{\numberline {A.2}The C Code}{53}
+\contentsline {chapter}{\numberline {B}Codes for Client-Server (Socket) Approach}{61}
+\contentsline {section}{\numberline {B.1}The Python Approach}{61}
+\contentsline {section}{\numberline {B.2}The C Client}{62}
+\contentsline {chapter}{\numberline {C}Python script to convert Chemsep database into openmodelica syntax}{65}
+\contentsline {section}{\numberline {C.1}Python script to convert Chemsep.xml to openmodelica classes}{65}
