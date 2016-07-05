@@ -61,8 +61,24 @@ Prof. D. B. Phatak(Chairperson) \\
 
 \newpage
 
-\section*{Acknowledgement}
-Firstly, I would like to thank my supervisor Prof. Kannan. M. Moudgalya, for guiding me throughout this project. The door to Prof. Moudgalya's office was always open whenever I ran into a trouble spot or had a question about my research. He consistently steered me in the right the direction whenever he thought I needed it.
+\section*{Declaration}
+I, \textbf{Rahul Jain}, Roll No. 143020028, declare that the work presented in this report is carried out by my own. Also, wherever someone else's ideas have been used, they have been cited and nothing has been copied verbatim. Due credit has been given to all the contibutors and authors, whose ideas and theories reflecting in this project report. \\
+\vspace{3cm}
+
+\begin{flushright}
+........................ \\
+Rahul Jain(143020028)
+\end{flushright}
+
+\vspace{3cm}
+
+\begin{flushleft}
+Date: 06 July 2016
+\end{flushleft}
+
+\newpage
+\section*{Acknowledgements}
+Firstly, I would like to thank my supervisor Prof. Kannan. M. Moudgalya, for guiding me throughout this project. The door to Prof. Moudgalya's office was always open whenever I ran into a trouble spot or had a question about my research. He consistently steered me in the right direction whenever he thought I needed it.
 
 I would also like to thank Prof. K. P. Madhvan for providing me with rich literature sources. His expertise and broad knowledge has been of great value to me.  
 
@@ -70,19 +86,19 @@ I would also like to thank the following interns Mr. Arpit Gupta, Mr. Neelesh Ch
 
 
 \abstract
-Openmodelica is a state of art equation oriented modelling environment capable of doing both steady state and dynamics simulation but lacks thermodynamics, and good chemical engineering support. DWSIM is a sequential modular steady state simulator with good thermodynamic library (DTL). An attempt is made to make DTL available for Openmodelica in this work. Python-C API and Socket programming approaches are implemented and the performance compared for tasks like steady state and transient simulations regarding chemical engineering systems in Openmodelica. Socket programing performs much better in all the attempted examples. But both the approaches failed when it comes to solving complex chemical engineering processes. Therefore an attempt is made to develop an in-built thermodynamic engine in openmodelica so that thermodynamic equations can be solved simultaneously with mass and energy balance. This built in thermodynamic engine proved to be successful in solving many complex processes with excellent speed and accuracy. 
+Openmodelica is a state of art equation oriented modeling environment capable of doing both steady state and dynamics simulation but lacks thermodynamics, and good chemical engineering support. DWSIM is a sequential modular steady state simulator with good thermodynamic library (DTL). An attempt is made to make DTL available for Openmodelica in this work. Python-C API and Socket programming approaches are implemented and the performance compared for tasks like steady state and transient simulations regarding chemical engineering systems in Openmodelica. Socket programing performs much better in all the attempted examples. But both the approaches failed when it comes to solving complex chemical engineering processes. Therefore an attempt is made to develop an in-built thermodynamic engine in openmodelica so that thermodynamic equations can be solved simultaneously with mass and energy balance. This built in thermodynamic engine proved to be successful in solving many complex processes with excellent speed and accuracy. 
 \tableofcontents
 \listoftables
 \listoffigures
 
 \chapter{Introduction}
-A chemical process simulator is a software through which one can perform chemical engineering calculations. As all the calculations are done by a computer-  , chemical process simulator provides a robust and fast way to carry out the calculations, rather than doing it manually.
+A chemical process simulator is a software through which one can perform chemical engineering calculations. As all the calculations are done by a computer, chemical process simulator provides a robust and fast way to carry out the calculations, rather than doing it manually.
 
 Presently many commercial chemical process simulators are available, which can be used for educational and industrial purposes. But as these commercial process simulators are very expensive, only large scale industries and very few academic institutes can a afford it. Aspen plus, Chemcad, Pro II are some of the commercial chemical process simulators presently available in the market. Due to this reason there is a strong need to develop an open source, free chemical process simulator, so that it can be used by small scale industries and academic institutes.
 
-The open source chemical process simulators that are currently available, have some drawbacks, due to which they cannot replace the commercial process simulators. DWSIM is one such steady state process simulator which is open source and has excellent built in thermodynamic and unit operations, but the only drawback is that it is not t for design and dynamic simulation. Whereas openmodelica is a state of art simulation and modelling environment, which is excellent for design and dynamic simulations but doesn't have a thermodynamic engine and library of unit operations. Therefor if one can successfully develop a thermodynamic engine in openmodelica, it can become an alternate to the commercial chemical process simulators, which is beneficial for both small scale industries and academic institutes. There are two ways of carrying out the above task. 
+The open source chemical process simulators that are currently available, have some drawbacks, due to which they cannot replace the commercial process simulators. DWSIM is one such steady state process simulator which is open source and has excellent built in thermodynamic and unit operations, but the only drawback is that it is not fit for design and dynamic simulation. Whereas openmodelica is a state of art simulation and modeling environment, which is excellent for design and dynamic simulations but doesn't have a thermodynamic engine and library of unit operations. Therefor if one can successfully develop a thermodynamic engine in openmodelica, it can become an alternate to the commercial chemical process simulators, which is beneficial for both small scale industries and academic institutes. There are two ways of carrying out the above task. 
 \begin{itemize}
-\item Integrating the thermodynamic engine of DWSIM with openmodelica. In this process the thermodynamic calculations will be performed by DWISIM where as the unit operation modelling equations which are mostly mass and energy balances will be solved by openmodelica solvers. 
+\item Integrating the thermodynamic engine of DWSIM with openmodelica. In this process the thermodynamic calculations will be performed by DWISIM where as the unit operation modeling equations which are mostly mass and energy balances will be solved by openmodelica solvers. 
 \item Developing a new thermodynamic engine from scratch in openmodelica itself. This includes the development of compound database and all the thermodynamic routines and VLE packages required for a powerful thermodynamic engine. In this approach all the thermodynamic equations and the unit operations modelling equations will be solved simultaneously by openmodelica solvers.
 \end{itemize}
 
@@ -91,25 +107,25 @@ The open source chemical process simulators that are currently available, have s
 \section{Chemical Process Simulators}
 
 \subsection{What is it ?}
-Chemical Process simulator is a software that can be used to design, optimize, analyze and develop chemical processes.Chemical Process simulation is a model based representation of unit operations in software. Basic prerequisites   are a thorough knowledge of chemical and physical properties of pure components and mixtures, of reactions, and of mathematical models which, in combination, allow the calculation of a process in computers.
-Chemical Process simulation software describes processes in ow diagrams where unit operations are positioned and connected by product streams. The software has to solve the mass and energy balance to reach a stable operating point. The goal of a process simulation is to reach optimal conditions for an examined process. This is essentially an optimization problem which has to be solved in an iterative process.
+Chemical Process simulator is a software that can be used to design, optimize, analyze and develop chemical processes.Chemical Process simulation is a model based representation of unit operations in software. Basic prerequisites   are a thorough knowledge of chemical and physical properties of pure components and mixtures, of reactions, and of mathematical models which, in combination, allow the calculation of a process in computer.
+Chemical Process simulation software describes processes in flow diagrams where unit operations are positioned and connected by product streams. The software has to solve the mass and energy balance to reach a stable operating point. The goal of a process simulation is to reach optimal conditions for an examined process. This is essentially an optimization problem which has to be solved in an iterative process.
 Chemical Process simulation always use models which introduce approximations and assumptions but allow the description of a property over a wide range of temperatures and pressures which might not be covered by real data. Models also allow interpolation and extrapolation within certain limits and enable the search for conditions outside the range of known properties.
-A chemical process simulator which is freely of cost with its source code is also available and editable is knows as open source chemical process simulator.
+A chemical process simulator which is free of cost, with its source available and editable is knows as open source chemical process simulator.
 
 \subsection{Various Components of a Chemical Process Simulator}
 \begin{itemize}
 \item{\textbf{Component Database}} \\
-A component database is a library of all the components and their physical properties. It contains constant and equations for calculation of physical properties at di different pressures and temperatures. Some of these physical property constants Antoin's coefficients  , heat capacity, density, heat of formation,critical temperature and pressure. The simulator accesses all the physical property data from this database and hands it over to the solver at run time. Some of the commercially available component databases are DCHEMA and Nist. Chemsep and DWSIM are two open source component database.
+A component database is a library of all the components and their physical properties. It contains constant and equations for calculation of physical properties at different pressures and temperatures. Some of these physical property constants are Antoin's coefficients, heat capacity, density, heat of formation, critical temperature and pressure. The simulator accesses all the physical property data from this database and hands it over to the solver at run time. Some of the commercially available component databases are DCHEMA and Nist. Chemsep and DWSIM are two open source component database.
 
 \item{\textbf{Thermodynamics}} \\
-All chemical process simulator need a library of routines that calculate thermodynamic data such as VLE parameters, dew and bubble point pressures and temps., vapor and liquid enthalpies, viscosities, densities, and other physical and transport properties of pure component and mixtures .Various thermodynamic models have been developed to fulfill ll this requirement as a single model cannot predict the properties of all the components.All these thermodynamic models are present in thermodynamic engine of a process simulator.It is the thermodynamic engine that decides how robust a simulator is. Choosing the right model is extremely important because using the wrong model, or estimating a physical property incorrectly, can lead to inaccurate results for the overall simulation.
+All chemical process simulator need a library of routines that calculate thermodynamic data such as VLE parameters, dew and bubble point pressures and temps., vapor and liquid enthalpies, viscosities, densities, and other physical and transport properties of pure component and mixtures .Various thermodynamic models have been developed to fulfill this requirement as a single model cannot predict the properties of all the components.All these thermodynamic models are present in thermodynamic engine of a process simulator.It is the thermodynamic engine that decides how robust a simulator is. Choosing the right model is extremely important because using the wrong model, or estimating a physical property incorrectly, can lead to inaccurate results for the overall simulation.
 
 \item{\textbf{Unit Operation Modules}} \\
-Every process simulator has a library of unit operation modules which replicates the physical/chemical operation of the actual process unit of the plant like Heat Exchangers, Distillation Columns, Pumps, Computer compressors, etc . These unit operation modules consists of a set of equations which relates thermodynamic behavior of input stream variables to that to the output stream variables. Most of the the unit operation involves highly non-linear algebraic equation which has to solved by
+Every process simulator has a library of unit operation modules which replicates the physical/chemical operation of the actual process unit of the plant like Heat Exchangers, Distillation Columns, Pumps, Computer compressors, etc. These unit operation modules consists of a set of equations which relates thermodynamic behavior of input stream variables to that to the output stream variables. Most of the the unit operation involves highly non-linear algebraic equation which has to solved by
 a solver which does it by some numerical iterative method as mostly analytical solution is not possible.
 
 \item{\textbf{Solver}} \\
-The solver solves all the equations that are given to it by thermodynamic engine and all unit modules included in the flowsheet. Depending on the flowsheet there may be two types of processes namely acyclic and recycle. In acyclic calculation order is generally straight forward and is in the direction of material ow. In recycle process the ow sheet is divided into a number of single or nested recycle loops and the minimum number of tear streams ( can be recycle streams) are identified  . The calculation sequence of module is thus determined as a result of this tearing. The solver solves these equations with the help of some numerical iterative method.
+The solver solves all the equations that are given to it by the thermodynamic engine and all unit modules included in the flowsheet. Depending on the flowsheet there may be two types of processes namely acyclic and recycle. In acyclic calculation order is generally straight forward and is in the direction of material flow. In recycle processes the flow sheet is divided into a number of single or nested recycle loops and the minimum number of tear streams ( can be recycle streams) are identified . The calculation sequence of module is thus determined as a result of this tearing. The solver solves these equations with the help of some numerical iterative method.
 \end{itemize}
 
 \subsection{Applications of Chemical Process Simulators in Education and Industry}
@@ -121,13 +137,13 @@ One can generate various parametric graphs and observe the nature for better und
 By looking at the flowsheeting section of a simulator one can visualize the mass and energy flow of a plant.
 
 \item{\textbf{Helps in project work.}} \\
-Students can use a simulator to perform calculations related to their projects which otherwise would be very time consuming if done manu ally. All the thermodynamic and transport properties at various temperatures and pressures can also be extracted which are required in most of the project work.
+Students can use a simulator to perform calculations related to their projects which otherwise would be very time consuming if done manually. All the thermodynamic and transport properties at various temperatures and pressures can also be extracted which are required in most of the project work.
 
 \item{\textbf{Process plant synthesis.}} \\
 New process can be checked for feasibility study. Comparative studies can also be performed to decide which process would be more efficient for the production of required compound.
 
 \item{\textbf{Estimation of Parameters.}} \\
-Based on the experimental data various parameters can be estimated by the simulatorâ  build in data fitting techniques. For example binary interaction parameters, rate constants of reaction, order of reactions can be predicted.
+Based on the experimental data various parameters can be estimated by the simulator's build in data fitting techniques. For example binary interaction parameters, rate constants of reaction, order of reactions can be predicted.
 
 \item{\textbf{Used for design of unit operations.}} \\
 One can come out with an optimized design for unit operations for a given load.
@@ -148,12 +164,12 @@ All the parametric changes can be done on the simulator instead of applying it d
 \section{Why an Open Source Chemical Process Simulator}
 
 \subsection{Expensive for academic institutions}
-Commercial process simulator are very expensive even for educational purposes. Most of the chemical engineering institutes exclude process simulation course from their curriculum as Commercial simulators are affordable.
+Commercial process simulator are very expensive even for educational purposes. Most of the chemical engineering institutes exclude process simulation course from their curriculum as Commercial simulators are not affordable.
 
-Simulation is a valuable tool to understand the principles of chemical engineering will also help simulate large scale, industrial level, problems, which is not possible by paper and pen. A student who is well trained in simulation will be extremely useful to the industry. This will help to improve employment of chemical engineering students.
+Simulation is a valuable tool to understand the principles of chemical engineering. It will also help simulate large scale, industrial level, problems, which is not possible by paper and pen. A student who is well trained in simulation will be extremely useful to the industry. This will help to improve employment of chemical engineering students.
 
 \subsection{Expensive for Industry}
-Commercial process simulators are unaffordable for small and medium scale industries.Hiring consulting firms is not an option because presently all consulting firms use commercial simulators and therefore the consulting charges are very high. Therefore most of them are poorly designed, which reduces the efficiency of the plant. Industry can use an open source simulator for resolving their problems or take help from individuals who knows open source simulation.
+Commercial process simulators are not affordable for small and medium scale industries. Hiring consulting firms is not an option because presently all consulting firms use commercial simulators and therefore the consulting charges are very high. Therefore most of them are poorly designed, which reduces the efficiency of the plant. Industry can use an open source simulator for resolving their problems or take help from individuals who knows open source simulation.
 
 Small chemical consulting firms can be established which uses open source simulators, to resolve industrial problems.These consulting firms can be started with almost zero investment as they will be using an open source simulator. The consulting charges will also be reasonably low as commercial simulator are not used.
 
@@ -169,48 +185,48 @@ As open source simulators are freely available, anyone who is an expert can shar
 
 \chapter{Literature Survey}
 \section{Available commercial chemical process simulation environments and their thermodynamic engine}
-\subsection{gPROMS ModelBuilder} \cite{GP}
-gPROMS ModelBuilder is an environment for modellers to build, validate and execute steady-state and dynamic process models based on the gPROMS second-generation EO modelling platformoriginally developed at Imperial College London [Barton and Pantelides, 1994; Oh and Pantelides,1996], and subsequently substantially re-architected and re-written at PSE. Following are the thermodynamic engines that can be used in gPROMS to perform chemical process simulations.
+\subsection{gPROMS ModelBuilder}
+gPROMS ModelBuilder is an environment for modelers to build, validate and execute steady-state and dynamic process models based on the gPROMS second-generation EO modeling platform originally developed at Imperial College London [Barton and Pantelides, 1994; Oh and Pantelides,1996], and subsequently substantially re-architected and re-written at PSE. Following are the thermodynamic engines that can be used in gPROMS to perform chemical process simulations. \cite{GP}
 \begin{itemize}
 \item \textbf{Multiflash thermodynamic engine} \\
-KBC Advanced Technologies' Multiflash is the standard gPROMS physical properties package. It is supplied as an integral part of gPROMS ProcessBuilder, along with the 2000+ component DIPPR 801 database.
+KBC Advanced Technologies' Multiflash is the standard gPROMS physical properties package. It is supplied as an integral part of gPROMS Process Builder, along with the 2000+ component DIPPR 801 database.
 
 Multiflash is a highly rigorous properties package that supports all commonly used thermodynamic and transport properties, including a wide range of equation of state and activity coefficient thermodynamic models.
 
-Multiflash is specifically designed for equation-orientated modelling, providing tight convergence of internal iterations and analytical partial derivatives with respect to temperature, pressure and composition.
+Multiflash is specifically designed for equation-orientated modeling, providing tight convergence of internal iterations and analytical partial derivatives with respect to temperature, pressure and composition.
 
 PSE can supply Multiflash with the DIPPR database supplied by the AIChE, providing component data for thousands of components.
 
 \item \textbf{OLI electrolyte properties} \\
-PSE provides OLI Systems' OLI electrolyte properties package for aqueous electrolytic systems. It is a proprietery thermodynamic package and involves separate licencing cost.
+PSE provides OLI Systems' OLI electrolyte properties package for aqueous electrolytic systems. It is a proprietery thermodynamic package and involves separate licensing cost.
 
 \item \textbf{CAPE-OPEN physical properties} \\
-gPROMS provides a CAPE-OPEN physical properties socket into which any CAPE-OPEN compliant physical properties package can be plugged – for example Aspentech's Aspen Properties®, PROSIM's SIMULIS® Thermodynamics, Aspentech's COMThermo® and many others.
+gPROMS provides a CAPE-OPEN physical properties socket into which any CAPE-OPEN compliant physical properties package can be plugged – for example Aspentech's Aspen Properties, PROSIM's SIMULIS Thermodynamics, Aspentech's COMThermo and many others.
 
 \item \textbf{gSAFT} \\
 Statistical Associating Fluid Theory, or SAFT, is an advanced molecular thermodynamic method that can predict a wide variety of thermodynamic properties of mixtures accurately based on physically-realistic models of molecules and their interactions with other molecules.
 \end{itemize}
 
-\subsection{Aspen Custom Modeler} \cite{ACM}
-Aspen-tech' Aspen custom modeler is a modelling and simulation environment to develop customized model. It is an evolution of SPEEDUP, a first-generation EO
+\subsection{Aspen Custom Modeler}
+Aspen-tech' Aspen custom modeler is a modeling and simulation environment to develop customized model. It is an evolution of SPEEDUP, a first-generation EO
 tool originally developed at Imperial College London [Pantelides, 1988].
 
 The primary purpose of custom modeler is to built customized process models which are not available in Aspen Plus or Apen Hysys. These models can then be imported to Aspen plus or hysys and can be integrated with the flowsheet. 
 
 The custom modeler attains its thermodynamics from aspen properties which is a proprietery thermodynamic engine developed by Aspen-tech. Aspen properties itself uses two popular databases, namely NIST and DCHEMA.
 
-The thermodynamic equations are calculated separately by aspen properties, whereas the modelling equations are solved separately by aspen custom modeler.
+The thermodynamic equations are calculated separately by aspen properties, whereas the modeling equations are solved separately by aspen custom modeler. \cite{ACM}
 
 \section{Open source simulation environment and associated thermodynamic engine}
-\subsection{Ascend} \cite{fprops}
-
+\subsection{ASCEND}
+ASCEND is also an open source simulation environment based on equation oriented approach. ASCEND has developed its own thermodynamic engine based on the book \'The Properties of Gases and Liquids'\ \cite{ascend} which provides pure component properties for compounds. This thermodynamic engine is named as fprops  \cite{fprops}. The problem with ASCEND thermodynamic is that is has very limited thermodynamic package support for example their is support for only one thermodynamic activity which is UNIQUAC. Another problem is that the compound database is not intensive.
 
 
 
 \chapter{DWSIM: An Open Source Steady State Process Simulator}
 \section{The Sequential Modular Approach} \cite{SM}
 \subsection{What is Sequential Modular Approach}
-DWSIM is based on sequential modular approach. In this approach there are computer programs for all unit operations. One constructs a complete model of these units by writing modelling equations, keeping in mind some assumptions, which closely replicates the actual process units. The simulator then solves the total process flowsheet by calling each unit according to how they are connected in the flowsheet and iterating where loops are encountered. In this approach the variables(pressure, temperature, flows, composition) to input streams to the are fixed and it will compute the variables of the streams leaving the unit. Apart from specifying the input streams completely one has to specify the unit parameters as well for example the flash unit requires one to specify the temperature and pressure at which the flashing takes place. The degree of freedom should be zero. The solver used for solving the equations is developed so efficiently that it takes some default initial guess values to calculate the solution through some numerical iterative technique. These guess values are then updated and progressively the system converges.
+DWSIM is based on sequential modular approach. In this approach there are computer programs for all unit operations. One constructs a complete model of these units by writing modeling equations, keeping in mind some assumptions, which closely replicates the actual process units. The simulator then solves the total process flowsheet by calling each unit according to how they are connected in the flowsheet and iterating where loops are encountered. In this approach the variables(pressure, temperature, flows, composition) to input streams to the are fixed and it will compute the variables of the streams leaving the unit. Apart from specifying the input streams completely one has to specify the unit parameters as well, for example the flash unit requires one to specify the temperature and pressure at which the flashing takes place. The degree of freedom should be zero. The solver used for solving the equations is developed so efficiently that it takes some default initial guess values to calculate the solution through some numerical iterative technique. These guess values are then updated and progressively the system converges.
 
 \subsection{The Two Pillars of Sequential Modular Approach} \cite{SM}
 \begin{itemize}
@@ -226,7 +242,7 @@ The next issue is how we might solve each of the partitions containing more than
 \item {The models of the different units can be prepared and tested separately, while the unit model can be expressed as a computer program subroutine(procedure).}
 \item{The solution method for a single unit can be optimized.}
 \item{Because of rigid requirements, input data can be quite easily checked for completeness and consistency.}
-\item{Because of the modular structure,new units are easily added to the flowsheeting program.}
+\item{Because of the modular structure, new units are easily added to the flowsheeting program.}
 \item{Less attractive strategy when dealing with design and optimization problems.}
 \end{itemize}
 
@@ -239,7 +255,7 @@ Apart from this if one wants to insert a new unit module, DWSIM provides the fac
 
 \begin{itemize}
 \item {\textbf{Spread Sheet Unit Operation}} \\
-This module uses a spreadsheet application like excel or calc to model the unit which can then be inserted directly into the flowsheet. The spreadsheet consists of three sheets namely input, output and calculation. The variable in the input and output sheets are predefined by DWSIM and the user must not edit it. The variables in the input sheet automatically takes the values from the input material stream at run time. All the modelling equations must be inserted in the calculation sheet which takes values from input sheet and return calculated values to output sheet.
+This module uses a spreadsheet application like excel or Libre office calc to model the unit which can then be inserted directly into the flowsheet. The spreadsheet consists of three sheets namely input, output and calculation. The variable in the input and output sheets are predefined by DWSIM and the user must not edit it. The variables in the input sheet automatically takes the values from the input material stream at run time. All the modeling equations must be inserted in the calculation sheet which takes values from input sheet and return calculated values to output sheet.
 \item{\textbf{Custom unit Operation}} \\
 This module uses a programming language where the user can code the required unit module, after which the module can directly be inserted into the flowsheet. The two programming languages which can be used for this purpose are iron python and visual basic.
 \end{itemize}
@@ -247,22 +263,22 @@ This module uses a programming language where the user can code the required uni
 \subsection{Flowsheeting Applications in DWSIM}
 \begin{itemize}
 \item {\textbf{Column profiles}} \\
-Column profiles are very important as they give idea of how various parameters like temperature, pressure, composition, flows vary along the length of the column. By studying these profiles one can decide various design aspects of the column like number of trays, the optimal feed stage etc. DWSIM generates column profiles of distillation, absorption and extractive columns.
+Column profiles are very important as they give idea of how various parameters like temperature, pressure, composition, flows vary along the length of the column. By studying these profiles one can decide various design aspects of the column like number of trays, the optimal feed stage etc. DWSIM can generate column profiles of distillation, absorption and extractive columns.
 
 \item{\textbf{Sensitivity Analysis}} \\
 Sensitivity analysis is varying an independent variable over a given range and observing the behavior of dependent variable accordingly. This feature helps optimize parameters. For example the behavior of product composition and reboiler duty can be observed by varying the reflux ratio and the number of trays so that one obtain an optimized value of both. Sensitivity analysis is not confined to only a single unit operation, it can be implemented between any two variables of the entire flowsheet.
 
 \item{\textbf{Multivariable Optimizer}} \\
-It is similar to sensitivity analysis but instead of generating a plot it directly given the optimized value of the parameter. Another advantage of multivariable optimizer is that, here one can define an objective function like cost, efficiency etc which can be minimized or maximized.
+It is similar to sensitivity analysis but instead of generating a plot it directly gives the optimized value of the parameter. Another advantage of multi variable optimizer is that, here one can define an objective function like cost, efficiency etc. which can be minimized or maximized.
 
 \end{itemize}
 
 \section{Thermodynamics}
 \subsection{Thermodynamic packages available in DWSIM}
-DWSIM in enriched with strong thermodynamic engine which can extract physical property data from the two available databases namely Chemsep and DWSIM. It can also extract properties from any other database which is in .xml format. DWSIM has a rich set of thermodynamic packages which includes ideal gas, equation of state, activity coefficient models. This makes it versatile to simulate any kind of system in DWSIM.
+DWSIM in enriched with strong thermodynamic engine which can extract physical property data from the two available databases namely Chemsep and DWSIM. It can also extract properties from any other databases which is in .xml format. DWSIM has a rich set of thermodynamic packages which includes ideal gas, equation of state, activity coefficient models. This makes it versatile to simulate any kind of system in DWSIM.
 
 \subsection{Flash Algorithm} \cite{DWSIM}
-Flash algorithm are thermodynamic procedures which calculates the properties of output streams after the input stream is flashed, for given operation conditions. In principle, flash calculations are straightforward and involve combining the VLE equations with the component mass balances, and in some cases the energy balance. Following are the four flash algorithms one can use in DWSIM according to the process requirement.
+Flash algorithm are thermodynamic procedures which calculates the properties of output streams after the input stream is flashed, for given operation conditions. In principle, flash calculations are straightforward and involve combining the VLE equations with the component mass balances, and in some cases energy balance also. Following are the four flash algorithms one can use in DWSIM according to the process requirement.
 
 \begin{itemize}
 \item{\textbf{PT Flash}} \\
@@ -270,7 +286,7 @@ This is the simplest flash algorithms. One has to specify pressure and temperatu
 \item{\textbf{PH Flash}} \\
 This is pressure and enthalpy flash algorithm. It involves overall and component mass balance, VLE equations, mole fraction summation equations and energy balance equation.
 \item{\textbf{PV Flash}} \\
-This is the pressure and vapor fraction flash algorithm. One needs to specify the pressure and vapor fraction and the algorithm will calculate temperature and composition of the resulting vapor and liquid streams.The dew point and bubble point calculations of any mixture are performed by this flash. For bubble point set the vapor fraction as zero and for dew point set the vapor fraction as one.It involves overall and component mass balance, VLE equations and mole fraction summation equations.
+This is the pressure and vapor fraction flash algorithm. One needs to specify the pressure and vapor fraction and the algorithm will calculate temperature and composition of the resulting vapor and liquid streams. The dew point and bubble point calculations of any mixture are performed by this flash. For bubble point set the vapor fraction as zero and for dew point set the vapor fraction as one. It involves overall and component mass balance, VLE equations and mole fraction summation equations.
 \item{\textbf{PS Flash}} \\
 This is the pressure and entropy flash algorithm. It involves the same equations as of PH flash, but the energy balance equation in PH flash is replaced by entropy balance here.
 \end{itemize}
@@ -280,22 +296,22 @@ DWSIM offers the facility to plot various thermodynamic plots like VLE curves, c
 DWSIM can also be used to estimate VLE and LLE binary interaction parameters for almost all thermodynamic packages. One need to provide experimental data and based on that the estimation is done.
 
 \subsection{Standalone Thermodynamic Library}
-DWSIM provides a standalone thermodynamic library by the name DTL (DWISM Thermodynamic Library).This library can be used externally.
-This is a very powerful tool as one can use this library in other simulating software where models can be developed but thermodynamic engine is missing.
+DWSIM provides a standalone thermodynamic library by the name DTL (DWISM Thermodynamic Library). This library can be used externally.
+This is a very powerful tool as one can use this library in other simulating software where models can be developed but the thermodynamic engine is missing.
 There are built in routines in DTL which can be used for all thermodynamic calculations. These routines include calculation of all physical properties as function of temperature, pressure and compositions. All flash algorithms discussed above are also included. Parameters like pure component properties, Binary interaction parameters of components can also be accessed just by calling these routines.
 DTL comes with two default databases which are Chemsep and DWSIM, but one can use his/her own database provided that the database is in .xml format. Users can also add their own compounds to the default database and can also modify the properties of the default database.
 
 \section{Drawbacks of DWSIM}
 \begin{itemize}
 \item {\textbf{Not Suitable for Design Problems}} \\
-As DWSIM is based on sequential modular approach it can only follow unidirectional calculation order. Only if all the inputs to a unit is completely specified, the output is calculated. It canâ  follow backward flow which is to specify the desired output variables and calculate the input variable. Therefore some trial and error method has to be used to solve these kind of problems. Although DWSIM has an adjust operation through which we can solve these kind of problems but still its not efficient and is time consuming as it is based on trial and error approach.
+As DWSIM is based on sequential modular approach it can only follow unidirectional calculation order. Only if all the inputs to a unit is completely specified, the output is calculated. It can't follow backward flow which is to specify the desired output variables and calculate the input variable. Therefore some trial and error method has to be used to solve these kind of problems. Although DWSIM has an adjust operation through which we can solve these kind of problems but still its not efficient and is time consuming as it is based on trial and error approach.
 
 \item{\textbf{Dynamic Processes Cannot be Simulated}} \\
 DWSIM being a steady state simulator cannot handle dynamic process as its solvers are incapable of solving differential equations. This is a major drawback for small scale industries as most of them consists of batch processes which are dynamic and cannot be solved in DWSIM.
 
 \end{itemize}
 
-\chapter{Openmodelica: An Open Source Dynamic Modelling and Simulation environment}
+\chapter{Openmodelica: An Open Source Dynamic Modeling and Simulation environment}
 
 \section{Equation Oriented Approach}
 \subsection{What is it?}
@@ -303,7 +319,7 @@ This approach refers to collecting all the equations describing the behavior of 
 
 \subsection{Advantages and Disadvantages}
 \begin{itemize}
-\item {Attractive strategy when dealing with design and optimization problems. As all the equations are solved simultaneously it doesnâ  matter whether the unknown variable in an input or output variable.}
+\item {Attractive strategy when dealing with design and optimization problems. As all the equations are solved simultaneously it doesn't  matter whether the unknown variable in an input or output variable.}
 \item{If the system consists of large number of equations, large number of initial estimates must be provided which may not guarantee for convergence.}
 \item{Testing of individual units cannot be done as the whole system is solved simultaneously.}
 \item{The approach is less realistic as compared to sequential modular.}
@@ -312,9 +328,9 @@ This approach refers to collecting all the equations describing the behavior of 
 
 \section{Advanced features of Openmodelica}
 \subsection{Declarative Language}
-In Openmodelica offers both equation as well as assignment statements. Equation statement are those in which the direction is not defined, which means the variable on the left side of the equal sign need not be the unknown variable. Openmodelica automatically determines the unknown variable. This makes life easy as implicit functions can directly be written without converting it into explicit form. This feature is presently rarely available in any other simulation language. The makes openmodelica library classes more reusable than traditional classes containing assignment statements where the input output causality is fixed. Example the resister equation: R*i = v, can be used in three different ways: i := v/R, v := R*i, R := v/i \cite{PeterFrit}.
-Not only the statements but the direction of flow of data need not be specified by the programmer. Think of it as an energy port that allows energy to flow from whichever happens to be the place of higher energy to that where it is lower. This is known as acausal modelling. A user would be able to build up a graphical network from function blocks, then the software builds the mathematical model, he states.
-Whereas a conventional modeler might model a resistance-capacitance- inductance circuit as a circuit, Openmodelica would model each individual component separately and connect the three without worrying about the flow of data\cite{PeterFrit}.
+Openmodelica offers both equation as well as assignment statements. Equation statements are those in which the direction is not defined, which means the variable on the left side of the equal sign need not be the unknown variable. Openmodelica automatically determines the unknown variable. This makes life easy as implicit functions can directly be written without converting it into explicit form. This feature is rarely available in any other simulation environments. The makes openmodelica library classes more reusable than traditional classes containing assignment statements where the input output causality is fixed. Example the resister equation: R*i = v, can be used in three different ways: i := v/R, v := R*i, R := v/i \cite{PeterFrit}.
+Not only the statements but the direction of flow of data need not be specified by the programmer. Think of it as an energy port that allows energy to flow from whatever happens to be the place of higher energy to that where it is lower. This is known as accusal modeling. A user would be able to build up a graphical network from function blocks, then the software builds the mathematical model, he states.
+Whereas a conventional modeler might model a resistance-capacitance-inductance circuit as a circuit, Openmodelica would model each individual component separately and connect the three without worrying about the flow of data\cite{PeterFrit}.
 
 \subsection{Object Oriented Language}
 Openmodelica is a strongly typed object oriented language with a general class concept. Individual generic models can be written which can then be reused and inherited. These models can be directly dragged in any simulation and then connected to the respective location.
@@ -336,19 +352,25 @@ Openmodelica offers an integrated modelling and simulation environment where one
 Following are two types of variables that can be defined in a connector.
 \begin{itemize}
 \item {\textbf{Flow variables}}
-Flow variables are those variables comes in or goes out of a model ex ample the current coming flowing through a resister. In openmodelica flow variables follow the Kirchhoffâ  current law, which means the total amount of any quantity coming into any node is equal to the amount of quantity going out of that node.
+Flow variables are those variables comes in or goes out of a model example the current flowing through a resister. In openmodelica flow variables follow the Kirchhoff's current law, which means the total amount of any quantity coming into any node is equal to the amount of quantity going out of that node.
 \item{\textbf{Potential variables}}
-Potential variables that replicates the voltage in an electrical circuit. In openmodelica potential variables follow Kirchhoffâ  voltage law, which states that the directed sum of the variables around any closed loop is zero.
+Potential variables are variables that replicates the voltage in an electrical circuit. In openmodelica, potential variables follow Kirchhoff's voltage law, which states that the directed sum of the variables around any closed loop should be zero.
 \end{itemize}
 
+Openmodelica offers an excellent graphical facility which is drag and drop composition. Using this one can easily drag and drop models to the simulation environment and connect them through a mouse cursor. Figure \ref{Dist} depicts this feature of open modelica.
 
-Open modelica offers an excellent graphical facility which is drag and drop composition. Using this one can easily drag and drop models to the simulation environment and connect them through a mouse cursor. Figure 3 depicts this feature of open modelica.
+\begin{figure}
+\centering
+\includegraphics[width = 0.6\linewidth]{Dist}
+\caption{A distillation tower model as a connection of tray model in openmodelica}
+\label{Dist}
+\end{figure}
 
 \section{Drawbacks}
 \begin{itemize}
 \item {As modelica is a generic modelling and simulation environment it has no built in chemical engineering unit operations.}
-\item{Openmodelica does have a thermodynamic engine. Therefore thermodynamic dynamic calculations cannot be performed.}
-\item{As every unit operation has to be coded user has provide the solver with good initial guess values otherwise the model may not converge.}
+\item{Openmodelica does have a thermodynamic engine. Therefore thermodynamic calculations cannot be performed.}
+\item{As every unit operation has to be coded user has to provide the solver with good initial guess values otherwise the model may not converge.}
 \end{itemize}
 
 \chapter{Importing the Thermodynamic engine of DWSIM in Openmodelica.}
@@ -356,19 +378,19 @@ Open modelica offers an excellent graphical facility which is drag and drop comp
 \section{Motivation}
 \begin{itemize}
 \item{\textbf{Design and Optimization}} \\
-As shown in chapter three DWSIM is not efficient in handling design and optimization problems because its based on sequential modular approach but has a strong thermodynamic engine.As described earlier DWSIM also has a standalone thermodynamic library (DTL) which can be used externally. On the other hand openmodelica is apt in handling problems but lacks thermodynamics. Therefore if somehow the thermodynamics of DWSIM is imported to openmodelica, both these problems can be solved.
+As shown in chapter three DWSIM is not efficient in handling design and optimization problems because it is based on sequential modular approach but has a strong thermodynamic engine. As described earlier DWSIM also has a standalone thermodynamic library (DTL) which can be used externally. On the other hand openmodelica is apt in handling equations but lacks thermodynamics. Therefore, if somehow the thermodynamics of DWSIM is imported to openmodelica, both these problems can be solved.
 
 \item{\textbf{Dynamic Simulation}} \\
-As stated in chapter three DWSIM cannot simulate dynamic systems. On the other hand openmodelica can do this very efficiently due to its strong built in integration solvers. Again if DTL is clubbed with openmodelica, simulation of dynamic processes can easily be carried out.
+As stated in chapter three DWSIM cannot simulate dynamic systems. On the other hand openmodelica can do this very efficiently due to its strong built in integration solvers. Again if DTL is clubbed with openmodelica, simulation of dynamic chemical processes can easily be carried out.
 
 \end{itemize}
 The above two benefits shows that it may be a fruitful exercise to integrate the DTL with openmodelica. As a result one may obtain a complete process simulator which is capable of solving all type of problems that is simulation, design, optimization with steady state or dynamic behavior.
 
 \section{Python-C API approach to Integrate Openmodelica with DTL} \cite{api}
-DTL consists of a file with an extension .dll(dynamic link library) which is written in VB.NET (windows environment). This file is COM (component object model) enabled, which means that any programming language which supports COM can import this library and access the built in thermodynamic subroutines. Openmodelica is written in C (Linux environment) and the only language whose routines can be called in openmodelica is C. As both these programs are developed in so different environment it becomes hard to integrate the two.
-As openmodelica supports only C language, it would have been best to call DTL from C but unfortunately due to the difference in environment both were not compatible. Therefore there was a need to bring in some glue language which can establish this integration from DTL to C. For this purpose python was chosen as it is an excellent glue language.
+DTL consists of a file with an extension .dll (dynamic link library) which is written in VB.NET (windows environment). This file is COM (component object model) enabled, which means that any programming language which supports COM can import this library and access the built in thermodynamic subroutines. Openmodelica is written in C (Linux environment) and the only language whose routines can be called from openmodelica is C. As both these programs are developed in so different environment it becomes hard to integrate the two.
+As openmodelica supports only C language, it would have been best to call DTL from C but unfortunately due to the difference in their environment both were not compatible. Therefore, there was a need to bring in some glue language which can establish this integration from DTL to C. For this purpose python was chosen as it is an excellent glue language.
 
-The package \textbf{win32com} in python can be used to extablish connection with COM enabled objects. Therefore, using win32com we can call the DTL library and hence all the thermodynamic routines available in it.
+The package \textbf{win32com} in python can be used to establish connection with COM enabled objects. Therefore, using win32com we can call the DTL library and hence all the thermodynamic routines available in it.
 
 Python-C API is one of the approach through which this integration of openmodelica and DTL is carried out successfully. Figure \ref{PyC1} describes the flow of the approach. Following points describes the structure and flow of this approach \ref{appenA}.
 
@@ -381,11 +403,11 @@ Python-C API is one of the approach through which this integration of openmodeli
 \begin{itemize}
 \item{First the DTL routines were imported to python. A package in python named win32com.client was used to do that. This package allows python to call routines from a dll file which is registered in the windows registry. Once the dll file is dispatched through win32com.client, python has access to all the COM enabled functions of the dll.}
 \item{Once DTL is imported to python now python functions were written to send input parameters to DTL routines and calculate the required thermodynamic properties. These python functions now behaves similarly as DTL routines. The codes for python functions are shown in appendix A.}
-\item{These python functions are now called by C through python-C API. In computer programming, an API (Application programming interface) is a set of routines, protocols, and tools for building software applications. An API expresses a software component in terms of its operations, inputs, outputs, and underlying types.This API is responsible for converting C variables to python and vice versa. The codes for C functions are shown in Appendix A}
-\item{Finally as openmodelica is compatible with C, the input are then sent to C functions through openmodelica external C functions, which in turn calls the python functions, which in turn calls DTL routines. The codes for external function in openmodelica are shown in Appendix A.}
+\item{These python functions are now called by C through python-C API. In computer programming, an API (Application programming interface) is a set of routines, protocols, and tools for building software applications. An API expresses a software component in terms of its operations, inputs, outputs, and underlying types. This API is responsible for converting C variables to python and vice versa. The codes for C functions are shown in Appendix A}
+\item{Finally as openmodelica is compatible with C, the inputs are then sent to C functions through openmodelica external C functions, which in turn calls the python functions, which in turn calls DTL routines. The codes for external function in openmodelica are shown in Appendix A.}
 \end{itemize}
 \section{Client-Server (sockets) approach to integrate OpenModelica with DTL} \cite{socket}
-Client-Server or socket approach is another through which the integration is successful. Figure \ref{PyC2} decribes the data flow of the approach.Following points describes the structure and flow of this approach \ref{appenB}.
+Client-Server or socket approach is another approach through which the integration is successful. Figure \ref{PyC2} describes the data flow of the approach. Following points describes the structure and flow of this approach \ref{appenB}.
 
 \begin{figure}
 \centering
@@ -396,14 +418,14 @@ Client-Server or socket approach is another through which the integration is suc
 
 \begin{itemize}
 \item{In this approach also, firstly the the DTL routines are called in python with the help of win32com.client package.}
-\item{Similar to the python-C approach functions are written in python which calls DTL to calculate various physical properties.}
-\item{Now a python server which consists of all the above functions is created which waits for a C clients to establish connections, receive inputs from it and send the calculated values back to the client. The codes for python server in shown in Appendix B}
+\item{Similar to python-C approach, functions are written in python which calls DTL to calculate various physical properties.}
+\item{Now a python server which consists of all the above functions is created which waits for a C clients to establish connection, receive inputs from it and send the calculated values back to the client. The codes for python server in shown in Appendix B}
 \item{Clients are coded in C which establishes connections with the python servers and send and receive data from it. The codes for C client is shown in Appendix B}
 \item{Once the connection is established the python server receives the data from C client, contacts DTL, calculate the required property as asked by the C client and sends it back to the client.}
 \item{Finally the these C clients are called by openmodelica external C functions giving the required inputs to the client which in turn contacts the python servers for the calculation. The C client receives the calculated values from python servers and transfers it to openmodelica.}
 \end{itemize}
 
-\section{Implimentation of the two approaches}
+\section{Implementation of the two approaches}
 Table \ref{Prop} lists the thermodynamic functions and their that can be used in openmodelica to receive values from DTL. These functions can be used directly in any simulation. 
 
 When, using the socket approach the python server should be up and running during the execution of the simulation. 
@@ -434,15 +456,15 @@ The following two models were simulated in openmodelica with different integrati
 
 \begin{itemize}
 \item{\textbf{Steady State Flash Separator}} \\
-An equimolar mixture of Benzene and Toluene was flashed in a flash separator. The thermodynamic package used was Raoultâ  law. All the pure component and mixture properties were imported from DTL. To test the capability of the integration methods the composition of the resulting vapor stream was specified, and the temperature at which this composition is attained was left unknown. It was observed that the \textbf{Python-C API} approach took thirty seconds to solve the system, whereas the \textbf{Client-Server} method took less than one second to simulate.
+An equimolar mixture of Benzene and Toluene was flashed in a flash separator. The thermodynamic package used was Raoult's law. All the pure component and mixture properties were imported from DTL. To test the capability of the integration methods the composition of the resulting vapor stream was specified, and the temperature at which this composition is attained was left unknown. It was observed that the \textbf{Python-C API} approach took thirty seconds to solve the system, whereas the \textbf{Client-Server} method took less than one second to simulate.
 \item{\textbf{Dynamic Flash}} \\
-A dynamic flash was simulated with the feed as equimolar mixture of benzene and toluene. The thermodynamic package used was again Raoultâ  Law. It was assumed that the output liquid stream was at the same composition and temperature as the holdup inside the flash separator. Heat supplied to flash separator was kept constant. The set of equations involved were mass balance, energy balance and equilibrium equations. The mass and energy balance were differential equations. It was observed that the Python-C API approach took \textbf{thirty minutes} to solve, whereas the Client-Server approach takes \textbf{four minute} to solve the system.
+A dynamic flash was simulated with the feed as equimolar mixture of benzene and toluene. The thermodynamic package used was again Raoult's Law. It was assumed that the output liquid stream was at the same composition and temperature, as the holdup inside the flash separator. Heat supplied to flash separator was kept constant. The set of equations involved were mass balance, energy balance and equilibrium equations. The mass and energy balance were differential equations. It was observed that the Python-C API approach took \textbf{thirty minutes} to solve, whereas the Client-Server approach takes \textbf{four minute} to solve the system.
 \end{itemize}
 
 The above two examples clearly states that Client-Server approach is much faster than Python-C API approach. This is because of two reasons.
 
 \begin{itemize}
-\item {Before you call any routine of DTL one has to call another DTL routine named Initialize. This routine loads all the compounds and their properties from the database, which consumes lot of time. In Python- C API approach this initialize routine was called every time a call was made from openmodelica to C and from C to modelica. When a model is simulated in openmodelica using DTL through Python-C API approach, on each iteration such a call was made and every time the Initialize routine was called. This repeated loading of the database through initialize make the process very slow. Whereas in Client-Server approach the before the server is ready to accept connections from client the initialize routine was already called. Therefore the initialize routine was only called once and not on every single iteration.}
+\item {Before you call any routine of DTL one has to call another DTL routine named Initialize. This routine loads all the compounds and their properties from the database, which consumes lot of time. In Python- C API approach this initialize routine was called every time a call was made from openmodelica to C and from C to modelica. When a model is simulated in openmodelica using DTL through Python-C API approach, on each iteration such a call was made and every time the Initialize routine was called. This repeated loading of the database through initialize make the process very slow. Whereas in Client-Server approach, before the server is ready to accept connections from client the initialize routine is already called. Therefore the initialize routine was only called once and not on every single iteration.}
 \item{Whenever API is used in any program it makes it slow as there are lots of conversion involved like data type conversions etc. As python-C API approach is based on API it is slow.}
 \end{itemize}
 
@@ -454,13 +476,13 @@ The following three reasons justifies the requirement of a built in thermodynami
 
 \begin{itemize}
 
-\item The two approaches as described in the previous chapter imports DWSIM's thermodynamic engine in openmodelica. This means that the thermodynamic engine is sitting outside openmodelica and has to called each and every time a thermodynamic property is to be calculated. This process is too time consuming, thus making it impossible to solve complex models involving rigorous thermodynamics calculations. 
+\item The two approaches as described in the previous chapter imports DWSIM's thermodynamic engine in openmodelica. This means that the thermodynamic engine is sitting outside openmodelica and has to be called each and every time a thermodynamic property is to be calculated. This process is too time consuming, thus making it impossible to solve complex models involving rigorous thermodynamics calculations. 
 
 \item As DWSIM's thermodynamic is external to openmodelica, it appears to be a black box to openmodelica, where inputs are send and calculated values are obtained which are solved by DWSIM's solver. Openmodelica is unable to access the thermodynamic equations and therefore it is totally unaware of the nature of these equations. On the other hand if these equations are available in openmodelica itself, they can be solved simultaneously with mass and energy balance thereby solving all the equations simultaneously using openmodelica's own solver. This seems to be lot faster as openmodelica now knows the nature of these equations and they are solved internally by openmodelica itself.
 
 \item Another key point to be considered is as described in chapter four, openmodelica has a rich set of nonlinear and ODE solvers which are written in C. This makes the solving process too fast. Whereas DWSIM solvers are written in C\# which is slower than C in terms of computation time required. Consequently, the calculation of thermodynamic properties , which are highly nonlinear equations, is much faster in openmodelica than DWSIM. 
 
-\item The problem with DTL approach is that as DTL is a dll file it is supported only in windows. Infact the concept of COM is only supported by windows. Therefore, this approach dosen't work in other operation systems like linux and mac. Whereas, the build in thermodynamics is a part of openmodelica itself and openmodelica is compatible with every operating system. There the built in thermodynamic works on multi platform.
+\item The problem with DTL approach is that as DTL is a dll file it is supported only in windows. Infact the concept of COM is only supported by windows. Therefore, this approach dosen't work in other operation systems like linux and mac. Whereas, the build in thermodynamics is a part of openmodelica itself and openmodelica is compatible with every operating system. Therefore the built in thermodynamic should be multi platform.
 
 \end{itemize}
 
@@ -471,9 +493,9 @@ The following three reasons justifies the requirement of a built in thermodynami
 Chemsep is an open source database, written in \textbf{xml} format, of over six hundred compounds with a comprehensive set of thermodynamic properties of each compound. It also has an extensive database of binary interaction parameters for thermodynamic packages like NRTL, Peng Robinson, UNIQUAC, SRK etc. Most of the thermodynamic properties are calculated by using empirical equations which are functions of temperature or pressure. Chemsep database includes the constants which are used in these equations. Therefore, chemsep database is a comprehensive database that can be used to built a powerful and robust thermodynamic engine.
 
 \item{\textbf{Porting Chemsep database into Openmodelica}} \\
-As described in the previous section chemsep database is written in xml format. This xml data has to be re written in such a form which can be understood by openmodelica. Therefore, each compound (including all its thermodynamic properties) is replicated as a single class in openmodelica as shown in figure \ref{fig:BT1}. The properties are given abbreviations ( as shown in table \ref{tab:indprop}) so that they can be called continently. The conversion from xml to openmodelica classes is carried out by developing a python script (see Appendix \ref{appenC} ) which automates this process, thus making it fast and robust. 
+As described in the previous section chemsep database is written in xml format. This xml data has to be re written in such a form which can be understood by openmodelica. Therefore, each compound (including all its thermodynamic properties) is replicated as a single class in openmodelica as shown in figure \ref{fig:BT1}. The properties are given abbreviations ( as shown in table \ref{tab:indprop}) so that they can be called conveniently. The conversion from xml to openmodelica classes is carried out by developing a python script (see Appendix \ref{appenC} ) which automates this process, thus making it fast and robust. 
 
-Now one can extract any independent property of a compound by the \textbf{.} operator followed by the property relevant abbreviation. For example the critical temperature (Tc) of methane can be accessed by \textbf{Methane.Tc}. Similarly, all the properties of any compound can be accessed in the same way as shown in table \ref{tab:indprop}. \\
+Now, one can extract any independent property of a compound by the \textbf{.} operator followed by the property relevant abbreviation. For example the critical temperature (Tc) of methane can be accessed by \textbf{Methane.Tc}. Similarly, all the properties of any compound can be accessed in the same way as shown in table \ref{tab:indprop}. \\
 \end{itemize}
 
 \begin{figure}
@@ -508,7 +530,7 @@ Absolute enthalpy & Compound.ABSENT \\ \hline
 
 \subsection{Development of Thermodynamic Functions}
 
-As discussed earlier most of the thermodynamic properties of pure compounds which depends on temperature or pressure are in the form of equations which includes constants and an independent variable (temperature and pressure). These properties are written in the form of functions in openmodelica. The arguments to these functions are the independent variable (temperature, pressure, composition) and the name of the coefficients respective compound whose properties have to be calculated. The coefficients can be accessed by instanciating the base compound class. The functions returns the calculated property. For example the vapor pressure of methane at 300 K can be calculated by first instanciating the base methance class and then calling \textbf{Pvap(water.VP, 373)}. Where Pvap is a generic function to calculate the vapor pressure of any compound at any given temperature. The whole process is shown in figure \ref{fig:BT2}.Similarly, all other thermodynamic properties can be calculated using their respective functions as shown in table \ref{tab:depprop}.
+As discussed earlier most of the thermodynamic properties of pure compounds which depends on temperature or pressure are in the form of equations which includes constants and an independent variable (temperature and pressure). These properties are written in the form of functions in openmodelica. The arguments to these functions are the independent variable (temperature, pressure, composition) and the coefficients of the respective compound whose properties have to be calculated. The coefficients can be accessed by instantiating the base compound class. The functions then returns the calculated property. For example the vapor pressure of methane at 300 K can be calculated by first instantiating the base methane class and then calling \textbf{Pvap(water.VP, 373)}. Where Pvap is a generic function to calculate the vapor pressure of any compound at any given temperature. The whole process is shown in figure \ref{fig:BT2}. Similarly, all other thermodynamic properties can be calculated using their respective functions as shown in table \ref{tab:depprop}.
 
 \begin{figure}
 \centering
@@ -559,8 +581,8 @@ The following EOS models are developed in openmodelica \cite{DWSIM}.
 The binary interaction parameters for each of the EOS and acitivity coefficient models have been extracted from chemsep database where they are saved in a .dat file. The following procedure is used to port all the binary interaction parameters to openmodelica. 
 
 \begin{itemize}
-\item First, the dat file is converted to as .csv file as python is very much comfortable with csv format. To accomplish this sublime editor is used which makes this task simple enough.
-\item This csv is them converted to an openmodelica function by a python script (Appendix C) which converts the compound names and the binary interaction parameters as an array.
+\item First, the dat file is converted to a csv file as python is very much comfortable with csv format. To accomplish this sublime editor is used which makes this task simple enough.
+\item This csv is then converted to an openmodelica function by a python script (Appendix C) which converts the compound and the binary interaction parameters as an array.
 \end{itemize}
 
 \begin{figure}
@@ -679,12 +701,12 @@ UNIQUAC activity coefficient model is used as the phase equilibria model.
 \label{omcode}
 \end{figure}
 
-Figure \ref{omcode} decribes the code used to simulate the flash. The first four lines specifies variables which carries the feed specifications (temperature, pressure, composition, flowarate). The next set of lines instanciate the compound class ethanol and water and creates an array of the same. The next line \textbf{extends UNIQUAC} is used to inherit the already developed UNIQUAC class (which has all the equations for UNIQUAC model). By inheriting a class all the equations and variables of the inherited class are actually dragged and added to the class which inherits it. Therefore, all the UNIQUAC equations are added to the equation section of the Flash class.The next set of variables initializes and defines the unknown variables that needs to be calculated. Finally, the equation section has all the modelling equations required for the simulation of the flash. 
+Figure \ref{omcode} describes the code used to simulate the flash. The first four lines specifies variables which carries the feed specifications (temperature, pressure, composition, flowarate). The next set of lines instanciate the compound class ethanol and water and creates an array of the same. The next line \textbf{extends UNIQUAC} is used to inherit the already developed UNIQUAC class (which has all the equations for UNIQUAC model). By inheriting a class all the equations and variables of the inherited class are actually dragged and added to the class which inherits it. Therefore, all the UNIQUAC equations are added to the equation section of the Flash class. The next set of variables initializes and defines the unknown variables that needs to be calculated. Finally, the equation section has all the modelling equations required for the simulation of the flash. 
 
 \subsection{How openmodelica handles and solves the model equations}
-As described in chapter 5, openmodelica follows an equation oriented approach where all the equations are solved simultaneously. Refering to the above example openmodelica collects all the model equations along with the thermodynamic equations (UNIQUAC equations in this case) and then solves them simultaniously. The fact that thermodynamic equations are solved simultaniously along with the modelling equations can be shown by executing the transformational debugger which shows all the equations that are to be solved simultaniously. Figure \ref{TD} shows the snapshot of the transformational debugger for the above flash example. It can be seen that the all the equations irrespective of their type (thermodynamc or mass balance) are solved simultaneously.
+As described in chapter 5, openmodelica follows an equation oriented approach where all the equations are solved simultaneously. Referring to the above example openmodelica collects all the model equations along with the thermodynamic equations (UNIQUAC equations in this case) and then solves them simultaneously. The fact that thermodynamic equations are solved simultaneously along with the modelling equations can be shown by executing the transformational debugger which shows all the equations that are to be solved simultaneously. Figure \ref{TD} shows the snapshot of the transformational debugger for the above flash example. It can be seen that the all the equations irrespective of their type (thermodynamic or mass balance) are solved simultaneously.
 
-By default openmodelica uses \textbf{Dassl} to solve differential algebric equations and a hybrid solver for solving algebric equaitons. However, we can choose a different solver from the list of solvers. This is achieved by going in the simulation setup window, where one can specify all the details regarding the simulation execution for example the time period, the number of intervals for simulation etc. The output of openmodelica's successful simulation is a mat or a csv file.
+By default openmodelica uses \textbf{Dassl} to solve differential algebric equations and a hybrid solver for solving algebraic equations. However, we can choose a different solver from the list of solvers. This is achieved by going in the simulation setup window, where one can specify all the details regarding the simulation for example the time period, the number of intervals for simulation etc. The output of openmodelica's successful simulation is a mat or a csv file.
 
 \begin{figure}
 \centering
@@ -710,7 +732,7 @@ P = \gamma_2.x_2.Pvap_2 + \gamma_1.x_1.Pvap_1 \label{eqn:RL3}
 \intertext{Here $\gamma_1$ and $\gamma_2$ are complex nonlinear functions of temperature and liquid compositions and $Pvap_1$ and $Pvap_2$ are functions of temperature} \nonumber
 \end{align} 
 
-The pressure is kept constant at 1 atm. The value of $x_1$ (mole fraction of ethanol) is varied from 0 to 1 with an interval of 0.1 and for each value of $x_1$ the corresponding value of temperature if calculated by equation \ref{eqn:RL3}. Figure \ref{fig:BP} shows the resulting tx curve as calculated by the developed built in thermodynamics in openmodelica.
+The pressure is kept constant at 1 atm. The value of $x_1$ (mole fraction of ethanol) is varied from 0 to 1 with an interval of 0.1 and for each value of $x_1$ the corresponding value of temperature is calculated by equation \ref{eqn:RL3}. Figure \ref{fig:BP} shows the resulting tx curve as calculated by the developed built in thermodynamics in openmodelica.
 
 \begin{figure}[t]
 \centering
@@ -746,7 +768,7 @@ The pressure is kept constant at 1 atm. The value of $y_1$ (mole fraction of eth
 
 This figure is verified by reproducing the same problem in Aspen plus. Figure \ref{aspen} depicts the Txy curve for ethanol water system generated in Aspen plus. It clearly shows that the plot generated in openmodelica completely replicates the one generated in Aspen plus. 
 
-Reliable azeotropic data source by American Chemical Society \cite{Az} says that at 1 atm the azeotropic composition and temperatures are 0.96 mole fraction ethanol and 351.4 K. These valuses are also in agreement with the openmodelica results.
+Reliable azeotropic data source by American Chemical Society \cite{Az} says that for ethanol-water system, at 1 atm, the azeotropic composition and temperatures are 0.96 mole fraction ethanol and 351.4 K. These values are also in agreement with the openmodelica results.
 
 \begin{figure}
 \centering
@@ -755,15 +777,15 @@ Reliable azeotropic data source by American Chemical Society \cite{Az} says that
 \label{aspen}
 \end{figure}
 
-The same simulation when carried out with the imported DWSIM's thermodynamic engine in openmodelica resulted in an execution time of about 4 minutes whereas for the built in thermodynamic engine the execution time was fraction of a second.  
+The same simulation when carried out with the imported DWSIM's thermodynamic engine in openmodelica resulted in an execution time of about 20 minutes whereas for the built in thermodynamic engine the execution time was fraction of a second.  
 
 \end{itemize}
 \section{Steady State Flash}
 \subsection{The Model}
-In this model a steady state flash is simulated in openmodelica using the developed thermodynamics. The components involved are methanol, ethanol and water. The thermodynamic package used is NRTL. To check the design efficiency of the developed thermodynamic engine in openmodelica , the output composition of the vapor product is specified, while the temperature at which this desired composition of vapour is attained needs to be calculated. Therefore, it is a design problem. To carry out this simulation in DWSIM, we have to use an adjust operation which uses a trial and error method and is time consuming.
+In this model a steady state flash is simulated in openmodelica using the developed thermodynamics. The components involved are methanol, ethanol and water. The thermodynamic package used is NRTL. To check the design efficiency of the developed thermodynamic engine in openmodelica , the output composition of the vapor product is specified, while the temperature at which this desired composition of vapor is attained needs to be calculated. Therefore, it is a design problem. To carry out this simulation in DWSIM, we have to use an adjust operation which uses a trial and error method and is time consuming.
 
 \subsection{Problem Statement}
-The flowrate and the composition of the feed is specified. Pressure is kept constant at 1 atm. The problem is divided into three parts with each having different desired vapour compositions. The temperature and all the unknows compositions and flowrates need to be calculated. The schematic of the problem statement is shown in figure \ref{Flash}.
+The flowrate and the composition of the feed is specified. Pressure is kept constant at 1 atm. The problem is divided into three parts with each having different desired vapor compositions. The temperature and all the unknowns compositions and flow rates need to be calculated. The schematic of the problem statement is shown in figure \ref{Flash}.
 
 \begin{figure}
 \centering
@@ -790,7 +812,7 @@ y_i = K_ix_i \\
 \end{gather*}
 
 \subsection{Results}
-Three cases were studies. The desired vapor composition is different for each case. According to the VLE behavior the case with richest vapor computer- position (of more volatile component) should have the lowest temperature and the case with least vapor composition (of more volatile composition) should have the highest temperature. Table \ref{Tab:Flash} show the resulting tem- temperature for the three different cases.The simulation time taken was almost instant, whereas if DWSIM was used it takes five to ten seconds to simulate the same.
+For the three case studies the desired vapor composition is different for each case. According to the VLE behavior the case with richest vapor composition (of more volatile component) should have the lowest temperature and the case with least vapor composition (of more volatile composition) should have the highest temperature. Table \ref{Tab:Flash} show the resulting temperature and other compositions for the three different cases. The simulation time taken was almost instant, whereas if DWSIM was used it takes fifteen to twenty seconds to simulate the same.
 
 \begin{table}
 \centering
@@ -809,7 +831,7 @@ Desired Vapor Comp. & Temperature & Liquid Comp. \\ \hline
 
 \section{Semi-Batch Steam Distillation of a Binary Organic Mixture}
 \subsection{Problem background}
-This illustrative example involves semi-batch steam distil- lation of binary mixture. A schematic plot of the steam distillation apparatus is shown in Figure \ref{SD}. The organic mixture is charged into the still initially, and then steam is bubbled through continuously until the desired degree of separation has been reached. There are two different periods in the op- eration of the still: the heating period, until the boiling point temperature of the organic mixture is reached, and the distil- lation period. A brief description of the mathematical models for the two periods follows \cite{PHD}.
+This illustrative example involves semi-batch steam distil- lation of binary mixture. A schematic plot of the steam distillation apparatus is shown in Figure \ref{SD}. The organic mixture is charged into the still initially, and then steam is bubbled through continuously until the desired degree of separation has been reached. There are two different periods in the operation of the still: the heating period, until the boiling point temperature of the organic mixture is reached, and the distillation period. A brief description of the mathematical models for the two periods follows \cite{PHD}.
 
 \begin{figure}
 \centering
@@ -868,13 +890,13 @@ where $H_V$ is the molar enthalpy of the vapor phase; $h_{Lw}, h_{L1}, and h_{L2
 semi-batch steam distillation of an n-octane (comp. 1) and n-decane
 (comp. 2) mixture. Initially M = 0.015 kmol of organics with
 composition $x_1$ = 0.725 is charged into the still. The initial
-temperature in the still is $T_0$ = 25 \degree C. Starting at time t = 0, steam at a temperature Tsteam = 99.2 \degree C is bubbled continuously through the organic phase at the rate of $M_S$ = 3.85e-5 kmol/s. All the steam is assumed to condense during the heating period. The ambient temperature is $T_E$ = 25 \degree C and the heat transfer coef cient between the still and the surrounding is UA = 1.05 J/s-K. The ambient pressure is P = 9.839E+04 Pa.
-Assumptions: 1) Ideal behavior of all components in pure state or mixture; 2) complete immiscibility of the water and the organic phases; 3) ideal mixing in the boiler; and 4) equi- librium between the organic vapor and its liquid at all times. The standard state for enthalpy calculations pure liquids at 0 \degree C and 1 atm. can be used.
+temperature in the still is $T_0$ = 25 \degree C. Starting at time t = 0, steam at a temperature Tsteam = 99.2 \degree C is bubbled continuously through the organic phase at the rate of $M_S$ = 3.85e-5 kmol/s. All the steam is assumed to condense during the heating period. The ambient temperature is $T_E$ = 25 \degree C and the heat transfer coefficient between the still and the surrounding is UA = 1.05 J/s-K. The ambient pressure is P = 9.839E+04 Pa.
+Assumptions: 1) Ideal behavior of all components in pure state or mixture; 2) complete immiscibility of the water and the organic phases; 3) ideal mixing in the boiler; and 4) equilibrium between the organic vapor and its liquid at all times. The standard state for enthalpy calculations pure liquids at 0 \degree C and 1 atm. can be used.
 
 \begin{itemize}
 \item Calculate and plot the still temperature (T), component mole fractions inside the still ($x_1, x_2, y_1, and y_2$), and the component mole fractions in the distillate ($x_1dist and x_2dist$) using the data and the initial values provided.
 \item Determine the lowest n-octane mole fraction in the
-feed that can yield a distillate concentration of $90\%$ of n-octane. Compute the percent recovery of n-octane in the distillate as function of its concentration in the feed. Vary the feed concentration in the range where the re- quirement for the n-octane concentration in the distillate is attainable.
+feed that can yield a distillate concentration of $90\%$ of n-octane. Compute the percent recovery of n-octane in the distillate as function of its concentration in the feed. Vary the feed concentration in the range where the requirement for the n-octane concentration in the distillate is attainable.
 \end{itemize}
 
 \subsection{Results}
@@ -912,9 +934,9 @@ One of the next objective will be to built a library of steady state and dynamic
 
 After developing the unit operation library, a GUI should be developed so that an end user could conveniently use the software without getting into the complexities of the code. The GUI will be a replication of the commercial process simulators so the it might be easy for the users to adapt.
 
-A collection of sample examples from various reliable sources should be simulated so as to verify the developed simulator, thus making it flawless. These sources might include examples for standard chemical engineering books and sample problems from commercial simulators like aspen plus.
+A collection of sample examples from various reliable sources should be simulated so as to verify the developed simulator, thus making it flawless. These sources might include examples from standard chemical engineering books and sample problems from commercial simulators like aspen plus.
 
-Another objective is to identify dynamic simulation problems of interest to chemical industry and coding them in OpenModelica. An industrial campaign is planned, to visit small scale industries, who canâ  afford consultancy services from big consulting firms using commercial simulators, to identify their problems and provide an efficient solution as now we have an open source simulator that can handle dynamic simulations as well.
+Another objective is to identify dynamic simulation problems of interest to chemical industry and coding them in OpenModelica. An industrial campaign is planned, to visit small scale industries, who can't afford consultancy services from big consulting firms using commercial simulators, to identify their problems and provide an efficient solution as now we have an open source simulator that can handle dynamic simulations as well.
 
 \appendix
 \chapter{Codes for Python-C API Approach}
@@ -923,11 +945,11 @@ Another objective is to identify dynamic simulation problems of interest to chem
 \begin{lstlisting}[language=Python]
 def Properties(Comp,Prop,PropType,TorP):
 import win32com. client
-dtlc = win32com.client.Dispatch(âDTL.Thermodynamics.Calculatorâ) dtlc . Initialize ()
-if PropType==âconstPropâ:
+dtlc = win32com.client.Dispatch(DTL.Thermodynamics.Calculator) dtlc . Initialize ()
+if PropType==constProp:
 elif
 elif
-PROPVALUE = dtlc.GetCompoundConstProp(Comp,Prop) PropType==âconstPDepPropâ :
+PROPVALUE = dtlc.GetCompoundConstProp(Comp,Prop) PropType==constPDepProp :
 TorP=float (TorP)
 PROPVALUE = dtlc.GetCompoundPDepProp(Comp,Prop,TorP)
 PropType==âconstTDepPropâ : TorP=float (TorP)
@@ -955,7 +977,7 @@ for j in range(4):
 x[ i ][ j]=float(pv[ i ][ j ])
 return x[k][l2]
 def BinaryInteractionParameters(PropPack,Comp1,Comp2,l2): import win32com. client
-dtlc = win32com.client.Dispatch(âDTL.Thermodynamics.Calculatorâ) dtlc . Initialize ()
+dtlc = win32com.client.Dispatch(DTL.Thermodynamics.Calculatorâ) dtlc . Initialize ()
 x=[1.0 ,1.0 ,1.0]
 l2=int ( l2 )
 val=dtlc . GetInteractionParameterSet (PropPack ,Comp1,Comp2)
@@ -1035,9 +1057,11 @@ double Property(char *Comp, char *Prop, char *PropType, double TorP)
 
 }
 
-double TwoPhaseProperty(char *propPack, double flashAlg, double pressure, double temp, char *comp1, char *comp2, double mf1, double mf2, double i, double j)
+double TwoPhaseProperty(char *propPack, double flashAlg, double pressure, double temp, 
+char *comp1, char *comp2, double mf1, double mf2, double i, double j)
 {
-	PyObject *pName, *pModule, *pDict, *pFunc, *pValue, *palg, *pArgs, *pcomp1, *pcomp2, *pmf1, *pmf2, *ptemp, *ppres, *ppack, *pi, *pj;
+	PyObject *pName, *pModule, *pDict, *pFunc, *pValue, *palg, *pArgs, 
+*pcomp1, *pcomp2, *pmf1, *pmf2, *ptemp, *ppres, *ppack, *pi, *pj;
 	double mw = 0.0;
 	// Initialize the Python Interpreter
 	Py_Initialize();
