@@ -370,7 +370,7 @@ Openmodelica offers an excellent graphical facility which is drag and drop compo
 \item{As every unit operation has to be coded user has to provide the solver with good initial guess values otherwise the model may not converge.}
 \end{itemize}
 
-\chapter{Importing the Thermodynamic engine of DWSIM in Openmodelica.}
+\chapter{Importing the Thermodynamic engine of DWSIM in Openmodelica}
 
 \section{Motivation}
 \begin{itemize}
@@ -389,7 +389,7 @@ As openmodelica supports only C language, it would have been best to call DTL fr
 
 The package \textbf{win32com} in python can be used to establish connection with COM enabled objects. Therefore, using win32com we can call the DTL library and hence all the thermodynamic routines available in it.
 
-Python-C API is one of the approach through which this integration of openmodelica and DTL is carried out successfully. Figure \ref{PyC1} describes the flow of the approach. Following points describes the structure and flow of this approach \ref{appenA}.
+Python-C API is one of the approach through which this integration of openmodelica and DTL is carried out successfully. Figure \ref{fig:PyC1} describes the flow of the approach. Following points describes the structure and flow of this approach \ref{appenA}.
 
 \begin{figure}
 \centering
@@ -404,7 +404,7 @@ Python-C API is one of the approach through which this integration of openmodeli
 \item{Finally as openmodelica is compatible with C, the inputs are then sent to C functions through openmodelica external C functions, which in turn calls the python functions, which in turn calls DTL routines. The codes for external function in openmodelica are shown in Appendix A.}
 \end{itemize}
 \section{Client-Server (sockets) approach to integrate OpenModelica with DTL} \cite{socket}
-Client-Server or socket approach is another approach through which the integration is successful. Figure \ref{PyC2} describes the data flow of the approach. Following points describes the structure and flow of this approach \ref{appenB}.
+Client-Server or socket approach is another approach through which the integration is successful. Figure \ref{fig:PyC2} describes the data flow of the approach. Following points describes the structure and flow of this approach \ref{appenB}.
 
 \begin{figure}
 \centering
@@ -465,7 +465,7 @@ The above two examples clearly states that Client-Server approach is much faster
 \item{Whenever API is used in any program it makes it slow as there are lots of conversion involved like data type conversions etc. As python-C API approach is based on API it is slow.}
 \end{itemize}
 
-\chapter{Development of a built in Thermodynamic engine in Openmodelica.}
+\chapter{Development of a built in Thermodynamic engine in Openmodelica}
 
 \section{Motivation}
 
@@ -694,20 +694,61 @@ UNIQUAC activity coefficient model is used as the phase equilibria model.
 Figure \ref{omcode} describes the code used to simulate the flash. The first four lines specifies variables which carries the feed specifications (temperature, pressure, composition, flowarate). The next set of lines instanciate the compound class ethanol and water and creates an array of the same. The next line \textbf{extends UNIQUAC} is used to inherit the already developed UNIQUAC class (which has all the equations for UNIQUAC model). By inheriting a class all the equations and variables of the inherited class are actually dragged and added to the class which inherits it. Therefore, all the UNIQUAC equations are added to the equation section of the Flash class. The next set of variables initializes and defines the unknown variables that needs to be calculated. Finally, the equation section has all the modelling equations required for the simulation of the flash. 
 
 \subsection{How openmodelica handles and solves the model equations}
-As described in chapter 5, openmodelica follows an equation oriented approach where all the equations are solved simultaneously. Referring to the above example openmodelica collects all the model equations along with the thermodynamic equations (UNIQUAC equations in this case) and then solves them simultaneously. The fact that thermodynamic equations are solved simultaneously along with the modelling equations can be shown by executing the transformational debugger which shows all the equations that are to be solved simultaneously. Figure \ref{TD} shows the snapshot of the transformational debugger for the above flash example. It can be seen that the all the equations irrespective of their type (thermodynamic or mass balance) are solved simultaneously.
+As described in chapter 5, openmodelica follows an equation oriented approach where all the equations are solved simultaneously. Therefore, for chemical engineering problems, openmodelica collects all the model equations along with the thermodynamic equations and then solves them simultaneously. The fact that thermodynamic equations are solved simultaneously along with the modelling equations is demonstrated by the following example.
 
-By default openmodelica uses \textbf{Dassl} to solve differential algebric equations and a hybrid solver for solving algebraic equations. However, we can choose a different solver from the list of solvers. This is achieved by going in the simulation setup window, where one can specify all the details regarding the simulation for example the time period, the number of intervals for simulation etc. The output of openmodelica's successful simulation is a mat or a csv file.
+A simplest flash model is simulated for an ideal system of benzene and toluene. The feed is an equimolar mixture of benzene and toluene, which is flased at 1 atm. As the system is ideal the VLE model is taken to be Raoult's law. The unknown variables that needs to be calculated are compostions and flowrates of liquid and vapour streams. Following are the modelling equations for the flash model.
+
+
+Mass balance \\
+\begin{gather}
+z_iF = x_iL + y_iV
+\label{massbal}
+\end{gather}
+
+Summation Equation \\
+\begin{gather}
+\sum_{i=1}^2y_i = 1
+\label{summeqn}
+\end{gather}   
+
+Raoult's law \\
+\begin{gather}
+y_iP = x_iP_i^{sat}
+\label{rlaw}
+\end{gather}  
+
+Where F,L,V  feed,liquid,vapour flowrate resp. (100kmol/hr) and $z_i,x_i,y_i$ feed,liquid,vapour compositions respectively. $P_i^{sat}$ is the saturated vapour pressure  \\
 
 \begin{figure}
 \centering
-\includegraphics[width=0.9\linewidth]{TD}
-\caption{Snapshot of transformational debugger in openmodelica.}
-\label{TD}
+\includegraphics[width=1\linewidth]{FLmodel}
+\caption{Openmodelica code for ideal flash model.}
+\label{8.1}
 \end{figure}
+
+Figure \ref{8.1} shows the openmodelica code for the flash model. It can be seen that this model involves only mass balance and summation(equations \ref{massbal} and \ref{summeqn}). To incorporate raoult's law, another class named as \textbf{RaoultLaw} is inherited by the flash model. Figure \ref{8.2} shows the openmodelica code for this class. It can be seen that this class involves only the thermodynamic equations (equation \ref{rlaw}). Therefore, at this stage the thermodynamics and the model equations are in separate classes.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{RLmodel}
+\caption{Openmodelica code for Raoult's Law thermodynamic model}
+\label{8.2}
+\end{figure}
+
+Before simulating a model, openmodelica instanciate it by itself. It is at this stage that openmodelica's compiler collets all the equations and dumps them in the \textbf{equation section} of the instanciated model. Figure \ref{8.3} shows the instance of the flash model as generated by openmodelica. It is clear that now this model involves both the modelling equations and the thermodynamic equations. 
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{Combmodel}
+\caption{Combined model generated by openmodelica}
+\label{8.3}
+\end{figure}
+
+After the instance of the main model is generated, openmodelica start solving all the equations present in the \textbf{equation} section of the instanciated model. By default openmodelica uses \textbf{Dassl} to solve differential algebric equations and a hybrid solver for solving algebraic equations. However, we can choose a different solver from the list of solvers. This is achieved by going in the simulation setup window, where one can specify all the details regarding the simulation for example the time period, the number of intervals for simulation etc. The output of openmodelica's successful simulation is a mat or a csv file.
 
 \chapter{Solved examples in Openmodelica using the built in thermodynamics}
 
-\section{Generating VLE curve (Txy) for ethanol water system using the UNIQUAC model.}
+\section{Generating VLE curve (Txy) for ethanol water system using the UNIQUAC model}
 
 \begin{itemize}
 \item {\textbf{Bubble point}} \\
@@ -935,6 +976,81 @@ Plots \ref{SD3} and \ref{SD4} shows the results from the actual thesis.
 \end{figure}
 
 It can be seen that the results of openmodelica are in agreement with the original thesis. Therefore, the built in thermodynamics can be claimed to be robust and accurate.
+
+\section{Batch Distillation}
+\subsection{The Model}
+This case study is taken from the book Chemical Engineering Dynamic Modelling with PC simulation \cite{ingham}. For this example, a column containing four theoretical plates and reboiler is assumed, together with constant volume conditions in refux drum. The liquid behavior is, however, non-ideal for this water-methanol system. Constant holdup is considered for each tray and the vapour and liquid flowrates are assumed to be constant throughout the column. The efficiency of each tray is considered to be one. The thermodynamic used is NRTL as methanol- water is a non-ideal system. The block diagram of the model is shown in figure \ref{Ingham1}.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{Ingham1}
+\caption{The four stage batch distillation column \cite{ingham}}
+\label{Ingham1}
+\end{figure}
+
+\subsection{Simulation Details and Equations}
+For convenience, only four stage were used in this model. Here the only thermodynamic calculations which were required were calculation of bubble point temperature at each tray and the corresponding vapour compositions.The condenser is a total condenser. Molar holdup on each tray was taken to be 20. Initial molar holdup in the reboiler is 2500. Initial concentration in the reboiler was 0.8 mole fraction Methanol. Vapour boilup rate is 10. The pressure is constant at 1 bar. The column was started with total reflux and then it was
+reduced to 10 at t = 20. Following equation describe the model.
+
+Component balances for the more volatile component on any plate n.
+\begin{gather*}
+M\frac{dx_n}{dt} = L(x_{n-1} - x_n) + V(y_{n+1} - y_n)
+\end{gather*}
+Equilibrium equations for the trays.
+\begin{gather*}
+y_{n,i} = K_ix_{n,i}
+\end{gather*}
+Where n stands for the tray and i for the compound.\\
+Summation Equations
+\begin{gather*}
+y_1 + y_2 = 1 \\
+x_1 + x_2 = 1
+\end{gather*}
+where 1 is the more volatile component and 2 is the less volatile component. \\
+Component balance for the reboiler
+\begin{gather*}
+\frac{d(M_Bx_B)}{dt} = Lx_4 - Vy_B
+\end{gather*}
+Equilibrium and summation equations for the reboiler is same as that of the trays. \\
+For reflux drum and condenser
+\begin{gather*}
+\frac{dx_0}{dt} = Vy_1 - (L + D)x_0 \\
+\frac{L}{D} = R \\
+V = L + D
+\end{gather*}
+
+\subsection{Results}
+Figures \ref{Ingham4} and \ref{Ingham2}\cite{ingham} shows the composition of methanol increases very fast in starting as there is total reflux initially and then in increases with a low rate an now the reflux ratio is 10. The roboiler is slowly getting leaner in methanol as the holdup in roboiler is very high as compared to the trays. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{Ingham4}
+\caption{Methanol composition profiles of liquid holdup in reboiler and vapour leaving form tray 1 (as generated in openmodelica)}
+\label{Ingham4}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{Ingham2}
+\caption{Methanol composition profiles of liquid holdup in reboiler and vapour leaving form tray 1 \cite{ingham}}
+\label{Ingham2}
+\end{figure}
+
+Figures \ref{Ingham5} and \ref{Ingham3} shows that the temperature of all the trays drastically decreases and becomes less than the reboiler. The reboiler temperature changes slowly because the holdup is very high as compared to trays. One can also notice that as we move upwards along the column the temperature, this is due to the fact that the as we move upwards along the column the composition gets richer in more volatile component.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{Ingham5}
+\caption{Temperature profiles of tray 1,2,3,4 and reboiler with time as generated in openmodelica}
+\label{Ingham5}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{Ingham3}
+\caption{Temperature profiles of tray 1,2,3,4 and reboiler with time\cite{ingham}}
+\label{Ingham3}
+\end{figure}
 
 \chapter{Future Work}
 One of the next objective will be to built a library of steady state and dynamic unit operations in openmodelica. As now openmodelica has its own thermodynamic engine, a library of steady state unit operations should be modeled. Another prime objective is to build a library of dynamic unit operations in openmodelica to carry out calculations of batch processes.

@@ -1,11 +1,26 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: MtechIIReport.aux
 The style file: plain.bst
+Case mismatch error between cite keys Ingham and ingham
+---line 192 of file MtechIIReport.aux
+ : \citation{Ingham
+ :                 }
+I'm skipping whatever remains of this command
 Database file #1: ref.bib
-Warning--I didn't find a database entry for "PDH"
+Repeated entry---line 111 of file ref.bib
+ : @misc{Chemcad
+ :              ,
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in ST1
+Warning--to sort, need author or key in ST2
 Warning--to sort, need author or key in GP
+Warning--to sort, need author or key in ACM
+Warning--to sort, need author or key in Chemcad
+Warning--to sort, need author or key in DIPPR
+Warning--to sort, need author or key in Simulis
 Warning--to sort, need author or key in fprops
 Warning--to sort, need author or key in api
 Warning--empty institution in socket
 Warning--empty institution in DWSIM
+Warning--empty journal in Sidebyside
 Warning--empty institution in PHD
-(There were 7 warnings)
+(There were 2 error messages)

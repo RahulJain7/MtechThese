@@ -1,7 +1,25 @@
 \begin{thebibliography}{10}
 
+\bibitem{ST1}
+\url{http://spoken-tutorial.org/tutorial-search/?search_foss=DWSIM&search_language=English}.
+
+\bibitem{ST2}
+\url{http://spoken-tutorial.org/tutorial-search/?search_foss=OpenModelica&search_language=English}.
+
 \bibitem{GP}
 \url{http://www.psenterprise.com/gproms/physprops/index.html}.
+
+\bibitem{ACM}
+\url{http://www.aspentech.com/email/email_archive/acm_webinar-final.pdf}.
+
+\bibitem{Chemcad}
+\url{http://web.thu.edu.tw/g96310005/www/6_thermo.pdf}.
+
+\bibitem{DIPPR}
+\url{http://www.aiche.org/dippr/about}.
+
+\bibitem{Simulis}
+\url{http://www.prosim.net/en/software-simulis-thermodynamics-mixture-properties-and-fluid-phase-equilibria-calculations-3.php}.
 
 \bibitem{fprops}
 \url{http://ascend4.org/FPROPS}.
@@ -43,15 +61,20 @@ L.H. Horsley.
 \newblock Azeotropic data, iii.
 \newblock {\em American Chemical Society}, pages 1--1, 1973.
 
+\bibitem{ingham}
+John Ingham.
+\newblock {\em Chemical Engineering Dynamics Modelling With PC Simulation.}
+\newblock VCH Publishers, 1992.
+
 \bibitem{DWSIM}
 Daniel Medeiros.
 \newblock Dwsim technical document.
 \newblock Technical report, 2015.
 
-\bibitem{ACM}
-Zac Peers.
-\newblock
-  \url{http://www.aspentech.com/email/email_archive/acm_webinar-final.pdf}.
+\bibitem{Sidebyside}
+Kannan~M Moudgalya.
+\newblock Campaign for it literacy through foss and spoken tutorials.
+\newblock 2014.
 
 \bibitem{ascend}
 Polling Reid, Prausnitz.
