@@ -62,7 +62,7 @@ Prof. D. B. Phatak(Chairperson) \\
 \newpage
 
 \section*{Declaration}
-I, \textbf{Rahul Jain}, Roll No. 143020028, declare that the work presented in this report is carried out by my own. Also, wherever someone else's ideas have been used, they have been cited and nothing has been copied verbatim. Due credit has been given to all the contibutors and authors, whose ideas and theories reflecting in this project report. \\
+I, \textbf{Rahul Jain}, Roll No. 143020028, declare that the work presented in this report is carried out by my own. Also, wherever someone else's ideas have been used, they have been cited and nothing has been copied verbatim. Due credit has been given to all the contributors and authors, whose ideas and theories reflecting in this project report. \\
 \vspace{3cm}
 
 \begin{flushright}
@@ -99,7 +99,7 @@ Presently many commercial chemical process simulators are available, which can b
 The open source chemical process simulators that are currently available, have some drawbacks, due to which they cannot replace the commercial process simulators. DWSIM is one such steady state process simulator which is open source and has excellent built in thermodynamic and unit operations, but the only drawback is that it is not fit for design and dynamic simulation. Whereas openmodelica is a state of art simulation and modeling environment, which is excellent for design and dynamic simulations but doesn't have a thermodynamic engine and library of unit operations. Therefor if one can successfully develop a thermodynamic engine in openmodelica, it can become an alternate to the commercial chemical process simulators, which is beneficial for both small scale industries and academic institutes. There are two ways of carrying out the above task. 
 \begin{itemize}
 \item Integrating the thermodynamic engine of DWSIM with openmodelica. In this process the thermodynamic calculations will be performed by DWISIM where as the unit operation modeling equations which are mostly mass and energy balances will be solved by openmodelica solvers. 
-\item Developing a new thermodynamic engine from scratch in openmodelica itself. This includes the development of compound database and all the thermodynamic routines and VLE packages required for a powerful thermodynamic engine. In this approach all the thermodynamic equations and the unit operations modelling equations will be solved simultaneously by openmodelica solvers.
+\item Developing a new thermodynamic engine from scratch in openmodelica itself. This includes the development of compound database and all the thermodynamic routines and VLE packages required for a powerful thermodynamic engine. In this approach all the thermodynamic equations and the unit operations modeling equations will be solved simultaneously by openmodelica solvers.
 \end{itemize}
 
 \chapter{Open Source Chemical Process Simulator}
@@ -108,14 +108,14 @@ The open source chemical process simulators that are currently available, have s
 
 \subsection{What is it ?}
 Chemical Process simulator is a software that can be used to design, optimize, analyze and develop chemical processes.Chemical Process simulation is a model based representation of unit operations in software. Basic prerequisites   are a thorough knowledge of chemical and physical properties of pure components and mixtures, of reactions, and of mathematical models which, in combination, allow the calculation of a process in computer.
-Chemical Process simulation software describes processes in flow diagrams where unit operations are positioned and connected by product streams. The software has to solve the mass and energy balance to reach a stable operating point. The goal of a process simulation is to reach optimal conditions for an examined process. This is essentially an optimization problem which has to be solved in an iterative process.
+Chemical process simulation software describes processes in flow diagrams where unit operations are positioned and connected by product streams. The software has to solve the mass and energy balance to reach a stable operating point. The goal of a process simulation is to reach optimal conditions for an examined process. This is essentially an optimization problem which has to be solved in an iterative process.
 Chemical Process simulation always use models which introduce approximations and assumptions but allow the description of a property over a wide range of temperatures and pressures which might not be covered by real data. Models also allow interpolation and extrapolation within certain limits and enable the search for conditions outside the range of known properties.
 A chemical process simulator which is free of cost, with its source available and editable is knows as open source chemical process simulator.
 
 \subsection{Various Components of a Chemical Process Simulator}
 \begin{itemize}
 \item{\textbf{Component Database}} \\
-A component database is a library of all the components and their physical properties. It contains constant and equations for calculation of physical properties at different pressures and temperatures. Some of these physical property constants are Antoin's coefficients, heat capacity, density, heat of formation, critical temperature and pressure. The simulator accesses all the physical property data from this database and hands it over to the solver at run time. Some of the commercially available component databases are DCHEMA and Nist. Chemsep and DWSIM are two open source component database.
+A component database is a library of all the components and their physical properties. It contains constant and equations for calculation of physical properties at different pressures and temperatures. Some of these physical property constants are Antoine's coefficients, heat capacity, density, heat of formation, critical temperature and pressure. The simulator accesses all the physical property data from this database and hands it over to the solver at run time. Some of the commercially available component databases are DCHEMA and Nist. Chemsep and DWSIM are two open source component database.
 
 \item{\textbf{Thermodynamics}} \\
 All chemical process simulator need a library of routines that calculate thermodynamic data such as VLE parameters, dew and bubble point pressures and temps., vapor and liquid enthalpies, viscosities, densities, and other physical and transport properties of pure component and mixtures .Various thermodynamic models have been developed to fulfill this requirement as a single model cannot predict the properties of all the components.All these thermodynamic models are present in thermodynamic engine of a process simulator.It is the thermodynamic engine that decides how robust a simulator is. Choosing the right model is extremely important because using the wrong model, or estimating a physical property incorrectly, can lead to inaccurate results for the overall simulation.
@@ -178,9 +178,9 @@ This way both the consulting firms and the manufacturing firms can be mutually h
 \subsection{Amenable to the conduct of large scale training}
 As open source simulators are freely available, anyone who is an expert can share his/her expertise without any legal constraints. One such powerfull training technique is spoken tutorial.The Spoken Tutorial project is an initiative of National Mission on Education through ICT, MHRD, Govt. of India to promote IT literacy through Open Source Software. The Spoken Tutorial Project is about teaching and learning a particular FOSS (Free and Open Source Software) like Linux, Scilab, LaTeX, PHP, MySQL, Java, C/C++, LibreOffice etc. via an easy Video tool - Spoken Tutorials. 
 
-Spoken tutorials possesses an excellent method called side-by-side method which helps in active learning. In this approaches the learner should open the spoken tutorial in a reduced sized window and open the corresponding software side-by-side. This process leads toeffective learning. This is possible only with open source software as the learner can easily attain the software locally and can learn it with the corresponding freely available spoken tutorial \cite{Sidebyside}.
+Spoken tutorials possesses an excellent method called side-by-side method which helps in active learning. In this approaches the learner should open the spoken tutorial in a reduced sized window and open the corresponding software side-by-side. This process leads to effective learning. This is possible only with open source software as the learner can easily attain the software locally and can learn it with the corresponding freely available spoken tutorial \cite{Sidebyside}.
 
-Spoken tutorials are availble for two open source process simulators namely, DWSIM\cite{ST1} and Openmodelica\cite{ST2}. The series of videos available for each simulator, starts from the basic understanding of the software and covers almost all the aspects as we go towards the end of the series.  
+Spoken tutorials are available for two open source process simulators namely, DWSIM\cite{ST1} and Openmodelica\cite{ST2}. The series of videos available for each simulator, starts from the basic understanding of the software and covers almost all the aspects as we go towards the end of the series.  
 
 \chapter{Literature Survey}
 \section{Available commercial chemical process simulation environments and their thermodynamic engine}
@@ -197,7 +197,7 @@ Multiflash is specifically designed for equation-orientated modeling, providing 
 PSE can supply Multiflash with the DIPPR database supplied by the AIChE, providing component data for thousands of components.
 
 \item \textbf{OLI electrolyte properties} \\
-PSE provides OLI Systems' OLI electrolyte properties package for aqueous electrolytic systems. It is a proprietery thermodynamic package and involves separate licensing cost.
+PSE provides OLI Systems' OLI electrolyte properties package for aqueous electrolytic systems. It is a proprietary thermodynamic package and involves separate licensing cost.
 
 \item \textbf{CAPE-OPEN physical properties} \\
 gPROMS provides a CAPE-OPEN physical properties socket into which any CAPE-OPEN compliant physical properties package can be plugged – for example Aspentech's Aspen Properties, PROSIM's SIMULIS Thermodynamics, Aspentech's COMThermo and many others.
@@ -210,17 +210,17 @@ Statistical Associating Fluid Theory, or SAFT, is an advanced molecular thermody
 Aspen-tech' Aspen custom modeler is a modeling and simulation environment to develop customized model. It is an evolution of SPEEDUP, a first-generation EO
 tool originally developed at Imperial College London [Pantelides, 1988].
 
-The primary purpose of custom modeler is to built customized process models which are not available in Aspen Plus or Apen Hysys. These models can then be imported to Aspen plus or hysys and can be integrated with the flowsheet. 
+The primary purpose of custom modeler is to built customized process models which are not available in Aspen Plus or Apen Hysys. These models can then be imported to Aspen plus or Hysys and can be integrated with the flowsheet. 
 
-The custom modeler attains its thermodynamics from aspen properties which is a proprietery thermodynamic engine developed by Aspen-tech. Aspen properties itself uses two popular databases, namely NIST and DCHEMA.
+The custom modeler attains its thermodynamics from aspen properties which is a proprietary thermodynamic engine developed by Aspen-tech. Aspen properties itself uses two popular databases, namely NIST and DCHEMA.
 
 The thermodynamic equations are calculated separately by aspen properties, whereas the modeling equations are solved separately by aspen custom modeler. \cite{ACM}
 
 \subsection{CHEMCAD}
-Chemstations ' CHEMCAD \cite{Chemcad}  is a chemical process simulator which can simulate steady state as well as dynamic chemical processes. CHEMCAD has its own thermodynamic engine which is primary based on DIPPR (Design Institute for Physical Properties) databank, which is a proprietery databank created in 1978 under the auspices of the American Institute of Chemical Engineers \cite{DIPPR}.CHEMCAD take all the property constant for the databank based on which thermodynamic routines are written. CHEMCAD has a comprehensive set of thermodynamic properties and packages. Like Aspen plus one can switch between sequential modular approach and equation oriented approach in CHEMCAD.
+Chemstations ' CHEMCAD \cite{Chemcad}  is a chemical process simulator which can simulate steady state as well as dynamic chemical processes. CHEMCAD has its own thermodynamic engine which is primary based on DIPPR (Design Institute for Physical Properties) databank, which is a proprietary databank created in 1978 under the auspices of the American Institute of Chemical Engineers \cite{DIPPR}.CHEMCAD take all the property constant for the databank based on which thermodynamic routines are written. CHEMCAD has a comprehensive set of thermodynamic properties and packages. Like Aspen plus one can switch between sequential modular approach and equation oriented approach in CHEMCAD.
  
 \subsection{Simulis Thermdynamics}
-ProSim' Simulis Thermodynamics \cite{Simulis} is a calculation server for thermophysical properties and phase equilibria  calculations on pure components and mixtures. This thermodynamic server is a standalone package which can be plugged in any other application requiring reliable and accurate thermophysical properties. As it is a standalone thermodynamic pakcage when used with other application or in ProSim itself, the thermodyanmic properties are calculated by Simulis, whereas the modeling equations has to solved separately.  
+ProSim' Simulis Thermodynamics \cite{Simulis} is a calculation server for thermophysical properties and phase equilibria calculations on pure components and mixtures. This thermodynamic server is a standalone package which can be plugged in any other application requiring reliable and accurate thermophysical properties. As it is a standalone thermodynamic package when used with other application or in ProSim itself, the thermodyanmic properties are calculated by Simulis, whereas the modeling equations has to solved separately.  
 
 \section{Open source simulation environment and associated thermodynamic engine}
 \subsection{ASCEND}
@@ -344,7 +344,7 @@ Being an object oriented language openmodelica also supports inheritance through
 
 \subsection{Graphical Modelling}
 Openmodelica permit users to attach their own graphics to the models. This helps in better visualization of the system. Unlike other simulation software, which exhibits just on signal flow model modelica exhibits a physical model which is easy to understand and visualize. Due to the acausal feature the user just have to connect the different models involved in the flowsheet without worrying about the signal flow. Figure \ref{fig:OM1} show a comparative system of openmodelica versus simulink.
-Openmodelica offers an integrated modelling and simulation environment where one can first model the unit and then connect them with each other graphically. This relieves the user of writing the connecting equations and codes. Openmodelica has a special feature for establishing inter model connection, named connectors. Connector is a special type of class through which users can define what are the incoming or outgoing variables from a model.
+Openmodelica offers an integrated modeling and simulation environment where one can first model the unit and then connect them with each other graphically. This relieves the user of writing the connecting equations and codes. Openmodelica has a special feature for establishing inter model connection, named connectors. Connector is a special type of class through which users can define what are the incoming or outgoing variables from a model.
 
 Following are two types of variables that can be defined in a connector.
 \begin{itemize}
@@ -365,7 +365,7 @@ Openmodelica offers an excellent graphical facility which is drag and drop compo
 
 \section{Drawbacks}
 \begin{itemize}
-\item {As modelica is a generic modelling and simulation environment it has no built in chemical engineering unit operations.}
+\item {As modelica is a generic modeling and simulation environment it has no built in chemical engineering unit operations.}
 \item{Openmodelica does have a thermodynamic engine. Therefore thermodynamic calculations cannot be performed.}
 \item{As every unit operation has to be coded user has to provide the solver with good initial guess values otherwise the model may not converge.}
 \end{itemize}
@@ -663,7 +663,7 @@ The following example demonstrates the implementation of the built in thermodyna
 
 \section{Steady state flash of ethanol-water system}
 \subsection{The Model}
-An equimolar feed containing ethanol and water is to be flashed at 1 atm and 355 K. The resulting vapour and liquid compositions are to be calculated. Following are the modelling equations for the same. 
+An equimolar feed containing ethanol and water is to be flashed at 1 atm and 355 K. The resulting vapor and liquid compositions are to be calculated. Following are the modeling equations for the same. 
 
 
 \begin{gather*}
@@ -691,12 +691,12 @@ UNIQUAC activity coefficient model is used as the phase equilibria model.
 \label{omcode}
 \end{figure}
 
-Figure \ref{omcode} describes the code used to simulate the flash. The first four lines specifies variables which carries the feed specifications (temperature, pressure, composition, flowarate). The next set of lines instanciate the compound class ethanol and water and creates an array of the same. The next line \textbf{extends UNIQUAC} is used to inherit the already developed UNIQUAC class (which has all the equations for UNIQUAC model). By inheriting a class all the equations and variables of the inherited class are actually dragged and added to the class which inherits it. Therefore, all the UNIQUAC equations are added to the equation section of the Flash class. The next set of variables initializes and defines the unknown variables that needs to be calculated. Finally, the equation section has all the modelling equations required for the simulation of the flash. 
+Figure \ref{omcode} describes the code used to simulate the flash. The first four lines specifies variables which carries the feed specifications (temperature, pressure, composition, flowarate). The next set of lines instantiate the compound class ethanol and water and creates an array of the same. The next line \textbf{extends UNIQUAC} is used to inherit the already developed UNIQUAC class (which has all the equations for UNIQUAC model). By inheriting a class all the equations and variables of the inherited class are actually dragged and added to the class which inherits it. Therefore, all the UNIQUAC equations are added to the equation section of the Flash class. The next set of variables initializes and defines the unknown variables that needs to be calculated. Finally, the equation section has all the modeling equations required for the simulation of the flash. 
 
 \subsection{How openmodelica handles and solves the model equations}
-As described in chapter 5, openmodelica follows an equation oriented approach where all the equations are solved simultaneously. Therefore, for chemical engineering problems, openmodelica collects all the model equations along with the thermodynamic equations and then solves them simultaneously. The fact that thermodynamic equations are solved simultaneously along with the modelling equations is demonstrated by the following example.
+As described in chapter 5, openmodelica follows an equation oriented approach where all the equations are solved simultaneously. Therefore, for chemical engineering problems, openmodelica collects all the model equations along with the thermodynamic equations and then solves them simultaneously. The fact that thermodynamic equations are solved simultaneously along with the modeling equations is demonstrated by the following example.
 
-A simplest flash model is simulated for an ideal system of benzene and toluene. The feed is an equimolar mixture of benzene and toluene, which is flased at 1 atm. As the system is ideal the VLE model is taken to be Raoult's law. The unknown variables that needs to be calculated are compostions and flowrates of liquid and vapour streams. Following are the modelling equations for the flash model.
+A simplest flash model is simulated for an ideal system of benzene and toluene. The feed is an equimolar mixture of benzene and toluene, which is flased at 1 atm. As the system is ideal the VLE model is taken to be Raoult's law. The unknown variables that needs to be calculated are compositions and flowrates of liquid and vapor streams. Following are the modelling equations for the flash model.
 
 
 Mass balance \\
@@ -736,7 +736,7 @@ Figure \ref{8.1} shows the openmodelica code for the flash model. It can be seen
 \label{8.2}
 \end{figure}
 
-Before simulating a model, openmodelica instanciate it by itself. It is at this stage that openmodelica's compiler collets all the equations and dumps them in the \textbf{equation section} of the instanciated model. Figure \ref{8.3} shows the instance of the flash model as generated by openmodelica. It is clear that now this model involves both the modelling equations and the thermodynamic equations. 
+Before simulating a model, openmodelica instanciate it by itself. It is at this stage that openmodelica's compiler collects all the equations and dumps them in the \textbf{equation section} of the instantiated model. Figure \ref{8.3} shows the instance of the flash model as generated by openmodelica. It is clear that now this model involves both the modeling equations and the thermodynamic equations. 
 \begin{figure}
 \centering
 \includegraphics[width=0.9\linewidth]{Combmodel}
@@ -744,7 +744,7 @@ Before simulating a model, openmodelica instanciate it by itself. It is at this 
 \label{8.3}
 \end{figure}
 
-After the instance of the main model is generated, openmodelica start solving all the equations present in the \textbf{equation} section of the instanciated model. By default openmodelica uses \textbf{Dassl} to solve differential algebric equations and a hybrid solver for solving algebraic equations. However, we can choose a different solver from the list of solvers. This is achieved by going in the simulation setup window, where one can specify all the details regarding the simulation for example the time period, the number of intervals for simulation etc. The output of openmodelica's successful simulation is a mat or a csv file.
+After the instance of the main model is generated, openmodelica start solving all the equations present in the \textbf{equation} section of the instantiated model. By default openmodelica uses \textbf{Dassl} to solve differential algebric equations and a hybrid solver for solving algebraic equations. However, we can choose a different solver from the list of solvers. This is achieved by going in the simulation setup window, where one can specify all the details regarding the simulation for example the time period, the number of intervals for simulation etc. The output of openmodelica's successful simulation is a mat or a csv file.
 
 \chapter{Solved examples in Openmodelica using the built in thermodynamics}
 
@@ -904,7 +904,7 @@ where $H_s$ is the enthalpy of the steam in J/kmol, HLw is the enthalpy of liqui
 \begin{gather*}
 Q = UA(T - T_a)
 \end{gather*}
-where UA is the product of the overall heat transfer coef cient U and the contact area A with the surroundings in J/s·K, $T_a$ is the ambient temperature in K, and T is the temperature of the liquid in the still in K.
+where UA is the product of the overall heat transfer coefficient U and the contact area A with the surroundings in J/s·K, $T_a$ is the ambient temperature in K, and T is the temperature of the liquid in the still in K.
 
 Assuming ideal liquid behavior, Raoult's law can be used to calculate the vapor mole fraction of the components in the organic phase
 
