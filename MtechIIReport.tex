@@ -86,7 +86,7 @@ I would also like to thank the following interns Mr. Arpit Gupta, Mr. Neelesh Ch
 
 
 \abstract
-OpenModelica is a state of art equation oriented modeling environment capable of doing both steady state and dynamics simulation but lacks thermodynamics, and good chemical engineering support. DWSIM is a sequential modular steady state simulator with good thermodynamic library (DTL). An attempt is made to make DTL available for OpenModelica in this work. Python-C API and Socket programming approaches are implemented and the performance compared for tasks like steady state and transient simulations regarding chemical engineering systems in OpenModelica. Socket programing performs much better in all the attempted examples. But both the approaches failed when it comes to solving complex chemical engineering processes. Therefore an attempt is made to develop an in-built thermodynamic engine in OpenModelica so that thermodynamic equations can be solved simultaneously with mass and energy balance. This built in thermodynamic engine proved to be successful in solving many complex processes with excellent speed and accuracy. 
+OpenModelica is a state of art equation oriented modeling environment capable of handling both steady state and dynamics simulation but lacks thermodynamics, and good chemical engineering support. DWSIM is a sequential modular steady state simulator with a standalone thermodynamic library (DTL). An attempt is made to make DTL available for OpenModelica in this work. Python-C API and Socket programming approaches are implemented and the performance compared for tasks like steady state and transient simulations regarding chemical engineering systems in OpenModelica. Socket programing performs much better in all the attempted examples. Both the approaches fail when it comes to solving complex chemical engineering processes. Therefore an attempt is made to develop an in-built thermodynamic engine in OpenModelica so that thermodynamic equations can be solved simultaneously with mass and energy balance. This built in thermodynamic engine proved to be successful in solving many complex processes with excellent speed and accuracy. 
 \tableofcontents
 \listoftables
 \listoffigures
@@ -383,11 +383,11 @@ As stated in chapter three DWSIM cannot simulate dynamic systems. On the other h
 \end{itemize}
 The above two benefits shows that it may be a fruitful exercise to integrate the DTL with OpenModelica. As a result one may obtain a complete process simulator which is capable of solving all type of problems that is simulation, design, optimization with steady state or dynamic behavior.
 
-\section{Python-C API approach to Integrate OpenModelica with DTL} \cite{api}
+\section{Python-C API approach to Integrate OpenModelica with DTL}
 DTL consists of a file with an extension .dll (dynamic link library) which is written in VB.NET (windows environment). This file is COM (component object model) enabled, which means that any programming language which supports COM can import this library and access the built in thermodynamic subroutines. OpenModelica is written in C (Linux environment) and the only language whose routines can be called from OpenModelica is C. As both these programs are developed in so different environment it becomes hard to integrate the two.
 As OpenModelica supports only C language, it would have been best to call DTL from C but unfortunately due to the difference in their environment both were not compatible. Therefore, there was a need to bring in some glue language which can establish this integration from DTL to C. For this purpose python was chosen as it is an excellent glue language.
 
-The package \textbf{win32com} in python can be used to establish connection with COM enabled objects. Therefore, using win32com we can call the DTL library and hence all the thermodynamic routines available in it.
+The package \textbf{win32com} in python can be used to establish connection with COM enabled objects \cite{api}. Therefore, using win32com we can call the DTL library and hence all the thermodynamic routines available in it.
 
 Python-C API is one of the approach through which this integration of OpenModelica and DTL is carried out successfully. Figure \ref{fig:PyC1} describes the flow of the approach. Following points describes the structure and flow of this approach \ref{appenA}.
 
@@ -403,8 +403,8 @@ Python-C API is one of the approach through which this integration of OpenModeli
 \item{These python functions are now called by C through python-C API. In computer programming, an API (Application Programming Interface) is a set of routines, protocols, and tools for building software applications. An API expresses a software component in terms of its operations, inputs, outputs, and underlying types. This API is responsible for converting C variables to python and vice versa. The codes for C functions are shown in Appendix A}
 \item{Finally as OpenModelica is compatible with C, the inputs are then sent to C functions through OpenModelica external C functions, which in turn calls the python functions, which in turn calls DTL routines. The codes for external function in OpenModelica are shown in Appendix A.}
 \end{itemize}
-\section{Client-Server (sockets) approach to integrate OpenModelica with DTL} \cite{socket}
-Client-Server or socket approach is another approach through which the integration is successful. Figure \ref{fig:PyC2} describes the data flow of the approach. Following points describes the structure and flow of this approach \ref{appenB}.
+\section{Client-Server (sockets) approach to integrate OpenModelica with DTL}
+Client-Server or socket approach \cite{socket} is another approach through which the integration is successful . Figure \ref{fig:PyC2} describes the data flow of the approach. Following points describes the structure and flow of this approach.
 
 \begin{figure}
 \centering
@@ -734,7 +734,7 @@ Figure \ref{8.1} shows the OpenModelica code for the flash model. It can be seen
 Before simulating a model, OpenModelica instanciate it by itself. It is at this stage that OpenModelica's compiler collects all the equations and inserts them in the \textbf{equation section} of the instantiated model. Figure \ref{8.3} shows the instance of the flash model as generated by OpenModelica. It is clear that now this model involves both the modeling equations and the thermodynamic equations. 
 \begin{figure}
 \centering
-\includegraphics[width=0.9\linewidth]{Combmodel}
+\includegraphics[width=1.2\linewidth]{Combmodel}
 \caption{Combined model generated by OpenModelica}
 \label{8.3}
 \end{figure}
@@ -770,7 +770,7 @@ The pressure is kept constant at 1 atm. The value of $x_1$ (mole fraction of eth
 \end{figure}
 
 \item {\textbf{Dew point curve}} \\
-Modified Roult's law (equations \ref{eqn:RL1} and \ref{eqn:RL2}) is the governing equation to generate the dew point curve.
+Modified Raoult's law (equations \ref{eqn:RL1} and \ref{eqn:RL2}) is the governing equation to generate the dew point curve.
 
 \begin{align}
 \intertext{Manipulating the equations \ref{eqn:RL1} and \ref{eqn:RL2} and putting $x_1$ + $x_2$ = 1 we get} \nonumber \\
@@ -947,7 +947,7 @@ Assumptions: 1) Ideal behavior of all components in pure state or mixture; 2) co
 \end{itemize}
 
 \subsection{Results}
-Plots \ref{SD1} and \ref{SD2} shows the results obtained by simulating the example in OpenModelica by using the built in thermodynamics. \\
+Plots \ref{SD1} and \ref{SD2} shows the results obtained by simulating the example in OpenModelica by using the built in thermodynamics. It can be observed that the temperature increases during the heating period and then stays constant during the distillation period when the Bubble point is attained. The liquid phase compositions is constant during the heating period as there is no vapor formation. \\
 \begin{figure}
 \centering
 \includegraphics[width=0.8\linewidth]{SD1}
