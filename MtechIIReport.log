@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.3)  17 JUL 2016 20:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.3)  21 JUL 2016 11:18
 entering extended mode
 **./MtechIIReport.tex
 (MtechIIReport.tex
@@ -939,34 +939,33 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 Chapter 2.
 [9
 
-] [10] [11] [12] [13]
+] [10]
+Overfull \hbox (4.9358pt too wide) in paragraph at lines 162--162
+[]\OT1/cmr/bx/n/17.28 Need of an Open Source Chem-i-cal Pro-cess Sim-
+ []
+
+[11] [12]
 Chapter 3.
 
-Overfull \hbox (11.2828pt too wide) in paragraph at lines 188--189
-\OT1/cmr/m/n/12 Pan-telides, 1994; Oh and Pan-telides,1996], and sub-se-quently
- sub-stan-tially re-architected
+Overfull \hbox (0.92004pt too wide) in paragraph at lines 188--190
+\OT1/cmr/m/n/12 ex-e-cute steady-state and dy-namic pro-cess mod-els based on t
+he gPROMS second-
  []
 
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
-[14
+[13
 
-]
-Overfull \hbox (12.81009pt too wide) in paragraph at lines 217--218
-[]\OT1/cmr/m/n/12 The ther-mo-dy-namic equa-tions are cal-cu-lated sep-a-rately
- by as-pen prop-er-ties, whereas
- []
-
-[15] [16]
+] [14] [15]
 Chapter 4.
-[17
+[16
 
-] [18] [19] [20] [21]
+] [17] [18] [19] [20]
 Chapter 5.
-[22
+[21
 
-] <om1.png, id=94, 624.3325pt x 366.36874pt>
+] <om1.png, id=91, 624.3325pt x 366.36874pt>
 File: om1.png Graphic file (type png)
  <use om1.png>
 Package pdftex.def Info: om1.png used on input line 338.
@@ -977,99 +976,95 @@ Overfull \hbox (2.45743pt too wide) in paragraph at lines 343--344
 -ports in-her-i-tance through
  []
 
-[23] <Dist.png, id=98, 358.33875pt x 341.275pt>
+[22] <Dist.png, id=95, 358.33875pt x 341.275pt>
 File: Dist.png Graphic file (type png)
  <use Dist.png>
 Package pdftex.def Info: Dist.png used on input line 361.
 (pdftex.def)             Requested size: 260.17464pt x 247.80077pt.
- [24 <./om1.png>] [25 <./Dist.png>]
+ [23 <./om1.png>] [24 <./Dist.png>]
 Chapter 6.
-[26
+[25
 
-] <PytC1.png, id=110, 767.86874pt x 254.45062pt>
+] <PytC1.png, id=107, 767.86874pt x 254.45062pt>
 File: PytC1.png Graphic file (type png)
  <use PytC1.png>
-Package pdftex.def Info: PytC1.png used on input line 396.
+Package pdftex.def Info: PytC1.png used on input line 392.
 (pdftex.def)             Requested size: 433.62pt x 143.69109pt.
- [27 <./PytC1.png>] <PytC2.png, id=116, 771.63281pt x 164.11313pt>
+ [26 <./PytC1.png>] <PytC2.png, id=112, 771.63281pt x 164.11313pt>
 File: PytC2.png Graphic file (type png)
  <use PytC2.png>
-Package pdftex.def Info: PytC2.png used on input line 411.
+Package pdftex.def Info: PytC2.png used on input line 407.
 (pdftex.def)             Requested size: 433.62pt x 92.22325pt.
- [28 <./PytC2.png>] [29] [30]
+ [27 <./PytC2.png>] [28] [29]
 Chapter 7.
-[31
+[30
 
 ]
-Overfull \hbox (6.53773pt too wide) in paragraph at lines 486--486
+Overfull \hbox (6.53773pt too wide) in paragraph at lines 482--482
 []\OT1/cmr/bx/n/17.28 Development of the three com-po-nents of a ther-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 495--496
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
 
  []
 
 <BT1.png, id=130, 578.16pt x 337.26pt>
 File: BT1.png Graphic file (type png)
  <use BT1.png>
-Package pdftex.def Info: BT1.png used on input line 500.
+Package pdftex.def Info: BT1.png used on input line 506.
 (pdftex.def)             Requested size: 346.89731pt x 202.35756pt.
- [32] [33 <./BT1.png>]
-<BT2.png, id=139, 424.58624pt x 324.46219pt>
+
+<BT2.png, id=131, 424.58624pt x 324.46219pt>
 File: BT2.png Graphic file (type png)
  <use BT2.png>
-Package pdftex.def Info: BT2.png used on input line 534.
+Package pdftex.def Info: BT2.png used on input line 540.
 (pdftex.def)             Requested size: 346.89731pt x 265.10518pt.
- [34 <./BT2.png>]
-<BT3.png, id=147, 375.65344pt x 447.92343pt>
+ [32 <./BT1.png>]
+[33 <./BT2.png>] [34] <BT3.png, id=148, 375.65344pt x 447.92343pt>
 File: BT3.png Graphic file (type png)
- <use BT3.png>
-Package pdftex.def Info: BT3.png used on input line 587.
+
+<use BT3.png>
+Package pdftex.def Info: BT3.png used on input line 593.
 (pdftex.def)             Requested size: 346.89731pt x 413.65971pt.
- [35] [36 <./BT3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 600--606
+ [35 <./BT3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 606--612
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 609--615
+Underfull \hbox (badness 10000) in paragraph at lines 615--621
 
  []
 
-[37]
+[36]
 Missing character: There is no √ in font cmr12!
 Missing character: There is no ¢ in font cmr12!
- [38]
+ [37]
 Chapter 8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 664--665
+Underfull \hbox (badness 10000) in paragraph at lines 670--671
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 674--675
+Underfull \hbox (badness 10000) in paragraph at lines 680--681
 
  []
 
-<omcode.png, id=163, 875.52094pt x 383.18156pt>
+<omcode.png, id=160, 875.52094pt x 383.18156pt>
 File: omcode.png Graphic file (type png)
  <use omcode.png>
-Package pdftex.def Info: omcode.png used on input line 684.
+Package pdftex.def Info: omcode.png used on input line 690.
 (pdftex.def)             Requested size: 520.34267pt x 227.73567pt.
 
-Overfull \hbox (86.72267pt too wide) in paragraph at lines 684--685
+Overfull \hbox (86.72267pt too wide) in paragraph at lines 690--691
  [][] 
  []
 
-[39
+[38
 
-] [40 <./omcode.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 697--698
-
- []
-
-
+] [39 <./omcode.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 703--704
 
  []
@@ -1084,84 +1079,84 @@ Underfull \hbox (badness 10000) in paragraph at lines 715--716
 
  []
 
-<FLmodel.png, id=172, 882.29625pt x 453.19313pt>
-File: FLmodel.png Graphic file (type png)
- <use FLmodel.png>
-Package pdftex.def Info: FLmodel.png used on input line 719.
-(pdftex.def)             Requested size: 433.62pt x 222.73042pt.
 
-<RLmodel.png, id=173, 572.1375pt x 313.17pt>
-File: RLmodel.png Graphic file (type png)
- <use RLmodel.png>
-Package pdftex.def Info: RLmodel.png used on input line 729.
-(pdftex.def)             Requested size: 390.25534pt x 213.61699pt.
+Underfull \hbox (badness 10000) in paragraph at lines 721--722
 
-<Combmodel.png, id=174, 544.28343pt x 332.74312pt>
-File: Combmodel.png Graphic file (type png)
- <use Combmodel.png>
-Package pdftex.def Info: Combmodel.png used on input line 737.
-(pdftex.def)             Requested size: 520.34267pt x 318.1249pt.
-
-Overfull \hbox (86.72267pt too wide) in paragraph at lines 737--738
- [][] 
  []
 
-[41 <./FLmodel.png>] [42 <./RLmodel.png>] [43 <./Combmodel.png>]
+<FLmodel.png, id=169, 882.29625pt x 453.19313pt>
+File: FLmodel.png Graphic file (type png)
+ <use FLmodel.png>
+Package pdftex.def Info: FLmodel.png used on input line 725.
+(pdftex.def)             Requested size: 433.62pt x 222.73042pt.
+
+<RLmodel.png, id=170, 572.1375pt x 313.17pt>
+File: RLmodel.png Graphic file (type png)
+ <use RLmodel.png>
+Package pdftex.def Info: RLmodel.png used on input line 735.
+(pdftex.def)             Requested size: 390.25534pt x 213.61699pt.
+
+<Combmodel.png, id=171, 544.28343pt x 332.74312pt>
+File: Combmodel.png Graphic file (type png)
+ <use Combmodel.png>
+Package pdftex.def Info: Combmodel.png used on input line 743.
+(pdftex.def)             Requested size: 433.62pt x 265.088pt.
+ [40 <./FLmodel.png>] [41 <./RLmodel.png>] [42 <./Combmodel.png>]
 Chapter 9.
-<BP.png, id=187, 674.52pt x 350.81062pt>
+<BP.png, id=184, 674.52pt x 350.81062pt>
 File: BP.png Graphic file (type png)
  <use BP.png>
-Package pdftex.def Info: BP.png used on input line 767.
+Package pdftex.def Info: BP.png used on input line 773.
 (pdftex.def)             Requested size: 346.89731pt x 180.42056pt.
- [44
+ [43
 
 ]
-<DP.png, id=191, 679.78969pt x 352.31625pt>
+<DP.png, id=188, 679.78969pt x 352.31625pt>
 File: DP.png Graphic file (type png)
  <use DP.png>
-Package pdftex.def Info: DP.png used on input line 784.
+Package pdftex.def Info: DP.png used on input line 790.
 (pdftex.def)             Requested size: 346.89731pt x 179.78642pt.
 
-<VLE.png, id=192, 679.03688pt x 350.81062pt>
+<VLE.png, id=189, 679.03688pt x 350.81062pt>
 File: VLE.png Graphic file (type png)
  <use VLE.png>
-Package pdftex.def Info: VLE.png used on input line 793.
+Package pdftex.def Info: VLE.png used on input line 799.
 (pdftex.def)             Requested size: 346.89731pt x 179.21616pt.
 
-<aspen.png, id=193, 1026.83624pt x 403.5075pt>
+<aspen.png, id=190, 1026.83624pt x 403.5075pt>
 File: aspen.png Graphic file (type png)
  <use aspen.png>
-Package pdftex.def Info: aspen.png used on input line 804.
+Package pdftex.def Info: aspen.png used on input line 810.
 (pdftex.def)             Requested size: 390.25534pt x 153.3529pt.
- [45 <./BP.png>]
-[46 <./DP.png> <./VLE.png>] <Flash.png, id=204, 554.07pt x 380.92313pt>
+ [44 <./BP.png>]
+[45 <./DP.png> <./VLE.png>] <Flash.png, id=201, 554.07pt x 380.92313pt>
 File: Flash.png Graphic file (type png)
 
 <use Flash.png>
-Package pdftex.def Info: Flash.png used on input line 821.
+Package pdftex.def Info: Flash.png used on input line 827.
 (pdftex.def)             Requested size: 346.89731pt x 238.48903pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 830--831
+Underfull \hbox (badness 10000) in paragraph at lines 836--837
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 835--836
+Underfull \hbox (badness 10000) in paragraph at lines 841--842
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 840--841
+Underfull \hbox (badness 10000) in paragraph at lines 846--847
 
  []
 
-[47 <./aspen.png>] [48 <./Flash.png>]
-<SD.png, id=213, 420.82219pt x 292.09125pt>
+[46 <./aspen.png>] [47 <./Flash.png>]
+<SD.png, id=210, 420.82219pt x 292.09125pt>
 File: SD.png Graphic file (type png)
  <use SD.png>
-Package pdftex.def Info: SD.png used on input line 885.
+Package pdftex.def Info: SD.png used on input line 891.
 (pdftex.def)             Requested size: 346.89731pt x 240.78212pt.
- [49 <./SD.png>]
+ [48 <./SD.png>]
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no ∑ in font cmr12!
 Missing character: There is no ¬ in font cmr12!
@@ -1169,64 +1164,64 @@ Missing character: There is no ∑ in font cmr12!
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no ∑ in font cmr12!
 
-[50] <SD1.png, id=221, 603.75563pt x 350.81062pt>
+[49] <SD1.png, id=218, 603.75563pt x 350.81062pt>
 File: SD1.png Graphic file (type png)
  <use SD1.png>
-Package pdftex.def Info: SD1.png used on input line 953.
+Package pdftex.def Info: SD1.png used on input line 959.
 (pdftex.def)             Requested size: 346.89731pt x 201.56465pt.
 
-<SD2.png, id=222, 679.03688pt x 353.82187pt>
+<SD2.png, id=219, 679.03688pt x 353.82187pt>
 File: SD2.png Graphic file (type png)
  <use SD2.png>
-Package pdftex.def Info: SD2.png used on input line 959.
+Package pdftex.def Info: SD2.png used on input line 965.
 (pdftex.def)             Requested size: 346.89731pt x 180.7545pt.
 
-<SD3.png, id=223, 477.28313pt x 277.78781pt>
+<SD3.png, id=220, 477.28313pt x 277.78781pt>
 File: SD3.png Graphic file (type png)
  <use SD3.png>
-Package pdftex.def Info: SD3.png used on input line 966.
+Package pdftex.def Info: SD3.png used on input line 972.
 (pdftex.def)             Requested size: 303.53267pt x 176.66032pt.
 
-<SD4.png, id=224, 482.55281pt x 289.08pt>
+<SD4.png, id=221, 482.55281pt x 289.08pt>
 File: SD4.png Graphic file (type png)
  <use SD4.png>
-Package pdftex.def Info: SD4.png used on input line 972.
+Package pdftex.def Info: SD4.png used on input line 978.
 (pdftex.def)             Requested size: 303.53267pt x 181.83905pt.
- [51]
-<Ingham1.png, id=229, 526.21594pt x 367.3725pt>
+ [50]
+<Ingham1.png, id=225, 526.21594pt x 367.3725pt>
 File: Ingham1.png Graphic file (type png)
  <use Ingham1.png>
-Package pdftex.def Info: Ingham1.png used on input line 985.
+Package pdftex.def Info: Ingham1.png used on input line 991.
 (pdftex.def)             Requested size: 433.62pt x 302.73848pt.
- [52 <./SD1.png>] [53 <./SD2.png> <./SD3.png>] [54 <./SD4.png> <./Ingham1.png>]
+ [51 <./SD1.png>] [52 <./SD2.png> <./SD3.png>] [53 <./SD4.png> <./Ingham1.png>]
 
-<Ingham4.png, id=244, 759.58781pt x 298.86656pt>
+<Ingham4.png, id=241, 759.58781pt x 298.86656pt>
 File: Ingham4.png Graphic file (type png)
  <use Ingham4.png>
-Package pdftex.def Info: Ingham4.png used on input line 1026.
+Package pdftex.def Info: Ingham4.png used on input line 1032.
 (pdftex.def)             Requested size: 433.62pt x 170.61563pt.
 
-<Ingham2.png, id=245, 410.2828pt x 252.19218pt>
+<Ingham2.png, id=242, 410.2828pt x 252.19218pt>
 File: Ingham2.png Graphic file (type png)
  <use Ingham2.png>
-Package pdftex.def Info: Ingham2.png used on input line 1033.
+Package pdftex.def Info: Ingham2.png used on input line 1039.
 (pdftex.def)             Requested size: 433.62pt x 266.53355pt.
 
-<Ingham5.png, id=246, 761.09344pt x 298.86656pt>
+<Ingham5.png, id=243, 761.09344pt x 298.86656pt>
 File: Ingham5.png Graphic file (type png)
  <use Ingham5.png>
-Package pdftex.def Info: Ingham5.png used on input line 1042.
+Package pdftex.def Info: Ingham5.png used on input line 1048.
 (pdftex.def)             Requested size: 433.62pt x 170.27817pt.
 
-<Ingham3.png, id=247, 475.02469pt x 270.25969pt>
+<Ingham3.png, id=244, 475.02469pt x 270.25969pt>
 File: Ingham3.png Graphic file (type png)
  <use Ingham3.png>
-Package pdftex.def Info: Ingham3.png used on input line 1049.
+Package pdftex.def Info: Ingham3.png used on input line 1055.
 (pdftex.def)             Requested size: 433.62pt x 246.71198pt.
- [55]
-[56 <./Ingham4.png> <./Ingham2.png>] [57 <./Ingham5.png> <./Ingham3.png>]
+ [54]
+[55 <./Ingham4.png> <./Ingham2.png>] [56 <./Ingham5.png> <./Ingham3.png>]
 Chapter 10.
-[58
+[57
 
 ]
 Appendix A.
@@ -1235,17 +1230,17 @@ Appendix A.
 sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-Overfull \hbox (151.52899pt too wide) in paragraph at lines 1070--1071
+Overfull \hbox (151.52899pt too wide) in paragraph at lines 1076--1077
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (81.02911pt too wide) in paragraph at lines 1074--1075
+Overfull \hbox (81.02911pt too wide) in paragraph at lines 1080--1081
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (66.92914pt too wide) in paragraph at lines 1081--1082
+Overfull \hbox (66.92914pt too wide) in paragraph at lines 1087--1088
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1298,26 +1293,26 @@ Missing character: There is no Ä in font cmr12!
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no ù in font cmr12!
 
-Overfull \hbox (52.82916pt too wide) in paragraph at lines 1087--1088
+Overfull \hbox (52.82916pt too wide) in paragraph at lines 1093--1094
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1088--1089
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1094--1095
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[59
+[58
 
 ]
-Overfull \hbox (123.32904pt too wide) in paragraph at lines 1098--1099
+Overfull \hbox (123.32904pt too wide) in paragraph at lines 1104--1105
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 Missing character: There is no √ in font cmr12!
 Missing character: There is no ¢ in font cmr12!
 
-Overfull \hbox (17.57922pt too wide) in paragraph at lines 1107--1108
+Overfull \hbox (17.57922pt too wide) in paragraph at lines 1113--1114
 [][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1330,391 +1325,391 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 ty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-Overfull \hbox (45.77917pt too wide) in paragraph at lines 1121--1122
+Overfull \hbox (45.77917pt too wide) in paragraph at lines 1127--1128
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1123--1124
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1129--1130
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[60]
-Overfull \hbox (31.6792pt too wide) in paragraph at lines 1165--1166
+[59]
+Overfull \hbox (31.6792pt too wide) in paragraph at lines 1171--1172
 [][][][][][][][][][][][][][] 
  []
 
-[61]
-Overfull \hbox (52.82916pt too wide) in paragraph at lines 1191--1192
+[60]
+Overfull \hbox (52.82916pt too wide) in paragraph at lines 1197--1198
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (81.02911pt too wide) in paragraph at lines 1194--1195
+Overfull \hbox (81.02911pt too wide) in paragraph at lines 1200--1201
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ] 
  []
 
 
-Overfull \hbox (31.6792pt too wide) in paragraph at lines 1208--1210
+Overfull \hbox (31.6792pt too wide) in paragraph at lines 1214--1216
 [][][][][][][][][][][][][][][][] 
  []
 
-[62]
-Overfull \hbox (31.6792pt too wide) in paragraph at lines 1250--1251
+[61]
+Overfull \hbox (31.6792pt too wide) in paragraph at lines 1256--1257
 [][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1276--1277
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1282--1283
 [][][][][][][][][][][][][][][][][] 
  []
 
-[63] [64]
-Overfull \hbox (31.6792pt too wide) in paragraph at lines 1324--1325
+[62] [63]
+Overfull \hbox (31.6792pt too wide) in paragraph at lines 1330--1331
+[][][][][][][][][][][][][][] 
+ []
+
+[64]
+Overfull \hbox (31.6792pt too wide) in paragraph at lines 1398--1399
 [][][][][][][][][][][][][][] 
  []
 
 [65]
-Overfull \hbox (31.6792pt too wide) in paragraph at lines 1392--1393
-[][][][][][][][][][][][][][] 
- []
-
-[66]
-Overfull \hbox (45.77917pt too wide) in paragraph at lines 1417--1418
+Overfull \hbox (45.77917pt too wide) in paragraph at lines 1423--1424
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1422.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1428.
 
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 1425
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 1431
 .
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 1425.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 1431.
 
 
-Overfull \hbox (81.02911pt too wide) in paragraph at lines 1427--1428
+Overfull \hbox (81.02911pt too wide) in paragraph at lines 1433--1434
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 1433.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 1439.
 
 
-Overfull \hbox (59.87915pt too wide) in paragraph at lines 1435--1436
+Overfull \hbox (59.87915pt too wide) in paragraph at lines 1441--1442
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (17.57922pt too wide) in paragraph at lines 1451--1452
+Overfull \hbox (17.57922pt too wide) in paragraph at lines 1457--1458
 [][][][][][][][][][][][][][] 
  []
 
-[67] [68]
+[66] [67]
 Appendix B.
 
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1483--1484
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1489--1490
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1485--1486
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1491--1492
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-[69
+[68
 
-] [70]
-Overfull \hbox (3.47925pt too wide) in paragraph at lines 1557--1558
+] [69]
+Overfull \hbox (3.47925pt too wide) in paragraph at lines 1563--1564
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[71]
-Overfull \hbox (31.6792pt too wide) in paragraph at lines 1614--1615
+[70]
+Overfull \hbox (31.6792pt too wide) in paragraph at lines 1620--1621
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[72]
+[71]
 Appendix C.
 
-Overfull \hbox (15.19577pt too wide) in paragraph at lines 1625--1625
+Overfull \hbox (15.19577pt too wide) in paragraph at lines 1631--1631
 []\OT1/cmr/bx/n/17.28 Python script to con-vert Chem-sep.xml to Open-
  []
 
-[73
+[72
 
-] [74] [75]
-Overfull \hbox (81.02911pt too wide) in paragraph at lines 1756--1757
+] [73] [74]
+Overfull \hbox (81.02911pt too wide) in paragraph at lines 1762--1763
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (24.62921pt too wide) in paragraph at lines 1762--1763
+Overfull \hbox (24.62921pt too wide) in paragraph at lines 1768--1769
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1776--1777
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1782--1783
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1777--1778
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1783--1784
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1778--1779
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1784--1785
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1780--1781
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1786--1787
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1784--1785
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1790--1791
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+[75]
+Overfull \hbox (3.47925pt too wide) in paragraph at lines 1801--1802
+[][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (73.97913pt too wide) in paragraph at lines 1802--1803
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1803--1804
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1804--1805
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1805--1806
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1807--1808
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1811--1812
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (45.77917pt too wide) in paragraph at lines 1823--1824
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (24.62921pt too wide) in paragraph at lines 1828--1829
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (24.62921pt too wide) in paragraph at lines 1832--1833
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 [76]
-Overfull \hbox (3.47925pt too wide) in paragraph at lines 1795--1796
-[][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (73.97913pt too wide) in paragraph at lines 1796--1797
-[][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1797--1798
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1798--1799
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1799--1800
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1801--1802
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1805--1806
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (45.77917pt too wide) in paragraph at lines 1817--1818
-[][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (24.62921pt too wide) in paragraph at lines 1822--1823
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (24.62921pt too wide) in paragraph at lines 1826--1827
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-[77]
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1843--1844
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1849--1850
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (17.57922pt too wide) in paragraph at lines 1849--1850
+Overfull \hbox (17.57922pt too wide) in paragraph at lines 1855--1856
 [][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (73.97913pt too wide) in paragraph at lines 1850--1851
+Overfull \hbox (73.97913pt too wide) in paragraph at lines 1856--1857
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1851--1852
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1857--1858
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1852--1853
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1858--1859
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1853--1854
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1859--1860
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1855--1856
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1861--1862
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1859--1860
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1865--1866
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1874--1875
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1880--1881
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1875--1876
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1881--1882
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1876--1877
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1882--1883
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+[77]
+Overfull \hbox (66.92914pt too wide) in paragraph at lines 1884--1885
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (66.92914pt too wide) in paragraph at lines 1888--1889
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1903--1904
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1904--1905
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1905--1906
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (66.92914pt too wide) in paragraph at lines 1907--1908
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (66.92914pt too wide) in paragraph at lines 1911--1912
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (31.6792pt too wide) in paragraph at lines 1924--1925
+[][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (59.87915pt too wide) in paragraph at lines 1925--1926
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1926--1927
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1927--1928
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 [78]
-Overfull \hbox (66.92914pt too wide) in paragraph at lines 1878--1879
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1928--1929
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (66.92914pt too wide) in paragraph at lines 1882--1883
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1930--1931
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1897--1898
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1934--1935
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1898--1899
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1899--1900
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (66.92914pt too wide) in paragraph at lines 1901--1902
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (66.92914pt too wide) in paragraph at lines 1905--1906
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (31.6792pt too wide) in paragraph at lines 1918--1919
+Overfull \hbox (24.62921pt too wide) in paragraph at lines 1946--1947
 [][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (59.87915pt too wide) in paragraph at lines 1919--1920
+Overfull \hbox (59.87915pt too wide) in paragraph at lines 1947--1948
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1920--1921
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1948--1949
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1921--1922
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1949--1950
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (10.52924pt too wide) in paragraph at lines 1950--1951
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1952--1953
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (38.72919pt too wide) in paragraph at lines 1956--1957
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 [79]
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1922--1923
-[][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (31.6792pt too wide) in paragraph at lines 2014--2015
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1924--1925
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1928--1929
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (24.62921pt too wide) in paragraph at lines 1940--1941
-[][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (59.87915pt too wide) in paragraph at lines 1941--1942
-[][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1942--1943
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1943--1944
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.52924pt too wide) in paragraph at lines 1944--1945
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1946--1947
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (38.72919pt too wide) in paragraph at lines 1950--1951
-[][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (45.77917pt too wide) in paragraph at lines 2016--2017
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][] 
  []
 
 [80]
-Overfull \hbox (31.6792pt too wide) in paragraph at lines 2008--2009
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (45.77917pt too wide) in paragraph at lines 2010--2011
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][] 
- []
-
-[81]
-Overfull \hbox (52.82916pt too wide) in paragraph at lines 2021--2022
+Overfull \hbox (52.82916pt too wide) in paragraph at lines 2027--2028
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (52.82916pt too wide) in paragraph at lines 2024--2025
+Overfull \hbox (52.82916pt too wide) in paragraph at lines 2030--2031
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-(MtechIIReport.bbl [82]
+(MtechIIReport.bbl [81]
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 []$\OT1/cmtt/m/n/12 http : / / spoken-[]tutorial . org / tutorial-[]search / ?s
 earch _ foss = DWSIM &
@@ -1739,9 +1734,9 @@ hermodynamics-[]mixture-[]properties-[]and-[]fluid-[]phase-[]equilibria-[]calcu
 lations-[]3 .
  []
 
-[83
+[82
 
-]) [84] (MtechIIReport.aux) ) 
+]) [83] (MtechIIReport.aux) ) 
 Here is how much of TeX's memory you used:
  23068 strings out of 493335
  445548 string characters out of 3139237
@@ -1761,9 +1756,9 @@ ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
 msfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmtt12.pfb>
-Output written on MtechIIReport.pdf (88 pages, 1205051 bytes).
+Output written on MtechIIReport.pdf (87 pages, 1204223 bytes).
 PDF statistics:
- 387 PDF objects out of 1000 (max. 8388607)
+ 384 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  148 words of extra memory for PDF output out of 10000 (max. 10000000)
 

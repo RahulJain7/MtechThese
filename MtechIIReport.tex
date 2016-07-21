@@ -105,12 +105,9 @@ The open source chemical process simulators that are currently available, have s
 \chapter{Open Source Chemical Process Simulator}
 
 \section{Chemical Process Simulators}
-
-\subsection{What is it ?}
 Chemical Process simulator is a software that can be used to design, optimize, analyze and develop chemical processes.Chemical Process simulation is a model based representation of unit operations in software. Basic prerequisites   are a thorough knowledge of chemical and physical properties of pure components and mixtures, of reactions, and of mathematical models which, in combination, allow the calculation of a process in computer.
 Chemical process simulation software describes processes in flow diagrams where unit operations are positioned and connected by product streams. The software has to solve the mass and energy balance to reach a stable operating point. The goal of a process simulation is to reach optimal conditions for an examined process. This is essentially an optimization problem which has to be solved in an iterative process.
 Chemical Process simulation use models which introduce approximations and assumptions but allow the description of a property over a wide range of temperatures and pressures which might not be covered by real data. Models also allow interpolation and extrapolation within certain limits and enable us to search for conditions outside the range of known properties.
-A chemical process simulator which is free of cost, with its source available and editable is knows as open source chemical process simulator.
 
 \subsection{Various Components of a Chemical Process Simulator}
 \begin{itemize}
@@ -129,62 +126,66 @@ The solver solves all the equations that are given to it by the thermodynamic en
 \end{itemize}
 
 \subsection{Applications of Chemical Process Simulators in Education and Industry}
+Chemical process simulators plays an important role in both education and industrial sector. Process simulators can be used for the following purposes.
 \begin{itemize}
-\item{\textbf{Helps in learning chemical engineering concepts.}} \\
+\item{\textbf{Helps in learning chemical engineering concepts}} \\
 One can generate various parametric graphs and observe the nature for better understanding of the concepts.
 
-\item{\textbf{Visualization of the whole plant.}} \\
+\item{\textbf{Visualization of the whole plant}} \\
 By looking at the flowsheeting section of a simulator one can visualize the mass and energy flow of a plant.
 
-\item{\textbf{Helps in project work.}} \\
+\item{\textbf{Helps in project work}} \\
 Students can use a simulator to perform calculations related to their projects which otherwise would be very time consuming if done manually. All the thermodynamic and transport properties at various temperatures and pressures can also be extracted which are required in most of the project work.
 
-\item{\textbf{Process plant synthesis.}} \\
+\item{\textbf{Process plant synthesis}} \\
 New process can be checked for feasibility study. Comparative studies can also be performed to decide which process would be more efficient for the production of required compound.
 
-\item{\textbf{Estimation of Parameters.}} \\
+\item{\textbf{Estimation of Parameters}} \\
 Based on the experimental data various parameters can be estimated by the simulator's build in data fitting techniques. For example binary interaction parameters, rate constants of reaction, order of reactions can be predicted.
 
-\item{\textbf{Used for design of unit operations.}} \\
+\item{\textbf{Used for design of unit operations}} \\
 One can come out with an optimized design for unit operations for a given load.
 
-\item{\textbf{Optimization of Operating Parameters.}} \\
+\item{\textbf{Optimization of Operating Parameters}} \\
 Simulators can be used to study the effect of changing various parameters (pressure, temperature, flow rate etc.) on plant efficiency and product purity. This eliminates the need of pilot plants, which were quite cost intensive.
 
-\item{\textbf{Designing control strategies.}} \\
+\item{\textbf{Designing control strategies}} \\
 Control strategies can be designed and tested before applying it on the actual plant.
 
-\item{\textbf{Cost estimation.}} \\
+\item{\textbf{Cost estimation}} \\
 Cost estimation can be done which gives an idea whether the process is economically feasible or what will be the revenue generated.
 
-\item{\textbf{Safety.}} \\
+\item{\textbf{Safety}} \\
 All the parametric changes can be done on the simulator instead of applying it directly on the plant which may lead to some hazardous or dangerous situations. Safety systems can also be designed on Simulator.
 \end{itemize}
 
-\section{Why an Open Source Chemical Process Simulator}
-
-\subsection{Expensive for academic institutions}
+\section{Need of an Open Source Chemical Process Simulator}
+Process industries and education sector are highly dependent on process simulators. Commercial simulators lacks in fulfilling all the requirements and therefore there is a strong need of an open source process simulator, due to the following reasons.
+\begin{itemize}
+\item{\textbf{Expensive for academic institutions}} \\
 Commercial process simulator are very expensive even for educational purposes. Most of the chemical engineering institutes exclude process simulation course from their curriculum as Commercial simulators are not affordable.
 
 Simulation is a valuable tool to understand the principles of chemical engineering. It will also help simulate large scale, industrial level, problems, which is not possible by paper and pen. A student who is well trained in simulation will be extremely useful to the industry. This will help to improve employment of chemical engineering students.
 
-\subsection{Expensive for Industry}
+\item{\textbf{Expensive for Industry}} \\
 Commercial process simulators are not affordable for small and medium scale industries. Hiring consulting firms is not an option because presently all consulting firms use commercial simulators and therefore the consulting charges are very high. Therefore most of them are poorly designed, which reduces the efficiency of the plant. Industry can use an open source simulator for resolving their problems or take help from individuals who knows open source simulation.
 
 Small chemical consulting firms can be established which uses open source simulators, to resolve industrial problems. These consulting firms can be started with almost minimal investment as they will be using an open source simulator. The consulting charges will also be reasonably low as commercial simulator are not used.
 
 This way both the consulting firms and the manufacturing firms can be mutually helpful to each other.
 
-\subsection{Amenable to the conduct of large scale training}
+\item{\textbf{Amenable to the conduct of large scale training}} \\
 As open source simulators are freely available, anyone who is an expert can share his/her expertise without any legal constraints. One such powerfull training technique is spoken tutorial.The Spoken Tutorial project is an initiative of National Mission on Education through ICT, MHRD, Govt. of India to promote IT literacy through Open Source Software. The Spoken Tutorial Project is about teaching and learning a particular FOSS (Free and Open Source Software) like Linux, Scilab, LaTeX, PHP, MySQL, Java, C/C++, LibreOffice etc. via an easy Video tool - Spoken Tutorials. 
 
 Spoken tutorials possesses an excellent method called side-by-side method which helps in active learning. In this approaches the learner should open the spoken tutorial in a reduced sized window and open the corresponding software side-by-side. This process leads to effective learning. This is possible only with open source software as the learner can easily attain the software locally and can learn it with the corresponding freely available spoken tutorial \cite{Sidebyside}.
 
 Spoken tutorials are available for two open source process simulators namely, DWSIM\cite{ST1} and OpenModelica\cite{ST2}. The series of videos available for each simulator, starts from the basic understanding of the software and covers almost all the aspects as we go towards the end of the series.  
+\end{itemize}
 
-\chapter{Literature Survey}
-\section{Available commercial chemical process simulation environments and their thermodynamic engine}
-\subsection{gPROMS ModelBuilder}
+\chapter{Similar Work}
+Many process simulation environment are available today, which have their own thermodynamic engine with interacts with the modelling environment. Some of these simulators and their thermodynamic engines are listed below.
+\begin{enumerate}
+\item{\textbf{gPROMS ModelBuilder}} \\
 gPROMS ModelBuilder is an environment for modelers to build, validate and execute steady-state and dynamic process models based on the gPROMS second-generation EO modeling platform originally developed at Imperial College London [Barton and Pantelides, 1994; Oh and Pantelides,1996], and subsequently substantially re-architected and re-written at PSE. Following are the thermodynamic engines that can be used in gPROMS to perform chemical process simulations. \cite{GP}
 \begin{itemize}
 \item \textbf{Multiflash thermodynamic engine} \\
@@ -206,7 +207,7 @@ gPROMS provides a CAPE-OPEN physical properties socket into which any CAPE-OPEN 
 Statistical Associating Fluid Theory, or SAFT, is an advanced molecular thermodynamic method that can predict a wide variety of thermodynamic properties of mixtures accurately based on physically-realistic models of molecules and their interactions with other molecules.
 \end{itemize}
 
-\subsection{Aspen Custom Modeler}
+\item{\textbf{Aspen Custom Modeler}} \\
 Aspen-tech' Aspen custom modeler is a modeling and simulation environment to develop customized models. It is an evolution of SPEEDUP, a first-generation EO
 tool originally developed at Imperial College London [Pantelides, 1988].
 
@@ -216,22 +217,20 @@ The custom modeler attains its thermodynamics from aspen properties which is a p
 
 The thermodynamic equations are calculated separately by aspen properties, whereas the modeling equations are solved separately by aspen custom modeler. \cite{ACM}
 
-\subsection{CHEMCAD}
+\item{\textbf{CHEMCAD}} \\
 Chemstations ' CHEMCAD \cite{Chemcad}  is a chemical process simulator which can simulate steady state as well as dynamic chemical processes. CHEMCAD has its own thermodynamic engine which is primary based on DIPPR (Design Institute for Physical Properties) databank, which is a proprietary databank created in 1978 under the auspices of the American Institute of Chemical Engineers \cite{DIPPR}.CHEMCAD take all the property constant for the databank based on which thermodynamic routines are written. CHEMCAD has a comprehensive set of thermodynamic properties and packages. Like Aspen plus one can switch between sequential modular approach and equation oriented approach in CHEMCAD.
  
-\subsection{Simulis Thermdynamics}
+\item{\textbf{Simulis Thermdynamics}} \\
 ProSim' Simulis Thermodynamics \cite{Simulis} is a calculation server for thermophysical properties and phase equilibria calculations on pure components and mixtures. This thermodynamic server is a standalone package which can be plugged in any other application requiring reliable and accurate thermophysical properties. As it is a standalone thermodynamic package when used with other application or in ProSim itself, the thermodyanmic properties are calculated by Simulis, whereas the modeling equations has to solved separately.  
 
-\section{Open source simulation environment and associated thermodynamic engine}
-\subsection{ASCEND}
+\item{\textbf{ASCEND}} \\
 ASCEND is also an open source simulation environment based on equation oriented approach. ASCEND has developed its own thermodynamic engine based on the book \'The Properties of Gases and Liquids'\ \cite{ascend} which provides pure component properties for compounds. This thermodynamic engine is named as fprops  \cite{fprops}. The problem with ASCEND thermodynamic is that is has very limited thermodynamic package support for example their is support for only one thermodynamic activity which is UNIQUAC. Another problem is that the compound database is not intensive.
-
+\end{enumerate}
 
 
 \chapter{DWSIM: An Open Source Steady State Process Simulator}
-\section{The Sequential Modular Approach} \cite{SM}
-\subsection{What is Sequential Modular Approach}
-DWSIM is based on sequential modular approach. In this approach there are computer programs for all unit operations. One constructs a complete model of these units by writing modeling equations, keeping in mind some assumptions, which closely replicates the actual process units. The simulator then solves the total process flowsheet by calling each unit according to how they are connected in the flowsheet and iterating where loops are encountered. In this approach the variables(pressure, temperature, flows, composition) to input streams to the are fixed and it will compute the variables of the streams leaving the unit. Apart from specifying the input streams completely one has to specify the unit parameters as well, for example the flash unit requires one to specify the temperature and pressure at which the flashing takes place. The degree of freedom should be zero. The solver used for solving the equations is developed so efficiently that it takes some default initial guess values to calculate the solution through some numerical iterative technique. These guess values are then updated and progressively the system converges.
+\section{The Sequential Modular Approach}
+DWSIM is based on sequential modular approach. In this approach there are computer programs for all unit operations. One constructs a complete model of these units by writing modeling equations, keeping in mind some assumptions, which closely replicates the actual process units. The simulator then solves the total process flowsheet by calling each unit according to how they are connected in the flowsheet and iterating where loops are encountered. In this approach the variables(pressure, temperature, flows, composition) to input streams to the are fixed and it will compute the variables of the streams leaving the unit. Apart from specifying the input streams completely one has to specify the unit parameters as well, for example the flash unit requires one to specify the temperature and pressure at which the flashing takes place. The degree of freedom should be zero. The solver used for solving the equations is developed so efficiently that it takes some default initial guess values to calculate the solution through some numerical iterative technique. These guess values are then updated and progressively the system converges \cite{SM}.
 
 \subsection{Advantages and Disadvantages of Sequential Modular Approach}
 
@@ -258,7 +257,8 @@ This module uses a programming language where the user can code the required uni
 \end{itemize}
 
 \subsection{Flowsheeting Applications in DWSIM}
-\begin{itemize}
+Process simulation and design requires facilities for visualizing and optimizing various parameters of the flowsheet. Following three features of DWSIM fulfills this goal.
+\begin{enumerate}
 \item {\textbf{Column profiles}} \\
 Column profiles are important as they give idea of how various parameters like temperature, pressure, composition, flows vary along the length of the column. By studying these profiles one can decide various design aspects of the column like number of trays, the optimal feed stage etc. DWSIM can generate column profiles of distillation, absorption and extractive columns.
 
@@ -268,14 +268,14 @@ Sensitivity analysis is varying an independent variable over a given range and o
 \item{\textbf{Multivariable Optimizer}} \\
 It is similar to sensitivity analysis but instead of generating a plot it directly gives the optimized value of the parameter. Another advantage of multi variable optimizer is that, one can define an objective function like cost, efficiency etc. which can be minimized or maximized.
 
-\end{itemize}
+\end{enumerate}
 
 \section{Thermodynamics}
 \subsection{Thermodynamic packages available in DWSIM}
 DWSIM in enriched with strong thermodynamic engine which can extract physical property data from the two available databases namely Chemsep and DWSIM. It can also extract properties from any other databases which are in xml format. DWSIM has a rich set of thermodynamic packages which includes ideal gas, equation of state, activity coefficient models. This makes it versatile to simulate any kind of system in DWSIM.
 
-\subsection{Flash Algorithm} \cite{DWSIM}
-Flash algorithm are thermodynamic procedures which calculates the properties of output streams after the input stream is flashed, for given operation conditions. In principle, flash calculations are straightforward and involve combining the VLE equations with the component mass balances, and in some cases energy balance also. Following are the four flash algorithms one can use in DWSIM according to the process requirement.
+\subsection{Flash Algorithm}
+Flash algorithm are thermodynamic procedures which calculates the properties of output streams after the input stream is flashed, for given operation conditions. In principle, flash calculations are straightforward and involve combining the VLE equations with the component mass balances, and in some cases energy balance also. Following are the four flash algorithms one can use in DWSIM according to the process requirement \cite{DWSIM}.
 
 \begin{itemize}
 \item{\textbf{PT Flash}} \\
@@ -311,7 +311,6 @@ DWSIM being a steady state simulator cannot handle dynamic process as its solver
 \chapter{OpenModelica: An Open Source Dynamic Modeling and Simulation environment}
 
 \section{Equation Oriented Approach}
-\subsection{What is it?}
 This approach refers to collecting all the equations describing the behavior of the system and using some numerical technique to solve them simultaneously. Here we provide the equation system in such a way that all the unknown are to the left hand side of the equation, i.e. its given in the form of x=g(x). For solving the system one has to provide initial estimates to all the unknowns.
 
 \subsection{Advantages and Disadvantages}
@@ -324,6 +323,7 @@ This approach refers to collecting all the equations describing the behavior of 
 
 
 \section{Advanced features of OpenModelica}
+The following advanced features of OpenModelica provides a conveneint way of modelling complex systems.  
 \subsection{Declarative Language}
 OpenModelica offers both equation as well as assignment statements. Equation statements are those in which the direction is not defined, which means the variable on the left side of the equal sign need not be the unknown variable. OpenModelica automatically determines the unknown variable. This makes life easy as implicit functions can directly be written without converting it into explicit form. This feature is rarely available in any other simulation environments. The makes OpenModelica library classes more reusable than traditional classes containing assignment statements where the input output causality is fixed. Example the resister equation: R*i = v, can be used in three different ways: i := v/R, v := R*i, R := v/i \cite{PeterFrit}.
 Not only the statements but the direction of flow of data need not be specified by the programmer. Think of it as an energy port that allows energy to flow from whatever happens to be the place of higher energy to that where it is lower. This is known as accusal modeling. A user would be able to build up a graphical network from function blocks, then the software builds the mathematical model, he states.
@@ -373,14 +373,10 @@ OpenModelica offers an excellent graphical facility which is drag and drop compo
 \chapter{Importing the Thermodynamic engine of DWSIM in OpenModelica}
 
 \section{Motivation}
-\begin{itemize}
-\item{\textbf{Design and Optimization}} \\
 As shown in chapter three DWSIM is not efficient in handling design and optimization problems because it is based on sequential modular approach but has a strong thermodynamic engine. As described earlier DWSIM also has a standalone thermodynamic library (DTL) which can be used externally. On the other hand OpenModelica is apt in handling equations but lacks thermodynamics. Therefore, if somehow the thermodynamics of DWSIM is imported to OpenModelica, both these problems can be solved.
 
-\item{\textbf{Dynamic Simulation}} \\
 As stated in chapter three DWSIM cannot simulate dynamic systems. On the other hand OpenModelica can do this very efficiently due to its strong built in integration solvers. Again if DTL is clubbed with OpenModelica, simulation of dynamic chemical processes can easily be carried out.
 
-\end{itemize}
 The above two benefits shows that it may be a fruitful exercise to integrate the DTL with OpenModelica. As a result one may obtain a complete process simulator which is capable of solving all type of problems that is simulation, design, optimization with steady state or dynamic behavior.
 
 \section{Python-C API approach to Integrate OpenModelica with DTL}
@@ -449,7 +445,7 @@ Surface tension & SurfTen & Comp,T \\ \hline
 \end{table}
 
 \section{Comparison of the Two Approaches}
-The following two models were simulated in OpenModelica with different integration approaches to import DTL.
+Following two models are simulated in OpenModelica with different integration approaches DTL to compare their performance.
 
 \begin{itemize}
 \item{\textbf{Steady State Flash Separator}} \\
@@ -484,6 +480,16 @@ The following three reasons justifies the requirement of a built in thermodynami
 \end{itemize}
 
 \section{Development of the three components of a thermodynamic engine}
+A thermodynamic engine consists of following three components:
+\begin{itemize}
+\item{\textbf{Compound Database}} \\
+Compound database is a comprehensive database of physical and chemical properties of all compounds. It also includes constants for calculating various temperature or pressure dependent properties like vapor pressure, enthalpy, viscosity etc. 
+\item{\textbf{Thermodynamic Functions}} \\
+Thermodynamic functions consists of set emperical equations for calculating various temperature / pressure dependent properties. The constant for these emperical equations are provided by the compound database. 
+\item{\textbf{Phase Equilibria models}} \\
+Phase equilibria models consists of modelling equations for VLE models like Peng Robinson, NRTL, UNIQUAC etc. These models are used for predicting VLE / LLE behaviour for various systems.
+\end{itemize}
+
 \subsection{Development of Compound Database}
 \begin{itemize}
 \item {\textbf{The Chemsep Database}} \\
@@ -734,7 +740,7 @@ Figure \ref{8.1} shows the OpenModelica code for the flash model. It can be seen
 Before simulating a model, OpenModelica instanciate it by itself. It is at this stage that OpenModelica's compiler collects all the equations and inserts them in the \textbf{equation section} of the instantiated model. Figure \ref{8.3} shows the instance of the flash model as generated by OpenModelica. It is clear that now this model involves both the modeling equations and the thermodynamic equations. 
 \begin{figure}
 \centering
-\includegraphics[width=1.2\linewidth]{Combmodel}
+\includegraphics[width=1\linewidth]{Combmodel}
 \caption{Combined model generated by OpenModelica}
 \label{8.3}
 \end{figure}
