@@ -7,6 +7,8 @@
 \usepackage{listings}
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage{url}
+\usepackage{subfigure,graphicx}
+\newcommand{\figref}[1]{Fig.~\ref{#1}}
 \newcommand{\ignoreoverfullhboxes}{\setlength{\hfuzz}{\maxdimen}}
 \bibliographystyle{plain}
 
@@ -793,24 +795,23 @@ The pressure is kept constant at 1 atm. The value of $y_1$ (mole fraction of eth
 \end{figure}
 
 \item {\textbf{VLE curve}} \\ 
-Combining the bubble point and the dew point curves as generated above gives the T-xy curve for the system as shown in Figure \ref{fig:VLE}
+Combining the bubble point and the dew point curves as generated above gives the T-xy curve for the system as shown in Figure \figref{fig:VLE}
+
+This figure is verified by reproducing the same problem in Aspen plus. Figure \figref{aspen} depicts the T-xy curve for ethanol water system generated in Aspen plus. It clearly shows that the plot generated in OpenModelica completely replicates the one generated in Aspen plus. 
+
 \begin{figure}
 \centering
-\includegraphics[width=0.8\linewidth]{VLE}
-\caption{T-xy curve for ethanol water system generated in OpenModelica}
-\label{fig:VLE}
+\subfigure[Results from OpenModelica]{
+\includegraphics[width=0.9\linewidth]{VLE}
+\label{fig:VLE}}
+\subfigure[Results from Aspen Plus]{
+\includegraphics[width=0.9\linewidth]{aspen}
+\label{aspen}}
+\caption{Comparison of T-xy curve for ethanol water system using UNIQUAC VLE model}
 \end{figure}
-
-This figure is verified by reproducing the same problem in Aspen plus. Figure \ref{aspen} depicts the T-xy curve for ethanol water system generated in Aspen plus. It clearly shows that the plot generated in OpenModelica completely replicates the one generated in Aspen plus. 
 
 Reliable azeotropic data source by American Chemical Society \cite{Az} says that for ethanol-water system, at 1 atm, the azeotropic composition and temperatures are 0.96 mole fraction ethanol and 351.4 K. respectively. These values are also in agreement with the OpenModelica results.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.9\linewidth]{aspen}
-\caption{T-xy curve for ethanol-water system (UNIQUAC) generated in Aspen Plus}
-\label{aspen}
-\end{figure}
 
 The same simulation when carried out with the imported DWSIM's thermodynamic engine in OpenModelica resulted in an execution time of about 20 minutes whereas for the built in thermodynamic engine the execution time was fraction of a second.  
 
@@ -953,34 +954,33 @@ Assumptions: 1) Ideal behavior of all components in pure state or mixture; 2) co
 \end{itemize}
 
 \subsection{Results}
-Plots \ref{SD1} and \ref{SD2} shows the results obtained by simulating the example in OpenModelica by using the built in thermodynamics. It can be observed that the temperature increases during the heating period and then stays constant during the distillation period when the Bubble point is attained. The liquid phase compositions is constant during the heating period as there is no vapor formation. \\
+Plots \ref{composition} and \ref{temperature} shows the results of the simulation. It can be observed that the temperature increases during the heating period and then stays constant during the distillation period when the Bubble point is attained. The liquid phase compositions is constant during the heating period as there is no vapor formation. \\
+
 \begin{figure}
 \centering
+\subfigure[Results from OpenModelica]{
 \includegraphics[width=0.8\linewidth]{SD1}
-\caption{Change of organic phase composition during semi-batch steam distillation (as simulated in OpenModelica )}
-\label{SD1}
-\end{figure}
-\begin{figure}
-\centering
-\includegraphics[width=0.8\linewidth]{SD2}
-\caption{Temperature change during semi-batch steam distillation (as simulated in OpenModelica)}
-\label{SD2}
-\end{figure}
-Plots \ref{SD3} and \ref{SD4} shows the results from the actual thesis.
-\begin{figure}
-\centering
-\includegraphics[width=0.7\linewidth]{SD3}
-\caption{Change of organic phase composition during semi-batch steam distillation \cite{PHD}}
-\label{SD3}
-\end{figure}
-\begin{figure}
-\centering
-\includegraphics[width=0.7\linewidth]{SD4}
-\caption{Temperature change during semi-batch steam distillation \cite{PHD}}
-\label{SD4}
+\label{SD1}}
+\subfigure[Results from reference \cite{PHD}]{
+\includegraphics[width=0.8\linewidth]{SD4}
+\label{SD4}}
+\caption{Comparison of change in organic phase composition during semi-batch steam distillation}
+\label{composition}
 \end{figure}
 
-It can be seen that the results of OpenModelica are in agreement with the original thesis. Therefore, the built in thermodynamics can be claimed to be robust and accurate.
+\begin{figure}
+\centering
+\subfigure[Results from OpenModelica]{
+\includegraphics[width=0.8\linewidth]{SD2}
+\label{SD2}}
+\subfigure[Results from reference \cite{PHD}]{
+\includegraphics[width=0.8\linewidth]{SD3}
+\label{SD3}}
+\caption{Comparison of temperature change during semi-batch steam distillation}
+\label{temperature}
+\end{figure}
+
+Figures \ref{composition} and \ref{temperature} shows that the results of OpenModelica are in agreement with the reference \cite{PHD}. Therefore, the built in thermodynamics can be claimed to be robust and accurate.
 
 \section{Batch Distillation}
 \subsection{The Model}
@@ -1025,37 +1025,35 @@ V = L + D
 \end{gather*}
 
 \subsection{Results}
-Figures \ref{Ingham4} and \ref{Ingham2}\cite{ingham} shows the composition of methanol increases rapidly at the start as there is total reflux initially and then increases at a lower rate as now the reflux ratio is 10. The reboiler is slowly getting leaner in methanol as the holdup in roboiler is very high as compared to the trays. 
+Figure \ref{ingcomp} shows the composition of methanol increases rapidly at the start as there is total reflux initially and then increases at a lower rate as now the reflux ratio is 10. The reboiler is slowly getting leaner in methanol as the holdup in roboiler is very high as compared to the trays. 
 
 \begin{figure}
 \centering
-\includegraphics[width=1\linewidth]{Ingham4}
-\caption{Methanol composition profiles of liquid holdup in reboiler and vapour leaving form tray 1 (as generated in OpenModelica)}
-\label{Ingham4}
-\end{figure}
-
-\begin{figure}
-\centering
+\subfigure[Results from OpenModelica]{
+\includegraphics[width=1\linewidth]{Inghamb}
+\label{Ingham4}}
+\subfigure[Results from reference \cite{ingham}]{
 \includegraphics[width=1\linewidth]{Ingham2}
-\caption{Methanol composition profiles of liquid holdup in reboiler and vapour leaving form tray 1 \cite{ingham}}
-\label{Ingham2}
+\label{Ingham2}}
+\caption{Comparison of methanol composition profiles of liquid holdup in reboiler and vapour leaving form tray 1}
+\label{ingcomp}
 \end{figure}
 
-Figures \ref{Ingham5} and \ref{Ingham3} shows that the temperature of all the trays drastically decreases and becomes less than the reboiler. The reboiler temperature changes slowly because the holdup is very high as compared to trays. One can also notice that as we move upwards along the column, the temperature decreases, this is due to the fact that the as we move upwards along the column the composition gets richer in more volatile component.
+
+Figure \ref{ingtemp} shows that the temperature of all the trays drastically decreases and becomes less than the reboiler. The reboiler temperature changes slowly because the holdup is very high as compared to trays. One can also notice that as we move upwards along the column, the temperature decreases, this is due to the fact that the as we move upwards along the column the composition gets richer in more volatile component.
 
 \begin{figure}
 \centering
-\includegraphics[width=1\linewidth]{Ingham5}
-\caption{Temperature profiles of tray 1,2,3,4 and reboiler with time as generated in OpenModelica}
-\label{Ingham5}
-\end{figure}
-
-\begin{figure}
-\centering
+\subfigure[Results from OpenModelica]{
+\includegraphics[width=1\linewidth]{Inghama}
+\label{Ingham5}}
+\subfigure[Results from reference \cite{ingham}]{
 \includegraphics[width=1\linewidth]{Ingham3}
-\caption{Temperature profiles of tray 1,2,3,4 and reboiler with time\cite{ingham}}
-\label{Ingham3}
+\label{Ingham3}}
+\caption{Comparison of temperature profiles of tray 1,2,3,4 and reboiler with time}
+\label{ingtemp}
 \end{figure}
+
 
 \chapter{Future Work}
 One of the next objective will be to built a library of steady state and dynamic unit operations in OpenModelica. As now OpenModelica has its own thermodynamic engine, a library of steady state unit operations should be modeled. Another prime objective is to build a library of dynamic unit operations in OpenModelica to carry out calculations of batch processes.
